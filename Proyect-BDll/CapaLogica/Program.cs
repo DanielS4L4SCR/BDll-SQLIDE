@@ -16,7 +16,6 @@ namespace CapaLogica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
         }
     }
 }

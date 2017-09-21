@@ -42,7 +42,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(117, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Nombre Servidor:";
-            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroComboBox1
             // 
@@ -71,6 +70,7 @@
             this.metroButton2.TabIndex = 3;
             this.metroButton2.Text = "Cancelar";
             this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // Login
             // 
@@ -82,6 +82,7 @@
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroLabel1);
             this.Name = "Login";
+            this.Resizable = false;
             this.Text = "SQL MANAGER";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);

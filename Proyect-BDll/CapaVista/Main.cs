@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class Login : MetroFramework.Forms.MetroForm
+    public partial class Main : MetroFramework.Forms.MetroForm
     {
-        public Login()
+        public Main()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e)
         {
-            Main main1 = new Main();
-            main1.Show();
-        }
-
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            
+                
         }
     }
 }
