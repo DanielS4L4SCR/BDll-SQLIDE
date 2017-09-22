@@ -36,6 +36,13 @@ namespace CapaLogica
             return instance;
 
         }
+
+        public bool Conexion(String instanceName)
+        {
+            
+           return new CapaAccesoBD.clsConexion(instanceName: instanceName).abrirConexion();
+           
+        }
     }
 }
 

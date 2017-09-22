@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CapaVista
+{
+    public partial class Login : MetroFramework.Forms.MetroForm
+    {
+        public Login()
+        {
+            InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            
+        }
+#region
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+#endregion
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            if (cboInstancias.Text.ToString().Trim() != String.Empty)
+            {
+                if ( new CapaLogica.clsBaseDatos().Conexion(cboInstancias.Text.ToString().Trim()))
+                {
+                    
+                    new frmMain(cboInstancias.Text.ToString(), this).Show();
+                }
+                else
+                {
+                    MessageBox.Show("Conexión erronea, verifique el nombre de la instancia");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese o seleccione una instancia");
+            }
+        }
+    }
+
+}

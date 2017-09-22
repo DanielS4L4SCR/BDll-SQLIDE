@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.btnLoad = new MetroFramework.Controls.MetroButton();
+            this.btnInicio = new MetroFramework.Controls.MetroButton();
+            this.cboInstancias = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -42,23 +44,43 @@
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Nombre de la Instancia:";
             // 
-            // metroComboBox1
+            // btnLoad
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(114, 109);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(244, 29);
-            this.metroComboBox1.TabIndex = 1;
-            this.metroComboBox1.UseSelectable = true;
-            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
+            this.btnLoad.Location = new System.Drawing.Point(379, 115);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(58, 23);
+            this.btnLoad.TabIndex = 2;
+            this.btnLoad.Text = "metroButton1";
+            this.btnLoad.UseSelectable = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.Location = new System.Drawing.Point(215, 183);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(75, 23);
+            this.btnInicio.TabIndex = 3;
+            this.btnInicio.Text = "metroButton1";
+            this.btnInicio.UseSelectable = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
+            // cboInstancias
+            // 
+            this.cboInstancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboInstancias.FormattingEnabled = true;
+            this.cboInstancias.Location = new System.Drawing.Point(144, 115);
+            this.cboInstancias.Name = "cboInstancias";
+            this.cboInstancias.Size = new System.Drawing.Size(215, 28);
+            this.cboInstancias.TabIndex = 4;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 239);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.cboInstancias);
+            this.Controls.Add(this.btnInicio);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.metroLabel1);
             this.ForeColor = System.Drawing.Color.Green;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -76,6 +98,8 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroButton btnLoad;
+        private MetroFramework.Controls.MetroButton btnInicio;
+        private System.Windows.Forms.ComboBox cboInstancias;
     }
 }
