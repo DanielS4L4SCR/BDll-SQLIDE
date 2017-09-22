@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboBD = new MetroFramework.Controls.MetroComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gbBD = new System.Windows.Forms.GroupBox();
             this.lbTabla = new System.Windows.Forms.ListBox();
+            this.cboBD = new MetroFramework.Controls.MetroComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCargar = new MetroFramework.Controls.MetroButton();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.gbBD.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -47,6 +48,27 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // gbBD
+            // 
+            this.gbBD.Controls.Add(this.lbTabla);
+            this.gbBD.Font = new System.Drawing.Font("Maiandra GD", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbBD.Location = new System.Drawing.Point(6, 19);
+            this.gbBD.Name = "gbBD";
+            this.gbBD.Size = new System.Drawing.Size(167, 241);
+            this.gbBD.TabIndex = 0;
+            this.gbBD.TabStop = false;
+            // 
+            // lbTabla
+            // 
+            this.lbTabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbTabla.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lbTabla.FormattingEnabled = true;
+            this.lbTabla.ItemHeight = 15;
+            this.lbTabla.Location = new System.Drawing.Point(6, 19);
+            this.lbTabla.Name = "lbTabla";
+            this.lbTabla.Size = new System.Drawing.Size(152, 195);
+            this.lbTabla.TabIndex = 0;
+            // 
             // cboBD
             // 
             this.cboBD.FormattingEnabled = true;
@@ -56,10 +78,10 @@
             this.cboBD.Size = new System.Drawing.Size(145, 29);
             this.cboBD.TabIndex = 1;
             this.cboBD.UseSelectable = true;
-            this.cboBD.SelectedIndexChanged += new System.EventHandler(this.cboBD_SelectedIndexChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCargar);
             this.groupBox2.Controls.Add(this.cboBD);
             this.groupBox2.Location = new System.Drawing.Point(3, 7);
             this.groupBox2.Name = "groupBox2";
@@ -67,25 +89,15 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
-            // gbBD
+            // btnCargar
             // 
-            this.gbBD.Controls.Add(this.lbTabla);
-            this.gbBD.Location = new System.Drawing.Point(6, 19);
-            this.gbBD.Name = "gbBD";
-            this.gbBD.Size = new System.Drawing.Size(167, 241);
-            this.gbBD.TabIndex = 0;
-            this.gbBD.TabStop = false;
-            this.gbBD.Enter += new System.EventHandler(this.cboBD_SelectedIndexChanged);
-            // 
-            // lbTabla
-            // 
-            this.lbTabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbTabla.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lbTabla.FormattingEnabled = true;
-            this.lbTabla.Location = new System.Drawing.Point(6, 19);
-            this.lbTabla.Name = "lbTabla";
-            this.lbTabla.Size = new System.Drawing.Size(152, 195);
-            this.lbTabla.TabIndex = 0;
+            this.btnCargar.Location = new System.Drawing.Point(179, 41);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(50, 23);
+            this.btnCargar.TabIndex = 2;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseSelectable = true;
+            this.btnCargar.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // lbTabñas
             // 
@@ -99,8 +111,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.gbBD.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -112,5 +124,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox gbBD;
         private System.Windows.Forms.ListBox lbTabla;
+        private MetroFramework.Controls.MetroButton btnCargar;
     }
 }

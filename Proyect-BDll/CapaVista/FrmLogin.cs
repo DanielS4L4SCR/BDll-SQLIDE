@@ -17,10 +17,7 @@ namespace CapaVista
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-            
-        }
+      
 #region
         private void metroButton2_Click(object sender, EventArgs e)
         {
@@ -37,12 +34,6 @@ namespace CapaVista
 
         }
 #endregion
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
-        }
-
         private void btnInicio_Click(object sender, EventArgs e)
         {
             if (cboInstancias.Text.ToString().Trim() != String.Empty)
@@ -61,6 +52,11 @@ namespace CapaVista
             {
                 MessageBox.Show("Por favor, ingrese o seleccione una instancia");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
         }
     }
 

@@ -33,10 +33,11 @@ namespace CapaVista
             gbBD.Text = "";
 
         }
-
-        private void cboBD_SelectedIndexChanged(object sender, EventArgs e)
+        private void metroButton1_Click(object sender, EventArgs e)
         {
+            gbBD.Text = "Tablas de: " + cboBD.SelectedValue.ToString();
             DataTable objDT = new CapaLogica.clsTablas().Tablas(instanceName, cboBD.SelectedValue.ToString());
+            lbTabla.DataSource = null;
             if (cboBD.Enabled)
             {
                 if (objDT.Rows.Count > 0)
@@ -59,12 +60,6 @@ namespace CapaVista
                 }
 
             }
-            gbBD.Text = "Tablas de: " + cboBD.SelectedValue.ToString();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }
