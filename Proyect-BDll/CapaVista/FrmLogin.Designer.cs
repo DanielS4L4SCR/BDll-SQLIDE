@@ -75,15 +75,18 @@
             // 
             // btnLoad
             // 
+            this.btnLoad.BackColor = System.Drawing.Color.Transparent;
             this.btnLoad.BackgroundImage = global::CapaVista.Properties.Resources.if_icon_111_search_314478;
             this.btnLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLoad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnLoad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.ForeColor = System.Drawing.Color.Transparent;
             this.btnLoad.Location = new System.Drawing.Point(362, 120);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(27, 23);
             this.btnLoad.TabIndex = 8;
-            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login

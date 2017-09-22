@@ -73,6 +73,16 @@ namespace CapaVista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_cross_308235 {
+            get {
+                object obj = ResourceManager.GetObject("if_cross_308235", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_Enter_728934 {
             get {
                 object obj = ResourceManager.GetObject("if_Enter_728934", resourceCulture);

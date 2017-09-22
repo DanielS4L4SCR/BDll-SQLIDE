@@ -31,7 +31,7 @@ namespace CapaVista
             cboBD.ValueMember = "DATABASE_NAME";
             cboBD.DisplayMember = "DATABASE_NAME";
             gbBD.Text = "";
-
+            timer1.Start();
         }
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -62,6 +62,33 @@ namespace CapaVista
             }
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            txtQuery.Visible = true;
+            btnClose.Visible = true;
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("El texto seleccionado es: "+ txtQuery.SelectedText);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbReloj.Text = DateTime.Now.ToLongTimeString();
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtQuery.Visible = false;
+            btnClose.Visible = false;
+        }
     }
 }
 
