@@ -119,5 +119,17 @@
   <ItemGroup>
     <None Include="Resources\if_cross_308235.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_lock_locked_log_login_padlock_password_private_protection_register_registration_registry_safe_safety_secret_secure_security_392499.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_database_go_84526.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_032_95930.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_arrow_right_1930265.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

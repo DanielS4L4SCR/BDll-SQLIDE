@@ -19,7 +19,7 @@ namespace CapaVista.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,6 +63,16 @@ namespace CapaVista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_032_95930 {
+            get {
+                object obj = ResourceManager.GetObject("if_032_95930", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_18_330400 {
             get {
                 object obj = ResourceManager.GetObject("if_18_330400", resourceCulture);
@@ -73,9 +83,29 @@ namespace CapaVista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_arrow_right_1930265 {
+            get {
+                object obj = ResourceManager.GetObject("if_arrow_right_1930265", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_cross_308235 {
             get {
                 object obj = ResourceManager.GetObject("if_cross_308235", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_database_go_84526 {
+            get {
+                object obj = ResourceManager.GetObject("if_database_go_84526", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +126,17 @@ namespace CapaVista.Properties {
         internal static System.Drawing.Bitmap if_icon_111_search_314478 {
             get {
                 object obj = ResourceManager.GetObject("if_icon-111-search_314478", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_lock_locked_log_login_padlock_password_private_protection_register_registration_registry_safe_safety_secret_secure_security_392499 {
+            get {
+                object obj = ResourceManager.GetObject("if_lock_locked_log_login_padlock_password_private_protection_register_registratio" +
+                        "n_registry_safe_safety_secret_secure_security_392499", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
