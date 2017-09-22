@@ -50,7 +50,7 @@ namespace CapaVista
                 if ( new CapaLogica.clsBaseDatos().Conexion(cboInstancias.Text.ToString().Trim()))
                 {
                     
-                    new frmMain(cboInstancias.Text.ToString(), this).Show();
+                    new lbTabñas(cboInstancias.Text.ToString(), this).Show();
                 }
                 else
                 {

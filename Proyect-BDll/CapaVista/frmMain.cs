@@ -10,29 +10,62 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class frmMain : MetroFramework.Forms.MetroForm
+    public partial class lbTabñas : MetroFramework.Forms.MetroForm
     {
         public String instanceName { get; set; }
         public Form login { get; set; }
 
 
-        public frmMain(String instanceName, Form login)
+
+        public lbTabñas(String instanceName, Form login)
         {
             InitializeComponent();
             this.instanceName = instanceName;
             this.login = login;
+
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
-            cboBD.DisplayMember = "DATABASE_NAME";
             cboBD.ValueMember = "DATABASE_NAME";
+            cboBD.DisplayMember = "DATABASE_NAME";
+            gbBD.Text = "";
+
         }
 
         private void cboBD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable objDT = new CapaLogica.clsTablas().Tablas(instanceName, cboBD.SelectedValue.ToString());
+            if (cboBD.Enabled)
+            {
+                if (objDT.Rows.Count > 0)
+                {
+                    lbTabla.DataSource = objDT;
+                    lbTabla.DisplayMember = "TABLE_NAME";
+                    lbTabla.ValueMember = "TABLE_NAME";
+
+                }
+                else
+                {
+                    if (objDT == null)
+                    {
+                        MessageBox.Show("Error");
+                    }
+
+                    MessageBox.Show("La base de datos selecciona no contiene tablas");
+                    lbTabla.Items.Clear();
+
+                }
+
+            }
+            gbBD.Text = "Tablas de: " + cboBD.SelectedValue.ToString();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
     }
 }
+
