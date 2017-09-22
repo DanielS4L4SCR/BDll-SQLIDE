@@ -63,6 +63,16 @@ namespace CapaVista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_18_330400 {
+            get {
+                object obj = ResourceManager.GetObject("if_18_330400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_Enter_728934 {
             get {
                 object obj = ResourceManager.GetObject("if_Enter_728934", resourceCulture);
@@ -76,6 +86,16 @@ namespace CapaVista.Properties {
         internal static System.Drawing.Bitmap if_icon_111_search_314478 {
             get {
                 object obj = ResourceManager.GetObject("if_icon-111-search_314478", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rotate {
+            get {
+                object obj = ResourceManager.GetObject("rotate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

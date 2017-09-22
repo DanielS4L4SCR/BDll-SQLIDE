@@ -33,7 +33,7 @@ namespace CapaVista
             gbBD.Text = "";
 
         }
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             gbBD.Text = "Tablas de: " + cboBD.SelectedValue.ToString();
             DataTable objDT = new CapaLogica.clsTablas().Tablas(instanceName, cboBD.SelectedValue.ToString());
@@ -61,6 +61,7 @@ namespace CapaVista
 
             }
         }
+
     }
 }
 

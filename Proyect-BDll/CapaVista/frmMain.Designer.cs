@@ -33,7 +33,7 @@
             this.lbTabla = new System.Windows.Forms.ListBox();
             this.cboBD = new MetroFramework.Controls.MetroComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnCargar = new MetroFramework.Controls.MetroButton();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gbBD.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,7 +81,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnCargar);
+            this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.cboBD);
             this.groupBox2.Location = new System.Drawing.Point(3, 7);
             this.groupBox2.Name = "groupBox2";
@@ -89,15 +89,19 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
-            // btnCargar
+            // btnActualizar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(179, 41);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(50, 23);
-            this.btnCargar.TabIndex = 2;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseSelectable = true;
-            this.btnCargar.Click += new System.EventHandler(this.metroButton1_Click);
+            this.btnActualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnActualizar.BackgroundImage = global::CapaVista.Properties.Resources.rotate;
+            this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnActualizar.Location = new System.Drawing.Point(175, 35);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(32, 29);
+            this.btnActualizar.TabIndex = 3;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // lbTabñas
             // 
@@ -106,8 +110,10 @@
             this.ClientSize = new System.Drawing.Size(684, 595);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "lbTabñas";
             this.Padding = new System.Windows.Forms.Padding(0, 60, 20, 20);
+            this.Style = MetroFramework.MetroColorStyle.Green;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
@@ -124,6 +130,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox gbBD;
         private System.Windows.Forms.ListBox lbTabla;
-        private MetroFramework.Controls.MetroButton btnCargar;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

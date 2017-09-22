@@ -110,5 +110,11 @@
   <ItemGroup>
     <None Include="Resources\if_icon-111-search_314478.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_18_330400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotate.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

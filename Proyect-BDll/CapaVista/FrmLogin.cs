@@ -53,7 +53,6 @@ namespace CapaVista
                 MessageBox.Show("Por favor, ingrese o seleccione una instancia");
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
            cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
