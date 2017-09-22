@@ -164,7 +164,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(189, 641);
+            this.metroGrid1.Location = new System.Drawing.Point(189, 741);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -206,16 +206,16 @@
             // 
             // 
             this.txtQuery.CustomButton.Image = null;
-            this.txtQuery.CustomButton.Location = new System.Drawing.Point(246, 1);
+            this.txtQuery.CustomButton.Location = new System.Drawing.Point(146, 2);
             this.txtQuery.CustomButton.Name = "";
-            this.txtQuery.CustomButton.Size = new System.Drawing.Size(493, 493);
+            this.txtQuery.CustomButton.Size = new System.Drawing.Size(591, 591);
             this.txtQuery.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtQuery.CustomButton.TabIndex = 1;
             this.txtQuery.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtQuery.CustomButton.UseSelectable = true;
             this.txtQuery.CustomButton.Visible = false;
             this.txtQuery.Lines = new string[0];
-            this.txtQuery.Location = new System.Drawing.Point(189, 140);
+            this.txtQuery.Location = new System.Drawing.Point(193, 139);
             this.txtQuery.MaxLength = 32767;
             this.txtQuery.Multiline = true;
             this.txtQuery.Name = "txtQuery";
@@ -225,7 +225,7 @@
             this.txtQuery.SelectionLength = 0;
             this.txtQuery.SelectionStart = 0;
             this.txtQuery.ShortcutsEnabled = true;
-            this.txtQuery.Size = new System.Drawing.Size(740, 495);
+            this.txtQuery.Size = new System.Drawing.Size(740, 596);
             this.txtQuery.TabIndex = 8;
             this.txtQuery.UseSelectable = true;
             this.txtQuery.Visible = false;
