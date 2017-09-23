@@ -62,24 +62,13 @@ namespace CapaVista
         {
 
         }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             Load1.Width += 2;
             if (Load1.Width >= 499)
-            {   
-                load.Stop();
+            {
                 cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
+                load.Stop();             
             }
         }
     }
