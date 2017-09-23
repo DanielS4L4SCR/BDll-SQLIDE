@@ -64,20 +64,16 @@ namespace CapaVista
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-
-            tabQuery.Visible = true;
+            tabQuery1.Visible = true;
             btnExecute.Visible = true;
             btnClose.Visible = true;
-            int cont = 0;
-
-            if (tabQuery.TabCount < 5)
+            int cont = 0;          
+            if (tabQuery1.TabCount < 5)
             {
                 cont = cont + 1;
-                string title = "Query " + (tabQuery.TabCount + 1).ToString();
+                string title = "Query " + (tabQuery1.TabCount + 1).ToString();
                 TabPage myTabPage = new TabPage(title);
-                tabQuery.TabPages.Add(myTabPage);
-
-
+                tabQuery1.TabPages.Add(myTabPage);
             }
             else
             {
