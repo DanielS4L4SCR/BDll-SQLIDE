@@ -14,9 +14,6 @@ namespace CapaVista
     {
         public String instanceName { get; set; }
         public Form login { get; set; }
-
-
-
         public lbTabñas(String instanceName, Form login)
         {
             InitializeComponent();
@@ -45,7 +42,6 @@ namespace CapaVista
                     lbTabla.DataSource = objDT;
                     lbTabla.DisplayMember = "TABLE_NAME";
                     lbTabla.ValueMember = "TABLE_NAME";
-
                 }
                 else
                 {
@@ -56,34 +52,42 @@ namespace CapaVista
 
                     MessageBox.Show("La base de datos selecciona no contiene tablas");
                     lbTabla.Items.Clear();
-
                 }
 
             }
         }
-
+        
+         //aqui creas lod emas controles y los asignas al page
+        TextBox txtQuery1 = new TextBox();
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            tabQuery1.Visible = true;
+            /*tabQuery1.Visible = true;
             btnExecute.Visible = true;
             btnClose.Visible = true;
-            int cont = 0;          
+            txtQuery1.Location = new Point(2,2);
+            txtQuery1.Size = new Size(755,496);
+            txtQuery1.Multiline = true;
             if (tabQuery1.TabCount < 5)
             {
                 cont = cont + 1;
                 string title = "Query " + (tabQuery1.TabCount + 1).ToString();
-                TabPage myTabPage = new TabPage(title);
-                tabQuery1.TabPages.Add(myTabPage);
+                //TabPage myTabPage = new TabPage(title);
+                //tabQuery1.TabPages.Add(myTabPage);
+                TabPage page = new TabPage(title);
+                tabQuery1.TabPages.Add(page);
+                page.Controls.Add(txtQuery1);
             }
             else
             {
                 MessageBox.Show("Máximo de pestañas superado");
-            }
+            }*/
+            txtConsulta.Visible = true;
+            btnClose.Visible = true;
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El texto seleccionado es: " + txtQuery.SelectedText);
+            MessageBox.Show("El texto seleccionado es: " + txtQuery1.SelectedText);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -91,21 +95,12 @@ namespace CapaVista
             lbReloj.Text = DateTime.Now.ToLongTimeString();
 
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            txtQuery.Visible = false;
+            txtConsulta.Visible = false;
             btnClose.Visible = false;
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
+            
+            //tabQuery1.TabPages.RemoveAt(tabQuery1.TabCount-1);
         }
     }
 }
