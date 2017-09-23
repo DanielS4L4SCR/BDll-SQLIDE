@@ -64,19 +64,36 @@ namespace CapaVista
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            txtQuery.Visible = true;
+
+            tabQuery.Visible = true;
+            btnExecute.Visible = true;
             btnClose.Visible = true;
+            int cont = 0;
+
+            if (tabQuery.TabCount < 5)
+            {
+                cont = cont + 1;
+                string title = "Query " + (tabQuery.TabCount + 1).ToString();
+                TabPage myTabPage = new TabPage(title);
+                tabQuery.TabPages.Add(myTabPage);
+
+
+            }
+            else
+            {
+                MessageBox.Show("Máximo de pestañas superado");
+            }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El texto seleccionado es: "+ txtQuery.SelectedText);
+            MessageBox.Show("El texto seleccionado es: " + txtQuery.SelectedText);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbReloj.Text = DateTime.Now.ToLongTimeString();
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -88,6 +105,11 @@ namespace CapaVista
         {
             txtQuery.Visible = false;
             btnClose.Visible = false;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
