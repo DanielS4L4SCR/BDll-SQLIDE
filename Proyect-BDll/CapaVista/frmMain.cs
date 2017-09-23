@@ -64,9 +64,26 @@ namespace CapaVista
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            txtQuery.Visible = true;
-            btnClose.Visible = true;
-        }
+            {
+                tabQuery.Visible = true;
+                btnExecute.Visible = true;
+                btnClose.Visible = true;
+                int cont = 0;
+
+                if (tabQuery.TabCount < 5)
+                {
+                    cont = cont + 1;
+                    string title = "Query " + (tabQuery.TabCount + 1).ToString();
+                    TabPage myTabPage = new TabPage(title);
+                    tabQuery.TabPages.Add(myTabPage);
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Máximo de pestañas superado");
+                }
+            }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
@@ -88,6 +105,11 @@ namespace CapaVista
         {
             txtQuery.Visible = false;
             btnClose.Visible = false;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -46,6 +46,7 @@
             this.txtQuery = new MetroFramework.Controls.MetroTextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnClose = new System.Windows.Forms.Button();
+            this.tabQuery = new System.Windows.Forms.TabControl();
             this.groupBox1.SuspendLayout();
             this.gbBD.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,6 +96,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lbReloj);
+            this.groupBox2.Controls.Add(this.txtQuery);
             this.groupBox2.Controls.Add(this.lbSqlManager);
             this.groupBox2.Controls.Add(this.btnActualizar);
             this.groupBox2.Controls.Add(this.cboBD);
@@ -103,6 +105,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1783, 97);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // lbReloj
             // 
@@ -186,7 +189,7 @@
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(90, 23);
             this.btnConsulta.TabIndex = 6;
-            this.btnConsulta.Text = "Consulta";
+            this.btnConsulta.Text = "Nuevo Query";
             this.btnConsulta.UseSelectable = true;
             this.btnConsulta.Click += new System.EventHandler(this.metroButton1_Click);
             // 
@@ -206,16 +209,16 @@
             // 
             // 
             this.txtQuery.CustomButton.Image = null;
-            this.txtQuery.CustomButton.Location = new System.Drawing.Point(146, 2);
+            this.txtQuery.CustomButton.Location = new System.Drawing.Point(139, 1);
             this.txtQuery.CustomButton.Name = "";
-            this.txtQuery.CustomButton.Size = new System.Drawing.Size(591, 591);
+            this.txtQuery.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtQuery.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtQuery.CustomButton.TabIndex = 1;
             this.txtQuery.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtQuery.CustomButton.UseSelectable = true;
             this.txtQuery.CustomButton.Visible = false;
             this.txtQuery.Lines = new string[0];
-            this.txtQuery.Location = new System.Drawing.Point(193, 139);
+            this.txtQuery.Location = new System.Drawing.Point(354, 55);
             this.txtQuery.MaxLength = 32767;
             this.txtQuery.Multiline = true;
             this.txtQuery.Name = "txtQuery";
@@ -225,7 +228,7 @@
             this.txtQuery.SelectionLength = 0;
             this.txtQuery.SelectionStart = 0;
             this.txtQuery.ShortcutsEnabled = true;
-            this.txtQuery.Size = new System.Drawing.Size(740, 596);
+            this.txtQuery.Size = new System.Drawing.Size(165, 27);
             this.txtQuery.TabIndex = 8;
             this.txtQuery.UseSelectable = true;
             this.txtQuery.Visible = false;
@@ -253,13 +256,21 @@
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
+            // tabQuery
+            // 
+            this.tabQuery.Location = new System.Drawing.Point(203, 150);
+            this.tabQuery.Name = "tabQuery";
+            this.tabQuery.SelectedIndex = 0;
+            this.tabQuery.Size = new System.Drawing.Size(571, 327);
+            this.tabQuery.TabIndex = 11;
+            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.tabQuery);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.txtQuery);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.metroGrid1);
@@ -296,5 +307,6 @@
         private MetroFramework.Controls.MetroLabel lbSqlManager;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.TabControl tabQuery;
     }
 }
