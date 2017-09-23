@@ -64,7 +64,7 @@ namespace CapaVista
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Load1.Width += 2;
+            Load1.Width += 3;
             if (Load1.Width >= 499)
             {
                 cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
