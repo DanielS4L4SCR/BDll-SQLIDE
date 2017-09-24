@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lbTabñas));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbBD = new System.Windows.Forms.GroupBox();
             this.lbTabla = new System.Windows.Forms.ListBox();
@@ -47,11 +48,31 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.tabQuery = new System.Windows.Forms.TabControl();
             this.tabQuery1 = new System.Windows.Forms.TabControl();
-            this.txtConsulta = new System.Windows.Forms.TextBox();
+            this.tabContQuery = new MetroFramework.Controls.MetroTabControl();
+            this.Tab1 = new MetroFramework.Controls.MetroTabPage();
+            this.txtQuery1 = new System.Windows.Forms.TextBox();
+            this.tab2 = new MetroFramework.Controls.MetroTabPage();
+            this.txtQuery2 = new System.Windows.Forms.TextBox();
+            this.tab3 = new MetroFramework.Controls.MetroTabPage();
+            this.txtQuery3 = new System.Windows.Forms.TextBox();
+            this.tab4 = new MetroFramework.Controls.MetroTabPage();
+            this.txtQuery4 = new System.Windows.Forms.TextBox();
+            this.tab5 = new MetroFramework.Controls.MetroTabPage();
+            this.Query5 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gbBD.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            this.tabContQuery.SuspendLayout();
+            this.Tab1.SuspendLayout();
+            this.tab2.SuspendLayout();
+            this.tab3.SuspendLayout();
+            this.tab4.SuspendLayout();
+            this.tab5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -102,10 +123,9 @@
             this.groupBox2.Controls.Add(this.cboBD);
             this.groupBox2.Location = new System.Drawing.Point(3, 7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1783, 97);
+            this.groupBox2.Size = new System.Drawing.Size(860, 97);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            
             // 
             // lbReloj
             // 
@@ -120,7 +140,7 @@
             // 
             this.lbSqlManager.AutoSize = true;
             this.lbSqlManager.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lbSqlManager.Location = new System.Drawing.Point(8, 10);
+            this.lbSqlManager.Location = new System.Drawing.Point(28, 16);
             this.lbSqlManager.Name = "lbSqlManager";
             this.lbSqlManager.Size = new System.Drawing.Size(167, 25);
             this.lbSqlManager.TabIndex = 4;
@@ -133,7 +153,7 @@
             this.btnActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnActualizar.Location = new System.Drawing.Point(175, 55);
+            this.btnActualizar.Location = new System.Drawing.Point(195, 55);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(32, 29);
             this.btnActualizar.TabIndex = 3;
@@ -147,40 +167,40 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle32;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(189, 741);
+            this.metroGrid1.Location = new System.Drawing.Point(189, 558);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1597, 263);
+            this.metroGrid1.Size = new System.Drawing.Size(674, 213);
             this.metroGrid1.TabIndex = 5;
             // 
             // btnConsulta
@@ -209,6 +229,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.BackgroundImage = global::CapaVista.Properties.Resources.if_cross_308235;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -216,12 +237,11 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(915, 116);
+            this.btnClose.Location = new System.Drawing.Point(633, 22);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(28, 23);
             this.btnClose.TabIndex = 9;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Visible = false;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabQuery
@@ -241,42 +261,243 @@
             this.tabQuery1.TabIndex = 10;
             this.tabQuery1.Visible = false;
             // 
-            // txtConsulta
+            // tabContQuery
             // 
-            this.txtConsulta.Location = new System.Drawing.Point(198, 157);
-            this.txtConsulta.Multiline = true;
-            this.txtConsulta.Name = "txtConsulta";
-            this.txtConsulta.Size = new System.Drawing.Size(745, 470);
-            this.txtConsulta.TabIndex = 11;
-            this.txtConsulta.Visible = false;
-            
+            this.tabContQuery.Controls.Add(this.Tab1);
+            this.tabContQuery.Controls.Add(this.tab2);
+            this.tabContQuery.Controls.Add(this.tab3);
+            this.tabContQuery.Controls.Add(this.tab4);
+            this.tabContQuery.Controls.Add(this.tab5);
+            this.tabContQuery.Location = new System.Drawing.Point(184, 153);
+            this.tabContQuery.Name = "tabContQuery";
+            this.tabContQuery.SelectedIndex = 4;
+            this.tabContQuery.Size = new System.Drawing.Size(679, 399);
+            this.tabContQuery.TabIndex = 11;
+            this.tabContQuery.UseSelectable = true;
+            // 
+            // Tab1
+            // 
+            this.Tab1.Controls.Add(this.button4);
+            this.Tab1.Controls.Add(this.txtQuery1);
+            this.Tab1.HorizontalScrollbarBarColor = true;
+            this.Tab1.HorizontalScrollbarHighlightOnWheel = false;
+            this.Tab1.HorizontalScrollbarSize = 10;
+            this.Tab1.Location = new System.Drawing.Point(4, 38);
+            this.Tab1.Name = "Tab1";
+            this.Tab1.Size = new System.Drawing.Size(671, 357);
+            this.Tab1.TabIndex = 0;
+            this.Tab1.Text = "Query ";
+            this.Tab1.VerticalScrollbarBarColor = true;
+            this.Tab1.VerticalScrollbarHighlightOnWheel = false;
+            this.Tab1.VerticalScrollbarSize = 10;
+            // 
+            // txtQuery1
+            // 
+            this.txtQuery1.Location = new System.Drawing.Point(1, 11);
+            this.txtQuery1.Multiline = true;
+            this.txtQuery1.Name = "txtQuery1";
+            this.txtQuery1.Size = new System.Drawing.Size(668, 335);
+            this.txtQuery1.TabIndex = 13;
+            // 
+            // tab2
+            // 
+            this.tab2.Controls.Add(this.button3);
+            this.tab2.Controls.Add(this.txtQuery2);
+            this.tab2.HorizontalScrollbarBarColor = true;
+            this.tab2.HorizontalScrollbarHighlightOnWheel = false;
+            this.tab2.HorizontalScrollbarSize = 10;
+            this.tab2.Location = new System.Drawing.Point(4, 38);
+            this.tab2.Name = "tab2";
+            this.tab2.Size = new System.Drawing.Size(671, 357);
+            this.tab2.TabIndex = 1;
+            this.tab2.Text = "Query ";
+            this.tab2.VerticalScrollbarBarColor = true;
+            this.tab2.VerticalScrollbarHighlightOnWheel = false;
+            this.tab2.VerticalScrollbarSize = 10;
+            // 
+            // txtQuery2
+            // 
+            this.txtQuery2.Location = new System.Drawing.Point(1, 13);
+            this.txtQuery2.Multiline = true;
+            this.txtQuery2.Name = "txtQuery2";
+            this.txtQuery2.Size = new System.Drawing.Size(668, 333);
+            this.txtQuery2.TabIndex = 12;
+            // 
+            // tab3
+            // 
+            this.tab3.Controls.Add(this.button2);
+            this.tab3.Controls.Add(this.txtQuery3);
+            this.tab3.HorizontalScrollbarBarColor = true;
+            this.tab3.HorizontalScrollbarHighlightOnWheel = false;
+            this.tab3.HorizontalScrollbarSize = 10;
+            this.tab3.Location = new System.Drawing.Point(4, 38);
+            this.tab3.Name = "tab3";
+            this.tab3.Size = new System.Drawing.Size(671, 357);
+            this.tab3.TabIndex = 2;
+            this.tab3.Text = "Query ";
+            this.tab3.VerticalScrollbarBarColor = true;
+            this.tab3.VerticalScrollbarHighlightOnWheel = false;
+            this.tab3.VerticalScrollbarSize = 10;
+            // 
+            // txtQuery3
+            // 
+            this.txtQuery3.Location = new System.Drawing.Point(1, 11);
+            this.txtQuery3.Multiline = true;
+            this.txtQuery3.Name = "txtQuery3";
+            this.txtQuery3.Size = new System.Drawing.Size(668, 335);
+            this.txtQuery3.TabIndex = 12;
+            // 
+            // tab4
+            // 
+            this.tab4.Controls.Add(this.button1);
+            this.tab4.Controls.Add(this.txtQuery4);
+            this.tab4.HorizontalScrollbarBarColor = true;
+            this.tab4.HorizontalScrollbarHighlightOnWheel = false;
+            this.tab4.HorizontalScrollbarSize = 10;
+            this.tab4.Location = new System.Drawing.Point(4, 38);
+            this.tab4.Name = "tab4";
+            this.tab4.Size = new System.Drawing.Size(671, 357);
+            this.tab4.TabIndex = 3;
+            this.tab4.Text = "Query ";
+            this.tab4.VerticalScrollbarBarColor = true;
+            this.tab4.VerticalScrollbarHighlightOnWheel = false;
+            this.tab4.VerticalScrollbarSize = 10;
+            // 
+            // txtQuery4
+            // 
+            this.txtQuery4.Location = new System.Drawing.Point(1, 11);
+            this.txtQuery4.Multiline = true;
+            this.txtQuery4.Name = "txtQuery4";
+            this.txtQuery4.Size = new System.Drawing.Size(668, 335);
+            this.txtQuery4.TabIndex = 12;
+            // 
+            // tab5
+            // 
+            this.tab5.Controls.Add(this.btnClose);
+            this.tab5.Controls.Add(this.Query5);
+            this.tab5.HorizontalScrollbarBarColor = true;
+            this.tab5.HorizontalScrollbarHighlightOnWheel = false;
+            this.tab5.HorizontalScrollbarSize = 10;
+            this.tab5.Location = new System.Drawing.Point(4, 38);
+            this.tab5.Name = "tab5";
+            this.tab5.Size = new System.Drawing.Size(671, 357);
+            this.tab5.TabIndex = 4;
+            this.tab5.Text = "Query ";
+            this.tab5.VerticalScrollbarBarColor = true;
+            this.tab5.VerticalScrollbarHighlightOnWheel = false;
+            this.tab5.VerticalScrollbarSize = 10;
+            // 
+            // Query5
+            // 
+            this.Query5.Location = new System.Drawing.Point(1, 11);
+            this.Query5.Multiline = true;
+            this.Query5.Name = "Query5";
+            this.Query5.Size = new System.Drawing.Size(668, 335);
+            this.Query5.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::CapaVista.Properties.Resources.if_cross_308235;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(633, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.TabIndex = 13;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::CapaVista.Properties.Resources.if_cross_308235;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(633, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 23);
+            this.button2.TabIndex = 13;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = global::CapaVista.Properties.Resources.if_cross_308235;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(633, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 23);
+            this.button3.TabIndex = 13;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackgroundImage = global::CapaVista.Properties.Resources.if_cross_308235;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(633, 21);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 23);
+            this.button4.TabIndex = 14;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1488, 1054);
-            this.Controls.Add(this.txtConsulta);
+            this.ClientSize = new System.Drawing.Size(872, 780);
+            this.Controls.Add(this.tabContQuery);
             this.Controls.Add(this.tabQuery1);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnExecute);
             this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "lbTabñas";
             this.Padding = new System.Windows.Forms.Padding(0, 60, 20, 20);
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
             this.gbBD.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            this.tabContQuery.ResumeLayout(false);
+            this.Tab1.ResumeLayout(false);
+            this.Tab1.PerformLayout();
+            this.tab2.ResumeLayout(false);
+            this.tab2.PerformLayout();
+            this.tab3.ResumeLayout(false);
+            this.tab3.PerformLayout();
+            this.tab4.ResumeLayout(false);
+            this.tab4.PerformLayout();
+            this.tab5.ResumeLayout(false);
+            this.tab5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -297,6 +518,20 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TabControl tabQuery;
         private System.Windows.Forms.TabControl tabQuery1;
-        private System.Windows.Forms.TextBox txtConsulta;
+        private MetroFramework.Controls.MetroTabControl tabContQuery;
+        private MetroFramework.Controls.MetroTabPage Tab1;
+        private MetroFramework.Controls.MetroTabPage tab2;
+        private System.Windows.Forms.TextBox txtQuery2;
+        private MetroFramework.Controls.MetroTabPage tab3;
+        private System.Windows.Forms.TextBox txtQuery3;
+        private MetroFramework.Controls.MetroTabPage tab4;
+        private System.Windows.Forms.TextBox txtQuery4;
+        private MetroFramework.Controls.MetroTabPage tab5;
+        private System.Windows.Forms.TextBox Query5;
+        private System.Windows.Forms.TextBox txtQuery1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

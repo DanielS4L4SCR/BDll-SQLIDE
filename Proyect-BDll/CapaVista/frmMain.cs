@@ -14,11 +14,19 @@ namespace CapaVista
     {
         public String instanceName { get; set; }
         public Form login { get; set; }
+        List<TabPage> AllTabPages = new List<TabPage>();
+        int cont = 0;
+
         public lbTabñas(String instanceName, Form login)
         {
             InitializeComponent();
             this.instanceName = instanceName;
             this.login = login;
+            HideTabPage(Tab1);
+            HideTabPage(tab2);
+            HideTabPage(tab3);
+            HideTabPage(tab4);
+            HideTabPage(tab5);
 
         }
 
@@ -29,7 +37,9 @@ namespace CapaVista
             cboBD.DisplayMember = "DATABASE_NAME";
             gbBD.Text = "";
             timer1.Start();
+
         }
+
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             gbBD.Text = "Tablas de: " + cboBD.SelectedValue.ToString();
@@ -56,33 +66,48 @@ namespace CapaVista
 
             }
         }
-        
-         //aqui creas lod emas controles y los asignas al page
-        TextBox txtQuery1 = new TextBox();
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            /*tabQuery1.Visible = true;
-            btnExecute.Visible = true;
-            btnClose.Visible = true;
-            txtQuery1.Location = new Point(2,2);
-            txtQuery1.Size = new Size(755,496);
-            txtQuery1.Multiline = true;
-            if (tabQuery1.TabCount < 5)
+            #region ifTab
+            if (cont < 5)
             {
-                cont = cont + 1;
-                string title = "Query " + (tabQuery1.TabCount + 1).ToString();
-                //TabPage myTabPage = new TabPage(title);
-                //tabQuery1.TabPages.Add(myTabPage);
-                TabPage page = new TabPage(title);
-                tabQuery1.TabPages.Add(page);
-                page.Controls.Add(txtQuery1);
-            }
+                if (cont == 0)
+                {
+                    ShowTabPage(Tab1);
+                    Tab1.Show();
+                    cont = cont + 1;
+                }
+                else if (cont == 1)
+                {
+                    ShowTabPage(tab2);
+                    tab2.Show();
+                    cont = cont + 1;
+                }
+                else if (cont == 2)
+                {
+                    ShowTabPage(tab3);
+                    tab3.Show();
+                    cont = cont + 1;
+                }
+                else if (cont == 3)
+                {
+                    ShowTabPage(tab4);
+                    tab4.Show();
+                    cont = cont + 1;
+                }
+                else if (cont == 4)
+                {
+                    ShowTabPage(tab5);
+                    tab5.Show();
+                    cont = cont + 1;
+                }
+              }
+#endregion
             else
             {
                 MessageBox.Show("Máximo de pestañas superado");
-            }*/
-            txtConsulta.Visible = true;
-            btnClose.Visible = true;
+            }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
@@ -95,13 +120,63 @@ namespace CapaVista
             lbReloj.Text = DateTime.Now.ToLongTimeString();
 
         }
+
+
+        #region TabControl
+        public void HideTabPage(TabPage tb)
+        {
+
+            if (tabContQuery.TabPages.Contains(tb))
+            {
+                foreach (TabPage t in tabContQuery.TabPages)
+                {
+                    if (!AllTabPages.Contains(t))
+                        AllTabPages.Add(t);
+                }
+                this.tabContQuery.TabPages.Remove(tb);
+            }
+        }
+
+        public void ShowTabPage(TabPage tb)
+        {
+            if ((AllTabPages.Contains(tb)) && (!tabContQuery.TabPages.Contains(tb)))
+                this.tabContQuery.TabPages.Add(tb);
+
+        }
+        #endregion
+
+        #region Boton Cerrar
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+            cont = 0;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            txtConsulta.Visible = false;
-            btnClose.Visible = false;
-            
-            //tabQuery1.TabPages.RemoveAt(tabQuery1.TabCount-1);
+            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+            cont = 0;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+            cont = 0;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+            cont = 0;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+            cont = 0;
+        }
+        #endregion
     }
 }
+
 
