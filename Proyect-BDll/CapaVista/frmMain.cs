@@ -148,32 +148,62 @@ namespace CapaVista
         #region Boton Cerrar
         private void button1_Click_1(object sender, EventArgs e)
         {
-            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
-            cont = 0;
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            if ( msj == DialogResult.Yes)
+            {
+               tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+               cont = 0;
+            }
+            else if (msj == DialogResult.No)
+            {}            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
-            cont = 0;
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            if (msj == DialogResult.Yes)
+            {
+                tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+                cont = 0;
+            }
+            else if (msj == DialogResult.No)
+            { }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
-            cont = 0;
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            if (msj == DialogResult.Yes)
+            {
+                tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+                cont = 0;
+            }
+            else if (msj == DialogResult.No)
+            { }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
-            cont = 0;
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            if (msj == DialogResult.Yes)
+            {
+                tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+                cont = 0;
+            }
+            else if (msj == DialogResult.No)
+            { }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
-            cont = 0;
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            if (msj == DialogResult.Yes)
+            {
+                tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+                cont = 0;
+            }
+            else if (msj == DialogResult.No)
+            { }
         }
         #endregion
     }
