@@ -40,7 +40,6 @@ namespace CapaVista
             {
                 if ( new CapaLogica.clsBaseDatos().Conexion(cboInstancias.Text.ToString().Trim()))
                 {
-                    
                     new lbTabñas(cboInstancias.Text.ToString(), this).Show();
                 }
                 else
@@ -62,6 +61,7 @@ namespace CapaVista
         {
 
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             Load1.Width += 3;
@@ -70,6 +70,16 @@ namespace CapaVista
                 cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
                 load.Stop();             
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Load2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
