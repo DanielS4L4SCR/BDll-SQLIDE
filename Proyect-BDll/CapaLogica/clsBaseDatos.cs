@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,12 @@ namespace CapaLogica
             
            return new CapaAccesoBD.clsConexion(instanceName: instanceName).abrirConexion();
            
+        }
+
+        public DataTable Ejectar(String consulta, SqlConnection instance, String instances)
+        {
+            return new CapaAccesoBD.clsConexion(instanceName:instances).ejecutar(consulta, instance);
+
         }
     }
 }

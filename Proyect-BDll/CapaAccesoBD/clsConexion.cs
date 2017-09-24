@@ -99,6 +99,52 @@ namespace CapaAccesoBD
                 return false;
             }
         }
+       
 
+        public bool ejecutarInsert(String txtInsert,SqlConnection oCN)
+        {
+            SqlCommand cInsert = new SqlCommand(txtInsert);
+            try
+            {
+                cInsert.Connection = oCN;
+                cInsert.CommandType = CommandType.Text;
+                if (abrirConexion())
+                {
+                    cInsert.ExecuteNonQuery();
+                }
+                cerrarConexion();
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw e;
+
+            }
+        }
+
+        public DataTable ejecutar(String txtSelect, SqlConnection oCN)
+        {
+            SqlCommand cSelect = new SqlCommand();
+            DataTable oDT = new DataTable();
+            SqlDataAdapter oSQLDA = new SqlDataAdapter(cSelect);
+
+            try
+            {
+                cSelect.CommandText = txtSelect;
+                cSelect.Connection = oCN;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            if (abrirConexion())
+            {
+                oSQLDA.Fill(oDT);
+            }
+            cerrarConexion();
+
+            return oDT;
+        }
     }
 }

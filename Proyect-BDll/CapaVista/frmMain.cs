@@ -113,7 +113,7 @@ namespace CapaVista
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            
+            DataTable canect = new CapaLogica.clsBaseDatos().Ejectar
             MessageBox.Show("El texto seleccionado es: " + txtQuery1.SelectedText);
         }
 
