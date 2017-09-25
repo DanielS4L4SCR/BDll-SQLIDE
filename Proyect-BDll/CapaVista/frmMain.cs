@@ -70,7 +70,7 @@ namespace CapaVista
         private void metroButton1_Click(object sender, EventArgs e)
         {
             #region ifTab
-            if (cont < 5)
+            if (cont < 4)
             {
                 if (cont == 0)
                 {
@@ -113,10 +113,25 @@ namespace CapaVista
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            DataTable canect = new CapaLogica.clsBaseDatos().Ejectar
-            MessageBox.Show("El texto seleccionado es: " + txtQuery1.SelectedText);
+            //DataTable conect = new CapaLogica.clsBaseDatos().Ejectar;
+            
+            if(tabContQuery.SelectedIndex == 0)
+            {
+                MessageBox.Show("El texto seleccionado es: " + txtQuery1.SelectedText);
+            }
+            else if(tabContQuery.SelectedIndex == 1)
+            {
+                MessageBox.Show("El texto seleccionado es: " + txtQuery2.SelectedText);
+            }
+            else if (tabContQuery.SelectedIndex == 2)
+            {
+                MessageBox.Show("El texto seleccionado es: " + txtQuery3.SelectedText);
+            }
+            else if (tabContQuery.SelectedIndex == 3)
+            {
+                MessageBox.Show("El texto seleccionado es: " + txtQuery4.SelectedText);
+            }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbReloj.Text = DateTime.Now.ToLongTimeString();
@@ -150,7 +165,7 @@ namespace CapaVista
         #region Boton Cerrar
         private void button1_Click_1(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if ( msj == DialogResult.Yes)
             {
                tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -162,7 +177,7 @@ namespace CapaVista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -174,7 +189,7 @@ namespace CapaVista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -186,7 +201,7 @@ namespace CapaVista
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -198,7 +213,7 @@ namespace CapaVista
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
