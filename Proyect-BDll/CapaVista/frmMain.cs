@@ -134,8 +134,8 @@ namespace CapaVista
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbReloj.Text = DateTime.Now.ToLongTimeString();
-
+            lbClock.Text = DateTime.Now.ToLongTimeString();
+            
         }
 
 
@@ -222,7 +222,10 @@ namespace CapaVista
             else if (msj == DialogResult.No)
             { }
         }
+
         #endregion
+
+     
     }
 }
 
