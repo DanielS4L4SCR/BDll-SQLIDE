@@ -12,35 +12,20 @@ namespace CapaVista
 {
     public partial class Login : MetroFramework.Forms.MetroForm
     {
+        String Instancia;
         public Login()
         {
             InitializeComponent();
         }
 
-      
-#region
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-#endregion
         private void btnInicio_Click(object sender, EventArgs e)
         {
             if (cboInstancias.Text.ToString().Trim() != String.Empty)
             {
-                if ( new CapaLogica.clsBaseDatos().Conexion(cboInstancias.Text.ToString().Trim()))
+                if (new CapaLogica.clsBaseDatos().Conexion(cboInstancias.Text.ToString().Trim()))
                 {
                     new lbTabñas(cboInstancias.Text.ToString(), this).Show();
+                    Instancia = cboInstancias.Text.ToString().Trim();
                 }
                 else
                 {
@@ -56,31 +41,16 @@ namespace CapaVista
         {
             cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             Load1.Width += 3;
             if (Load1.Width >= 499)
             {
                 cboInstancias.DataSource = new CapaLogica.clsBaseDatos().Intancias();
-                load.Stop();             
+                load.Stop();
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
 
         }
 
-        private void Load2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
-
 }

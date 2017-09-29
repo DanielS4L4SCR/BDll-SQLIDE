@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace CapaVista
 {
     public partial class lbTabñas : MetroFramework.Forms.MetroForm
@@ -29,6 +29,7 @@ namespace CapaVista
             HideTabPage(tab5);
 
         }
+        
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -113,32 +114,26 @@ namespace CapaVista
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            //DataTable conect = new CapaLogica.clsBaseDatos().Ejectar;
-            
+            CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
+            CapaVista.Login Log = new CapaVista.Login();
+            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
             if(tabContQuery.SelectedIndex == 0)
             {
-                MessageBox.Show("El texto seleccionado es: " + txtQuery1.SelectedText);
+                Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                MessageBox.Show("Comando ejectutado");
             }
-            else if(tabContQuery.SelectedIndex == 1)
+            else
             {
-                MessageBox.Show("El texto seleccionado es: " + txtQuery2.SelectedText);
+                MessageBox.Show("Error de sintaxis");
             }
-            else if (tabContQuery.SelectedIndex == 2)
-            {
-                MessageBox.Show("El texto seleccionado es: " + txtQuery3.SelectedText);
-            }
-            else if (tabContQuery.SelectedIndex == 3)
-            {
-                MessageBox.Show("El texto seleccionado es: " + txtQuery4.SelectedText);
-            }
+           
+           
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbClock.Text = DateTime.Now.ToLongTimeString();
             
         }
-
-
         #region TabControl
         public void HideTabPage(TabPage tb)
         {

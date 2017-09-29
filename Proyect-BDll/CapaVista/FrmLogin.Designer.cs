@@ -71,7 +71,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(499, 10);
             this.panel2.TabIndex = 9;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox2
             // 
@@ -109,7 +108,6 @@
             this.Load2.Name = "Load2";
             this.Load2.Size = new System.Drawing.Size(499, 12);
             this.Load2.TabIndex = 12;
-            this.Load2.Paint += new System.Windows.Forms.PaintEventHandler(this.Load2_Paint);
             // 
             // Load1
             // 
@@ -145,7 +143,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "SQL MANAGER";
-            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

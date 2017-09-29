@@ -11,13 +11,14 @@ namespace CapaAccesoBD
     public class clsConexion
     {
         SqlConnection objConexion;
-
+        SqlConnection objConexion2;
 
         public clsConexion(String instanceName, String database = "master")
         {
             objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, database));
         }
 
+        
         public bool abrirConexion()
         {
             try
@@ -31,7 +32,14 @@ namespace CapaAccesoBD
                 throw;
             }
         }
-
+       /* public SqlConnectionStringBuilder ObtenerServidor(String DataSourse, String BD)
+        {
+            SqlConnectionStringBuilder localBuilder = new SqlConnectionStringBuilder();
+            localBuilder.DataSource = DataSourse;
+            localBuilder.InitialCatalog = BD;
+            localBuilder.IntegratedSecurity = true;
+            return localBuilder;
+        }*/
         public bool cerrarConexion()
         {
             try
@@ -118,7 +126,6 @@ namespace CapaAccesoBD
             catch (Exception e)
             {
                 throw e;
-
             }
         }
 

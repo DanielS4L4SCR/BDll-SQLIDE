@@ -64,6 +64,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtQuery1 = new System.Windows.Forms.TextBox();
             this.tabContQuery = new MetroFramework.Controls.MetroTabControl();
+            this.txtPrueba = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.gbBD.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -476,11 +477,19 @@
             this.tabContQuery.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tabContQuery.UseSelectable = true;
             // 
+            // txtPrueba
+            // 
+            this.txtPrueba.Location = new System.Drawing.Point(869, 278);
+            this.txtPrueba.Name = "txtPrueba";
+            this.txtPrueba.Size = new System.Drawing.Size(331, 20);
+            this.txtPrueba.TabIndex = 12;
+            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 819);
+            this.Controls.Add(this.txtPrueba);
             this.Controls.Add(this.tabContQuery);
             this.Controls.Add(this.tabQuery1);
             this.Controls.Add(this.btnExecute);
@@ -511,6 +520,7 @@
             this.Tab1.PerformLayout();
             this.tabContQuery.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -547,5 +557,6 @@
         private System.Windows.Forms.TextBox txtQuery1;
         private MetroFramework.Controls.MetroTabControl tabContQuery;
         private MetroFramework.Controls.MetroLabel lbClock;
+        private System.Windows.Forms.TextBox txtPrueba;
     }
 }
