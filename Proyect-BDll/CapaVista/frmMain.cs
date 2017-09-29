@@ -115,7 +115,6 @@ namespace CapaVista
         private void metroButton2_Click(object sender, EventArgs e)
         {
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
-            CapaVista.Login Log = new CapaVista.Login();
             SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
             if(tabContQuery.SelectedIndex == 0)
             {
@@ -125,9 +124,7 @@ namespace CapaVista
             else
             {
                 MessageBox.Show("Error de sintaxis");
-            }
-           
-           
+            }  
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
