@@ -48,7 +48,6 @@ namespace CapaLogica
         public DataTable Ejectar(String consulta, SqlConnection instance, String instances)
         {
             return new CapaAccesoBD.clsConexion(instanceName:instances).ejecutar(consulta, instance);
-
         }
     }
 }

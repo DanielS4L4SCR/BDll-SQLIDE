@@ -5,13 +5,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 namespace CapaAccesoBD
 {
     public class clsConexion
     {
         SqlConnection objConexion;
-        SqlConnection objConexion2;
 
         public clsConexion(String instanceName, String database = "master")
         {
@@ -128,29 +127,36 @@ namespace CapaAccesoBD
                 throw e;
             }
         }
-
         public DataTable ejecutar(String txtSelect, SqlConnection oCN)
         {
             SqlCommand cSelect = new SqlCommand();
             DataTable oDT = new DataTable();
             SqlDataAdapter oSQLDA = new SqlDataAdapter(cSelect);
-
             try
             {
                 cSelect.CommandText = txtSelect;
                 cSelect.Connection = oCN;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw ex;  
             }
-            if (abrirConexion())
+            try
             {
-                oSQLDA.Fill(oDT);
+                if (abrirConexion())
+                {
+                    oSQLDA.Fill(oDT);
+                    MessageBox.Show("Comando ejecutado correctamente","Éxito", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                System.Console.WriteLine("{0} exception caught here.", ex.GetType().ToString());
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine("Comando con errores de sintaxis");
+                MessageBox.Show("Comando con errores de sintaxis: " + ex.Message,"ERROR",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
             }
             cerrarConexion();
-
             return oDT;
         }
     }

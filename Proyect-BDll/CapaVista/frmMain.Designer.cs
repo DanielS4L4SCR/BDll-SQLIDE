@@ -64,7 +64,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtQuery1 = new System.Windows.Forms.TextBox();
             this.tabContQuery = new MetroFramework.Controls.MetroTabControl();
-            this.txtPrueba = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.gbBD.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -291,6 +290,7 @@
             // 
             // Query5
             // 
+            this.Query5.Font = new System.Drawing.Font("Maiandra GD", 12F);
             this.Query5.Location = new System.Drawing.Point(1, 11);
             this.Query5.Multiline = true;
             this.Query5.Name = "Query5";
@@ -332,6 +332,7 @@
             // 
             // txtQuery4
             // 
+            this.txtQuery4.Font = new System.Drawing.Font("Maiandra GD", 12F);
             this.txtQuery4.Location = new System.Drawing.Point(1, 11);
             this.txtQuery4.Multiline = true;
             this.txtQuery4.Name = "txtQuery4";
@@ -373,6 +374,7 @@
             // 
             // txtQuery3
             // 
+            this.txtQuery3.Font = new System.Drawing.Font("Maiandra GD", 12F);
             this.txtQuery3.Location = new System.Drawing.Point(1, 11);
             this.txtQuery3.Multiline = true;
             this.txtQuery3.Name = "txtQuery3";
@@ -414,6 +416,7 @@
             // 
             // txtQuery2
             // 
+            this.txtQuery2.Font = new System.Drawing.Font("Maiandra GD", 15.75F);
             this.txtQuery2.Location = new System.Drawing.Point(1, 13);
             this.txtQuery2.Multiline = true;
             this.txtQuery2.Name = "txtQuery2";
@@ -455,6 +458,7 @@
             // 
             // txtQuery1
             // 
+            this.txtQuery1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuery1.Location = new System.Drawing.Point(1, 11);
             this.txtQuery1.Multiline = true;
             this.txtQuery1.Name = "txtQuery1";
@@ -477,19 +481,11 @@
             this.tabContQuery.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tabContQuery.UseSelectable = true;
             // 
-            // txtPrueba
-            // 
-            this.txtPrueba.Location = new System.Drawing.Point(869, 278);
-            this.txtPrueba.Name = "txtPrueba";
-            this.txtPrueba.Size = new System.Drawing.Size(331, 20);
-            this.txtPrueba.TabIndex = 12;
-            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 819);
-            this.Controls.Add(this.txtPrueba);
             this.Controls.Add(this.tabContQuery);
             this.Controls.Add(this.tabQuery1);
             this.Controls.Add(this.btnExecute);
@@ -520,7 +516,6 @@
             this.Tab1.PerformLayout();
             this.tabContQuery.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -557,6 +552,5 @@
         private System.Windows.Forms.TextBox txtQuery1;
         private MetroFramework.Controls.MetroTabControl tabContQuery;
         private MetroFramework.Controls.MetroLabel lbClock;
-        private System.Windows.Forms.TextBox txtPrueba;
     }
 }

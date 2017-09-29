@@ -27,7 +27,6 @@ namespace CapaVista
             HideTabPage(tab3);
             HideTabPage(tab4);
             HideTabPage(tab5);
-
         }
         
 
@@ -111,20 +110,18 @@ namespace CapaVista
             }
             btnConsulta.Visible = true;
         }
-
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
+            CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();   
             SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
-            if(tabContQuery.SelectedIndex == 0)
+            if (txtQuery1.Text == ""||txtQuery1.SelectedText=="")
+            {
+                MessageBox.Show("debe introducir y seleccionar el texto antes de ejecutar","Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else if(tabContQuery.SelectedIndex == 0)
             {
                 Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
-                MessageBox.Show("Comando ejectutado");
             }
-            else
-            {
-                MessageBox.Show("Error de sintaxis");
-            }  
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
