@@ -249,25 +249,24 @@ namespace CapaVista
                         lbColumnas.DisplayMember = "COLUMN_NAME";
                         lbColumnas.ValueMember = "COLUMN_NAME";
                         lbColumnas.DataSource = objDT;
+
+                        DataTable Dt = new CapaLogica.clsTablas().Registro(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+
+                        dgvInfo.DataSource = Dt;
+
                     }
-                    DataTable Dt = new CapaLogica.clsTablas().Registro(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
-
-                    dgvInfo.DataSource = Dt;
-
+                    else
+                    {
+                        lbTabla.DataSource = objDT;
+                        lbColumnas.Enabled = false;
+                        lbColumnas.DataSource = null;
+                    }
                 }
                 else
                 {
-                    lbTabla.DataSource = objDT;
-                    lbColumnas.Enabled = false;
-                    lbColumnas.DataSource = null;
+                    MessageBox.Show("Seleccione una base de datos");
+
                 }
-
-
-            }
-
-            else
-            {
-                MessageBox.Show("Seleccione una base de datos");
             }
         }
 
