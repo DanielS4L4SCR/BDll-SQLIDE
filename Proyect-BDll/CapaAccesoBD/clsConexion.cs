@@ -151,9 +151,6 @@ namespace CapaAccesoBD
             }
             catch (System.Exception ex)
             {
-                System.Console.WriteLine("{0} exception caught here.", ex.GetType().ToString());
-                System.Console.WriteLine(ex.Message);
-                System.Console.WriteLine("Comando con errores de sintaxis");
                 MessageBox.Show("Comando con errores de sintaxis: " + ex.Message,"ERROR",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
             }
             cerrarConexion();

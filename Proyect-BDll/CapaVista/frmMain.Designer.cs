@@ -43,8 +43,6 @@
             this.lbSqlManager = new MetroFramework.Controls.MetroLabel();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.btnConsulta = new MetroFramework.Controls.MetroButton();
-            this.btnExecute = new MetroFramework.Controls.MetroButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabQuery = new System.Windows.Forms.TabControl();
             this.tabQuery1 = new System.Windows.Forms.TabControl();
@@ -64,6 +62,19 @@
             this.button4 = new System.Windows.Forms.Button();
             this.txtQuery1 = new System.Windows.Forms.TextBox();
             this.tabContQuery = new MetroFramework.Controls.MetroTabControl();
+            this.boxSnippet = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dLLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoQueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ejecutarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sELECTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iNSERTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uPDATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dELETEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cREATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dROPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aLTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.gbBD.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,6 +85,8 @@
             this.tab2.SuspendLayout();
             this.Tab1.SuspendLayout();
             this.tabContQuery.SuspendLayout();
+            this.boxSnippet.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -98,12 +111,13 @@
             // lbTabla
             // 
             this.lbTabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbTabla.Font = new System.Drawing.Font("Segoe UI", 9.75F);
             this.lbTabla.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lbTabla.FormattingEnabled = true;
-            this.lbTabla.ItemHeight = 15;
+            this.lbTabla.ItemHeight = 17;
             this.lbTabla.Location = new System.Drawing.Point(6, 19);
             this.lbTabla.Name = "lbTabla";
-            this.lbTabla.Size = new System.Drawing.Size(152, 195);
+            this.lbTabla.Size = new System.Drawing.Size(152, 187);
             this.lbTabla.TabIndex = 0;
             // 
             // cboBD
@@ -214,26 +228,6 @@
             this.metroGrid1.Size = new System.Drawing.Size(1111, 213);
             this.metroGrid1.TabIndex = 5;
             // 
-            // btnConsulta
-            // 
-            this.btnConsulta.Location = new System.Drawing.Point(189, 111);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(90, 23);
-            this.btnConsulta.TabIndex = 6;
-            this.btnConsulta.Text = "Nuevo Query";
-            this.btnConsulta.UseSelectable = true;
-            this.btnConsulta.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // btnExecute
-            // 
-            this.btnExecute.Location = new System.Drawing.Point(285, 110);
-            this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(90, 23);
-            this.btnExecute.TabIndex = 7;
-            this.btnExecute.Text = "Ejecutar";
-            this.btnExecute.UseSelectable = true;
-            this.btnExecute.Click += new System.EventHandler(this.metroButton2_Click);
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -290,7 +284,7 @@
             // 
             // Query5
             // 
-            this.Query5.Font = new System.Drawing.Font("Maiandra GD", 12F);
+            this.Query5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.Query5.Location = new System.Drawing.Point(1, 11);
             this.Query5.Multiline = true;
             this.Query5.Name = "Query5";
@@ -481,20 +475,120 @@
             this.tabContQuery.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tabContQuery.UseSelectable = true;
             // 
+            // boxSnippet
+            // 
+            this.boxSnippet.Controls.Add(this.menuStrip1);
+            this.boxSnippet.Location = new System.Drawing.Point(191, 110);
+            this.boxSnippet.Name = "boxSnippet";
+            this.boxSnippet.Size = new System.Drawing.Size(665, 44);
+            this.boxSnippet.TabIndex = 12;
+            this.boxSnippet.TabStop = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoQueryToolStripMenuItem,
+            this.ejecutarToolStripMenuItem,
+            this.dMLToolStripMenuItem,
+            this.dLLToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 16);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(659, 25);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // dMLToolStripMenuItem
+            // 
+            this.dMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sELECTToolStripMenuItem,
+            this.iNSERTToolStripMenuItem,
+            this.uPDATEToolStripMenuItem,
+            this.dELETEToolStripMenuItem});
+            this.dMLToolStripMenuItem.Name = "dMLToolStripMenuItem";
+            this.dMLToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.dMLToolStripMenuItem.Text = "DML";
+            // 
+            // dLLToolStripMenuItem
+            // 
+            this.dLLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cREATEToolStripMenuItem,
+            this.dROPToolStripMenuItem,
+            this.aLTERToolStripMenuItem});
+            this.dLLToolStripMenuItem.Name = "dLLToolStripMenuItem";
+            this.dLLToolStripMenuItem.Size = new System.Drawing.Size(41, 21);
+            this.dLLToolStripMenuItem.Text = "DLL";
+            // 
+            // nuevoQueryToolStripMenuItem
+            // 
+            this.nuevoQueryToolStripMenuItem.Name = "nuevoQueryToolStripMenuItem";
+            this.nuevoQueryToolStripMenuItem.Size = new System.Drawing.Size(97, 21);
+            this.nuevoQueryToolStripMenuItem.Text = "Nuevo Query";
+            this.nuevoQueryToolStripMenuItem.Click += new System.EventHandler(this.nuevoQueryToolStripMenuItem_Click);
+            // 
+            // ejecutarToolStripMenuItem
+            // 
+            this.ejecutarToolStripMenuItem.Name = "ejecutarToolStripMenuItem";
+            this.ejecutarToolStripMenuItem.Size = new System.Drawing.Size(66, 21);
+            this.ejecutarToolStripMenuItem.Text = "Ejecutar";
+            this.ejecutarToolStripMenuItem.Click += new System.EventHandler(this.ejecutarToolStripMenuItem_Click);
+            // 
+            // sELECTToolStripMenuItem
+            // 
+            this.sELECTToolStripMenuItem.Name = "sELECTToolStripMenuItem";
+            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sELECTToolStripMenuItem.Text = "SELECT";
+            // 
+            // iNSERTToolStripMenuItem
+            // 
+            this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
+            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iNSERTToolStripMenuItem.Text = "INSERT";
+            // 
+            // uPDATEToolStripMenuItem
+            // 
+            this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
+            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.uPDATEToolStripMenuItem.Text = "UPDATE";
+            // 
+            // dELETEToolStripMenuItem
+            // 
+            this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
+            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dELETEToolStripMenuItem.Text = "DELETE";
+            // 
+            // cREATEToolStripMenuItem
+            // 
+            this.cREATEToolStripMenuItem.Name = "cREATEToolStripMenuItem";
+            this.cREATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cREATEToolStripMenuItem.Text = "CREATE";
+            // 
+            // dROPToolStripMenuItem
+            // 
+            this.dROPToolStripMenuItem.Name = "dROPToolStripMenuItem";
+            this.dROPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dROPToolStripMenuItem.Text = "DROP";
+            // 
+            // aLTERToolStripMenuItem
+            // 
+            this.aLTERToolStripMenuItem.Name = "aLTERToolStripMenuItem";
+            this.aLTERToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aLTERToolStripMenuItem.Text = "ALTER";
+            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 819);
+            this.Controls.Add(this.boxSnippet);
             this.Controls.Add(this.tabContQuery);
             this.Controls.Add(this.tabQuery1);
-            this.Controls.Add(this.btnExecute);
-            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "lbTabñas";
             this.Padding = new System.Windows.Forms.Padding(0, 60, 20, 20);
             this.Style = MetroFramework.MetroColorStyle.Green;
@@ -515,6 +609,10 @@
             this.Tab1.ResumeLayout(false);
             this.Tab1.PerformLayout();
             this.tabContQuery.ResumeLayout(false);
+            this.boxSnippet.ResumeLayout(false);
+            this.boxSnippet.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -528,8 +626,6 @@
         private System.Windows.Forms.ListBox lbTabla;
         private System.Windows.Forms.Button btnActualizar;
         private MetroFramework.Controls.MetroGrid metroGrid1;
-        private MetroFramework.Controls.MetroButton btnConsulta;
-        private MetroFramework.Controls.MetroButton btnExecute;
         private MetroFramework.Controls.MetroLabel lbReloj;
         private MetroFramework.Controls.MetroLabel lbSqlManager;
         private System.Windows.Forms.Timer timer1;
@@ -552,5 +648,18 @@
         private System.Windows.Forms.TextBox txtQuery1;
         private MetroFramework.Controls.MetroTabControl tabContQuery;
         private MetroFramework.Controls.MetroLabel lbClock;
+        private System.Windows.Forms.GroupBox boxSnippet;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem dMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dLLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoQueryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ejecutarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sELECTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iNSERTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uPDATEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dELETEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cREATEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dROPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aLTERToolStripMenuItem;
     }
 }

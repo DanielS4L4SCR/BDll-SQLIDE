@@ -69,59 +69,11 @@ namespace CapaVista
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            #region ifTab
-            if (cont < 4)
-            {
-                if (cont == 0)
-                {
-                    ShowTabPage(Tab1);
-                    Tab1.Show();
-                    cont = cont + 1;
-                }
-                else if (cont == 1)
-                {
-                    ShowTabPage(tab2);
-                    tab2.Show();
-                    cont = cont + 1;
-                }
-                else if (cont == 2)
-                {
-                    ShowTabPage(tab3);
-                    tab3.Show();
-                    cont = cont + 1;
-                }
-                else if (cont == 3)
-                {
-                    ShowTabPage(tab4);
-                    tab4.Show();
-                    cont = cont + 1;
-                }
-                else if (cont == 4)
-                {
-                    ShowTabPage(tab5);
-                    tab5.Show();
-                    cont = cont + 1;
-                }
-              }
-#endregion
-            else
-            {
-                MessageBox.Show("Máximo de pestañas superado");
-            }
-            btnConsulta.Visible = true;
+            
         }
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();   
-            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
-            if (txtQuery1.Text == ""||txtQuery1.SelectedText=="")
-            {
-                MessageBox.Show("debe introducir y seleccionar el texto antes de ejecutar","Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if(tabContQuery.SelectedIndex == 0)
-            {
-                Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
-            }
+           
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -212,9 +164,67 @@ namespace CapaVista
             { }
         }
 
+
+
         #endregion
 
-     
+        private void nuevoQueryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            #region ifTab
+            if (cont < 4)
+            {
+                if (cont == 0)
+                {
+                    ShowTabPage(Tab1);
+                    Tab1.Show();
+                    cont = cont + 1;
+                }
+                else if (cont == 1)
+                {
+                    ShowTabPage(tab2);
+                    tab2.Show();
+                    cont = cont + 1;
+                }
+                else if (cont == 2)
+                {
+                    ShowTabPage(tab3);
+                    tab3.Show();
+                    cont = cont + 1;
+                }
+                else if (cont == 3)
+                {
+                    ShowTabPage(tab4);
+                    tab4.Show();
+                    cont = cont + 1;
+                }
+                else if (cont == 4)
+                {
+                    ShowTabPage(tab5);
+                    tab5.Show();
+                    cont = cont + 1;
+                }
+            }
+            #endregion
+            else
+            {
+                MessageBox.Show("Máximo de pestañas superado");
+            }
+            
+        }
+
+        private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
+            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
+            if (txtQuery1.Text == "" || txtQuery1.SelectedText == "")
+            {
+                MessageBox.Show("Debe introducir y seleccionar el texto antes de ejecutar", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else if (tabContQuery.SelectedIndex == 0)
+            {
+                Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+            }
+        }
     }
 }
 
