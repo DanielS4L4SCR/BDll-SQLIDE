@@ -567,25 +567,25 @@
             // sELECTToolStripMenuItem
             // 
             this.sELECTToolStripMenuItem.Name = "sELECTToolStripMenuItem";
-            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.sELECTToolStripMenuItem.Text = "SELECT";
             // 
             // iNSERTToolStripMenuItem
             // 
             this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
-            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.iNSERTToolStripMenuItem.Text = "INSERT";
             // 
             // uPDATEToolStripMenuItem
             // 
             this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
-            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.uPDATEToolStripMenuItem.Text = "UPDATE";
             // 
             // dELETEToolStripMenuItem
             // 
             this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
-            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.dELETEToolStripMenuItem.Text = "DELETE";
             // 
             // dLLToolStripMenuItem
