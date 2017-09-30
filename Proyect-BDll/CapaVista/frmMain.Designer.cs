@@ -168,14 +168,14 @@
             this.groupBox2.Controls.Add(this.cboBD);
             this.groupBox2.Location = new System.Drawing.Point(3, 7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1244, 97);
+            this.groupBox2.Size = new System.Drawing.Size(1142, 97);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
             // lbClock
             // 
             this.lbClock.AutoSize = true;
-            this.lbClock.Location = new System.Drawing.Point(1163, 75);
+            this.lbClock.Location = new System.Drawing.Point(1062, 75);
             this.lbClock.Name = "lbClock";
             this.lbClock.Size = new System.Drawing.Size(75, 19);
             this.lbClock.TabIndex = 6;
