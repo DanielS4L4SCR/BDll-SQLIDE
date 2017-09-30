@@ -28,7 +28,6 @@ namespace CapaVista
             HideTabPage(tab4);
             HideTabPage(tab5);
         }
-        
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -64,22 +63,26 @@ namespace CapaVista
                     lbTabla.Items.Clear();
                 }
 
+
             }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            
+
         }
+
         private void metroButton2_Click(object sender, EventArgs e)
         {
-           
+
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbClock.Text = DateTime.Now.ToLongTimeString();
-            
+
         }
+
         #region TabControl
         public void HideTabPage(TabPage tb)
         {
@@ -106,14 +109,14 @@ namespace CapaVista
         #region Boton Cerrar
         private void button1_Click_1(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if ( msj == DialogResult.Yes)
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (msj == DialogResult.Yes)
             {
-               tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
-               cont = 0;
+                tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
+                cont = 0;
             }
             else if (msj == DialogResult.No)
-            {}            
+            { }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -209,7 +212,7 @@ namespace CapaVista
             {
                 MessageBox.Show("Máximo de pestañas superado");
             }
-            
+
         }
 
         private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,6 +227,94 @@ namespace CapaVista
             {
                 Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
             }
+        }
+
+        private void lbTabla_DoubleClick(object sender, EventArgs e)
+        {
+            if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
+            {
+                DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+
+                if (objDT is null)
+                {
+                    MessageBox.Show("Error al cargar las columnas");
+                    return;
+                }
+                if (lbTabla.Enabled)
+                {
+                    if (objDT.Rows.Count > 0)
+                    {
+                        lbColumnas.ClearSelected();
+                        lbColumnas.Enabled = true;
+                        lbColumnas.DisplayMember = "COLUMN_NAME";
+                        lbColumnas.ValueMember = "COLUMN_NAME";
+                        lbColumnas.DataSource = objDT;
+                    }
+                    DataTable Dt = new CapaLogica.clsTablas().Registro(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+
+                    dgvInfo.DataSource = Dt;
+
+                }
+                else
+                {
+                    lbTabla.DataSource = objDT;
+                    lbColumnas.Enabled = false;
+                    lbColumnas.DataSource = null;
+                }
+
+
+            }
+
+            else
+            {
+                MessageBox.Show("Seleccione una base de datos");
+            }
+        }
+
+        private void lbTabla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
+            {
+                DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+
+                if (objDT is null)
+                {
+                    MessageBox.Show("Error al cargar las columnas");
+                    return;
+                }
+                if (lbTabla.Enabled)
+                {
+                    if (objDT.Rows.Count > 0)
+                    {
+                        lbColumnas.ClearSelected();
+                        lbColumnas.Enabled = true;
+                        lbColumnas.DisplayMember = "COLUMN_NAME";
+                        lbColumnas.ValueMember = "COLUMN_NAME";
+                        lbColumnas.DataSource = objDT;
+                    }
+                    else
+                    {
+                        lbTabla.DataSource = objDT;
+                        lbColumnas.Enabled = false;
+                        lbColumnas.DataSource = null;
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una base de datos");
+            }
+        }
+
+        private void lbColumnas_DoubleClick(object sender, EventArgs e)
+        {
+
         }
     }
 }

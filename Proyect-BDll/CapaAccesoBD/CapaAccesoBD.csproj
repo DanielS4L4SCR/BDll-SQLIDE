@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsBaseDatos.cs" />
+    <Compile Include="clsColumnas.cs" />
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsTabla.cs" />
     <Compile Include="Program.cs" />

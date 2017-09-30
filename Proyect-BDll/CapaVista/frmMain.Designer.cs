@@ -34,15 +34,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lbTabñas));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbColumnas = new System.Windows.Forms.ListBox();
             this.gbBD = new System.Windows.Forms.GroupBox();
             this.lbTabla = new System.Windows.Forms.ListBox();
             this.cboBD = new MetroFramework.Controls.MetroComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.lbClock = new MetroFramework.Controls.MetroLabel();
             this.lbReloj = new MetroFramework.Controls.MetroLabel();
             this.lbSqlManager = new MetroFramework.Controls.MetroLabel();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.dgvInfo = new MetroFramework.Controls.MetroGrid();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabQuery = new System.Windows.Forms.TabControl();
             this.tabQuery1 = new System.Windows.Forms.TabControl();
@@ -64,21 +67,22 @@
             this.tabContQuery = new MetroFramework.Controls.MetroTabControl();
             this.boxSnippet = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dLLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoQueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejecutarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sELECTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNSERTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uPDATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dELETEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dLLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cREATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dROPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aLTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.gbBD.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).BeginInit();
             this.tab5.SuspendLayout();
             this.tab4.SuspendLayout();
             this.tab3.SuspendLayout();
@@ -91,6 +95,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.gbBD);
             this.groupBox1.Location = new System.Drawing.Point(3, 101);
             this.groupBox1.Name = "groupBox1";
@@ -98,13 +103,36 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lbColumnas);
+            this.groupBox3.Font = new System.Drawing.Font("Maiandra GD", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(6, 275);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(167, 219);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            // 
+            // lbColumnas
+            // 
+            this.lbColumnas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbColumnas.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.lbColumnas.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lbColumnas.FormattingEnabled = true;
+            this.lbColumnas.ItemHeight = 17;
+            this.lbColumnas.Location = new System.Drawing.Point(6, 19);
+            this.lbColumnas.Name = "lbColumnas";
+            this.lbColumnas.Size = new System.Drawing.Size(152, 187);
+            this.lbColumnas.TabIndex = 0;
+            this.lbColumnas.DoubleClick += new System.EventHandler(this.lbColumnas_DoubleClick);
+            // 
             // gbBD
             // 
             this.gbBD.Controls.Add(this.lbTabla);
             this.gbBD.Font = new System.Drawing.Font("Maiandra GD", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBD.Location = new System.Drawing.Point(6, 19);
             this.gbBD.Name = "gbBD";
-            this.gbBD.Size = new System.Drawing.Size(167, 241);
+            this.gbBD.Size = new System.Drawing.Size(167, 219);
             this.gbBD.TabIndex = 0;
             this.gbBD.TabStop = false;
             // 
@@ -119,6 +147,8 @@
             this.lbTabla.Name = "lbTabla";
             this.lbTabla.Size = new System.Drawing.Size(152, 187);
             this.lbTabla.TabIndex = 0;
+            this.lbTabla.SelectedIndexChanged += new System.EventHandler(this.lbTabla_SelectedIndexChanged);
+            this.lbTabla.DoubleClick += new System.EventHandler(this.lbTabla_DoubleClick);
             // 
             // cboBD
             // 
@@ -132,6 +162,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.lbClock);
             this.groupBox2.Controls.Add(this.lbReloj);
             this.groupBox2.Controls.Add(this.lbSqlManager);
@@ -142,6 +173,16 @@
             this.groupBox2.Size = new System.Drawing.Size(1244, 97);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(453, 53);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // lbClock
             // 
@@ -185,13 +226,13 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // metroGrid1
+            // dgvInfo
             // 
-            this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvInfo.AllowUserToResizeRows = false;
+            this.dgvInfo.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -199,8 +240,8 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -208,13 +249,13 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(189, 558);
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvInfo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvInfo.EnableHeadersVisualStyles = false;
+            this.dgvInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvInfo.Location = new System.Drawing.Point(189, 558);
+            this.dgvInfo.Name = "dgvInfo";
+            this.dgvInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -222,11 +263,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1111, 213);
-            this.metroGrid1.TabIndex = 5;
+            this.dgvInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInfo.Size = new System.Drawing.Size(1111, 213);
+            this.dgvInfo.TabIndex = 5;
             // 
             // timer1
             // 
@@ -285,7 +326,7 @@
             // Query5
             // 
             this.Query5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Query5.Location = new System.Drawing.Point(1, 11);
+            this.Query5.Location = new System.Drawing.Point(3, 22);
             this.Query5.Multiline = true;
             this.Query5.Name = "Query5";
             this.Query5.Size = new System.Drawing.Size(668, 335);
@@ -466,7 +507,7 @@
             this.tabContQuery.Controls.Add(this.tab3);
             this.tabContQuery.Controls.Add(this.tab4);
             this.tabContQuery.Controls.Add(this.tab5);
-            this.tabContQuery.Location = new System.Drawing.Point(184, 153);
+            this.tabContQuery.Location = new System.Drawing.Point(189, 153);
             this.tabContQuery.Name = "tabContQuery";
             this.tabContQuery.SelectedIndex = 4;
             this.tabContQuery.Size = new System.Drawing.Size(679, 399);
@@ -498,27 +539,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // dMLToolStripMenuItem
-            // 
-            this.dMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sELECTToolStripMenuItem,
-            this.iNSERTToolStripMenuItem,
-            this.uPDATEToolStripMenuItem,
-            this.dELETEToolStripMenuItem});
-            this.dMLToolStripMenuItem.Name = "dMLToolStripMenuItem";
-            this.dMLToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
-            this.dMLToolStripMenuItem.Text = "DML";
-            // 
-            // dLLToolStripMenuItem
-            // 
-            this.dLLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cREATEToolStripMenuItem,
-            this.dROPToolStripMenuItem,
-            this.aLTERToolStripMenuItem});
-            this.dLLToolStripMenuItem.Name = "dLLToolStripMenuItem";
-            this.dLLToolStripMenuItem.Size = new System.Drawing.Size(41, 21);
-            this.dLLToolStripMenuItem.Text = "DLL";
-            // 
             // nuevoQueryToolStripMenuItem
             // 
             this.nuevoQueryToolStripMenuItem.Name = "nuevoQueryToolStripMenuItem";
@@ -533,57 +553,78 @@
             this.ejecutarToolStripMenuItem.Text = "Ejecutar";
             this.ejecutarToolStripMenuItem.Click += new System.EventHandler(this.ejecutarToolStripMenuItem_Click);
             // 
+            // dMLToolStripMenuItem
+            // 
+            this.dMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sELECTToolStripMenuItem,
+            this.iNSERTToolStripMenuItem,
+            this.uPDATEToolStripMenuItem,
+            this.dELETEToolStripMenuItem});
+            this.dMLToolStripMenuItem.Name = "dMLToolStripMenuItem";
+            this.dMLToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.dMLToolStripMenuItem.Text = "DML";
+            // 
             // sELECTToolStripMenuItem
             // 
             this.sELECTToolStripMenuItem.Name = "sELECTToolStripMenuItem";
-            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.sELECTToolStripMenuItem.Text = "SELECT";
             // 
             // iNSERTToolStripMenuItem
             // 
             this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
-            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.iNSERTToolStripMenuItem.Text = "INSERT";
             // 
             // uPDATEToolStripMenuItem
             // 
             this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
-            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.uPDATEToolStripMenuItem.Text = "UPDATE";
             // 
             // dELETEToolStripMenuItem
             // 
             this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
-            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.dELETEToolStripMenuItem.Text = "DELETE";
+            // 
+            // dLLToolStripMenuItem
+            // 
+            this.dLLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cREATEToolStripMenuItem,
+            this.dROPToolStripMenuItem,
+            this.aLTERToolStripMenuItem});
+            this.dLLToolStripMenuItem.Name = "dLLToolStripMenuItem";
+            this.dLLToolStripMenuItem.Size = new System.Drawing.Size(41, 21);
+            this.dLLToolStripMenuItem.Text = "DLL";
             // 
             // cREATEToolStripMenuItem
             // 
             this.cREATEToolStripMenuItem.Name = "cREATEToolStripMenuItem";
-            this.cREATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cREATEToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.cREATEToolStripMenuItem.Text = "CREATE";
             // 
             // dROPToolStripMenuItem
             // 
             this.dROPToolStripMenuItem.Name = "dROPToolStripMenuItem";
-            this.dROPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dROPToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.dROPToolStripMenuItem.Text = "DROP";
             // 
             // aLTERToolStripMenuItem
             // 
             this.aLTERToolStripMenuItem.Name = "aLTERToolStripMenuItem";
-            this.aLTERToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aLTERToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.aLTERToolStripMenuItem.Text = "ALTER";
             // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 819);
+            this.ClientSize = new System.Drawing.Size(1323, 772);
             this.Controls.Add(this.boxSnippet);
             this.Controls.Add(this.tabContQuery);
             this.Controls.Add(this.tabQuery1);
-            this.Controls.Add(this.metroGrid1);
+            this.Controls.Add(this.dgvInfo);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -594,10 +635,11 @@
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.gbBD.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).EndInit();
             this.tab5.ResumeLayout(false);
             this.tab5.PerformLayout();
             this.tab4.ResumeLayout(false);
@@ -625,7 +667,7 @@
         private System.Windows.Forms.GroupBox gbBD;
         private System.Windows.Forms.ListBox lbTabla;
         private System.Windows.Forms.Button btnActualizar;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
+        private MetroFramework.Controls.MetroGrid dgvInfo;
         private MetroFramework.Controls.MetroLabel lbReloj;
         private MetroFramework.Controls.MetroLabel lbSqlManager;
         private System.Windows.Forms.Timer timer1;
@@ -661,5 +703,8 @@
         private System.Windows.Forms.ToolStripMenuItem cREATEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dROPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aLTERToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ListBox lbColumnas;
+        private System.Windows.Forms.Button button5;
     }
 }
