@@ -66,6 +66,17 @@ namespace CapaVista
 
             }
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbClock.Text = DateTime.Now.ToLongTimeString();
@@ -258,6 +269,12 @@ namespace CapaVista
                 }
             }
         }
+
+        private void lbTabla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
@@ -292,6 +309,16 @@ namespace CapaVista
             {
                 MessageBox.Show("Seleccione una base de datos");
             }
+        }
+
+        private void lbColumnas_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbColumnas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
