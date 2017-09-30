@@ -40,10 +40,10 @@
             this.lbTabla = new System.Windows.Forms.ListBox();
             this.cboBD = new MetroFramework.Controls.MetroComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lbClock = new MetroFramework.Controls.MetroLabel();
             this.lbReloj = new MetroFramework.Controls.MetroLabel();
             this.lbSqlManager = new MetroFramework.Controls.MetroLabel();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.lbClock = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabQuery = new System.Windows.Forms.TabControl();
             this.tabQuery1 = new System.Windows.Forms.TabControl();
@@ -77,6 +77,9 @@
             this.dROPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aLTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvInfo = new MetroFramework.Controls.MetroGrid();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbBD.SuspendLayout();
@@ -159,7 +162,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lbClock);
             this.groupBox2.Controls.Add(this.lbReloj);
             this.groupBox2.Controls.Add(this.lbSqlManager);
             this.groupBox2.Controls.Add(this.btnActualizar);
@@ -169,15 +171,6 @@
             this.groupBox2.Size = new System.Drawing.Size(1142, 97);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            // 
-            // lbClock
-            // 
-            this.lbClock.AutoSize = true;
-            this.lbClock.Location = new System.Drawing.Point(1062, 75);
-            this.lbClock.Name = "lbClock";
-            this.lbClock.Size = new System.Drawing.Size(75, 19);
-            this.lbClock.TabIndex = 6;
-            this.lbClock.Text = "-----------";
             // 
             // lbReloj
             // 
@@ -211,6 +204,15 @@
             this.btnActualizar.TabIndex = 3;
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // lbClock
+            // 
+            this.lbClock.AutoSize = true;
+            this.lbClock.Location = new System.Drawing.Point(1175, 715);
+            this.lbClock.Name = "lbClock";
+            this.lbClock.Size = new System.Drawing.Size(75, 19);
+            this.lbClock.TabIndex = 6;
+            this.lbClock.Text = "-----------";
             // 
             // timer1
             // 
@@ -467,7 +469,7 @@
             this.boxSnippet.Location = new System.Drawing.Point(191, 110);
             this.boxSnippet.Name = "boxSnippet";
             this.boxSnippet.Padding = new System.Windows.Forms.Padding(0);
-            this.boxSnippet.Size = new System.Drawing.Size(665, 44);
+            this.boxSnippet.Size = new System.Drawing.Size(673, 44);
             this.boxSnippet.TabIndex = 12;
             this.boxSnippet.TabStop = false;
             // 
@@ -484,7 +486,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 13);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip1.Size = new System.Drawing.Size(665, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(673, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -614,11 +616,39 @@
             this.dgvInfo.TabIndex = 13;
             this.dgvInfo.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.Location = new System.Drawing.Point(-6, 762);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1265, 4);
+            this.panel1.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.Location = new System.Drawing.Point(877, 737);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(374, 4);
+            this.panel2.TabIndex = 15;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel3.Location = new System.Drawing.Point(1054, 707);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(196, 4);
+            this.panel3.TabIndex = 16;
+            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 765);
+            this.Controls.Add(this.lbClock);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvInfo);
             this.Controls.Add(this.boxSnippet);
             this.Controls.Add(this.tabContQuery);
@@ -654,6 +684,7 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -703,5 +734,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox lbColumnas;
         private MetroFramework.Controls.MetroGrid dgvInfo;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
