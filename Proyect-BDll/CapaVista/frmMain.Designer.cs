@@ -123,8 +123,6 @@
             this.lbColumnas.Name = "lbColumnas";
             this.lbColumnas.Size = new System.Drawing.Size(152, 187);
             this.lbColumnas.TabIndex = 0;
-            this.lbColumnas.SelectedIndexChanged += new System.EventHandler(this.lbColumnas_SelectedIndexChanged);
-            this.lbColumnas.DoubleClick += new System.EventHandler(this.lbColumnas_DoubleClick);
             // 
             // gbBD
             // 
@@ -147,7 +145,6 @@
             this.lbTabla.Name = "lbTabla";
             this.lbTabla.Size = new System.Drawing.Size(152, 187);
             this.lbTabla.TabIndex = 0;
-            this.lbTabla.SelectedIndexChanged += new System.EventHandler(this.lbTabla_SelectedIndexChanged);
             this.lbTabla.DoubleClick += new System.EventHandler(this.lbTabla_DoubleClick);
             // 
             // cboBD
