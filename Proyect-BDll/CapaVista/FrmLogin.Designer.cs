@@ -59,9 +59,9 @@
             // 
             this.cboInstancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboInstancias.FormattingEnabled = true;
-            this.cboInstancias.Location = new System.Drawing.Point(141, 120);
+            this.cboInstancias.Location = new System.Drawing.Point(157, 115);
             this.cboInstancias.Name = "cboInstancias";
-            this.cboInstancias.Size = new System.Drawing.Size(215, 28);
+            this.cboInstancias.Size = new System.Drawing.Size(319, 28);
             this.cboInstancias.TabIndex = 4;
             // 
             // panel2
@@ -98,6 +98,7 @@
             this.metroLabel1.Location = new System.Drawing.Point(25, 93);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(139, 19);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Nombre del Servidor:";
             // 
