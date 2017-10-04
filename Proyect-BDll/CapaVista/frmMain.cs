@@ -215,6 +215,7 @@ namespace CapaVista
             else if (tabContQuery.SelectedIndex == 0)
             {
                 Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
             }
         }
 
