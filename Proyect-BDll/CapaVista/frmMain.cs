@@ -44,6 +44,10 @@ namespace CapaVista
             gbBD.Text = "Tablas de: " + cboBD.SelectedValue.ToString();
             DataTable objDT = new CapaLogica.clsTablas().Tablas(instanceName, cboBD.SelectedValue.ToString());
             lbTabla.DataSource = null;
+
+            cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
+            cboBD.ValueMember = "DATABASE_NAME";
+            cboBD.DisplayMember = "DATABASE_NAME";
             if (cboBD.Enabled)
             {
                 if (objDT.Rows.Count > 0)
@@ -214,7 +218,7 @@ namespace CapaVista
             }
             else if (tabContQuery.SelectedIndex == 0)
             {
-                Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                //Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
                 dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
             }
         }
