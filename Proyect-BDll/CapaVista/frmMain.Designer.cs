@@ -37,6 +37,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbColumnas = new System.Windows.Forms.ListBox();
             this.gbBD = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.lbTabla = new System.Windows.Forms.ListBox();
             this.cboBD = new MetroFramework.Controls.MetroComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -80,7 +81,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbBD.SuspendLayout();
@@ -138,6 +138,20 @@
             this.gbBD.Size = new System.Drawing.Size(167, 219);
             this.gbBD.TabIndex = 0;
             this.gbBD.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = global::CapaVista.Properties.Resources.rotate;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Transparent;
+            this.button5.Location = new System.Drawing.Point(142, 11);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(19, 19);
+            this.button5.TabIndex = 6;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // lbTabla
             // 
@@ -617,6 +631,7 @@
             this.dgvInfo.Style = MetroFramework.MetroColorStyle.Green;
             this.dgvInfo.TabIndex = 13;
             this.dgvInfo.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.dgvInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInfo_CellContentClick);
             // 
             // panel1
             // 
@@ -641,20 +656,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(196, 4);
             this.panel3.TabIndex = 16;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::CapaVista.Properties.Resources.rotate;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(142, 11);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(19, 19);
-            this.button5.TabIndex = 6;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // lbTabñas
             // 

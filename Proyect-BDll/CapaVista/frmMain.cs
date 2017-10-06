@@ -12,6 +12,7 @@ namespace CapaVista
 {
     public partial class lbTabñas : MetroFramework.Forms.MetroForm
     {
+        int prueba;
         public String instanceName { get; set; }
         public Form login { get; set; }
         List<TabPage> AllTabPages = new List<TabPage>();
@@ -301,7 +302,7 @@ namespace CapaVista
             cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
             cboBD.ValueMember = "DATABASE_NAME";
             cboBD.DisplayMember = "DATABASE_NAME";
-        }
+        } 
     }
 }
 
