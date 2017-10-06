@@ -631,7 +631,6 @@
             this.dgvInfo.Style = MetroFramework.MetroColorStyle.Green;
             this.dgvInfo.TabIndex = 13;
             this.dgvInfo.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.dgvInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInfo_CellContentClick);
             // 
             // panel1
             // 

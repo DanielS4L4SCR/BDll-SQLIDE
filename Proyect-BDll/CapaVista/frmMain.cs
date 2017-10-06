@@ -12,7 +12,6 @@ namespace CapaVista
 {
     public partial class lbTabñas : MetroFramework.Forms.MetroForm
     {
-        int prueba;
         public String instanceName { get; set; }
         public Form login { get; set; }
         List<TabPage> AllTabPages = new List<TabPage>();
