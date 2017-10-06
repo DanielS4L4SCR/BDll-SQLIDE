@@ -80,6 +80,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbBD.SuspendLayout();
@@ -129,6 +130,7 @@
             // 
             // gbBD
             // 
+            this.gbBD.Controls.Add(this.button5);
             this.gbBD.Controls.Add(this.lbTabla);
             this.gbBD.Font = new System.Drawing.Font("Maiandra GD", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBD.Location = new System.Drawing.Point(6, 19);
@@ -144,9 +146,9 @@
             this.lbTabla.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lbTabla.FormattingEnabled = true;
             this.lbTabla.ItemHeight = 17;
-            this.lbTabla.Location = new System.Drawing.Point(6, 19);
+            this.lbTabla.Location = new System.Drawing.Point(6, 36);
             this.lbTabla.Name = "lbTabla";
-            this.lbTabla.Size = new System.Drawing.Size(152, 187);
+            this.lbTabla.Size = new System.Drawing.Size(152, 170);
             this.lbTabla.TabIndex = 0;
             this.lbTabla.DoubleClick += new System.EventHandler(this.lbTabla_DoubleClick);
             // 
@@ -429,9 +431,9 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(633, 21);
+            this.button4.Location = new System.Drawing.Point(643, 16);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 23);
+            this.button4.Size = new System.Drawing.Size(23, 19);
             this.button4.TabIndex = 14;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -640,6 +642,20 @@
             this.panel3.Size = new System.Drawing.Size(196, 4);
             this.panel3.TabIndex = 16;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = global::CapaVista.Properties.Resources.rotate;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Transparent;
+            this.button5.Location = new System.Drawing.Point(142, 11);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(19, 19);
+            this.button5.TabIndex = 6;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -737,5 +753,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button5;
     }
 }

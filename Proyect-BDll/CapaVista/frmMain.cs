@@ -45,9 +45,6 @@ namespace CapaVista
             DataTable objDT = new CapaLogica.clsTablas().Tablas(instanceName, cboBD.SelectedValue.ToString());
             lbTabla.DataSource = null;
 
-            cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
-            cboBD.ValueMember = "DATABASE_NAME";
-            cboBD.DisplayMember = "DATABASE_NAME";
             if (cboBD.Enabled)
             {
                 if (objDT.Rows.Count > 0)
@@ -299,6 +296,12 @@ namespace CapaVista
             }
         }
 
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
+            cboBD.ValueMember = "DATABASE_NAME";
+            cboBD.DisplayMember = "DATABASE_NAME";
+        }
     }
 }
 
