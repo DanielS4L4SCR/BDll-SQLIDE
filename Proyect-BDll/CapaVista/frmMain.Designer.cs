@@ -454,7 +454,8 @@
             // 
             // txtQuery1
             // 
-            this.txtQuery1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuery1.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuery1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtQuery1.Location = new System.Drawing.Point(1, 11);
             this.txtQuery1.Multiline = true;
             this.txtQuery1.Name = "txtQuery1";

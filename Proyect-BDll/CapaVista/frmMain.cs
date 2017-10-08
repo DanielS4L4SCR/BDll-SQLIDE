@@ -301,7 +301,7 @@ namespace CapaVista
             cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
             cboBD.ValueMember = "DATABASE_NAME";
             cboBD.DisplayMember = "DATABASE_NAME";
-        } 
+        }
     }
 }
 
