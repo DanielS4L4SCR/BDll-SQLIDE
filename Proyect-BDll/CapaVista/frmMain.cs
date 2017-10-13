@@ -36,7 +36,6 @@ namespace CapaVista
             cboBD.DisplayMember = "DATABASE_NAME";
             gbBD.Text = "";
             timer1.Start();
-
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -52,6 +51,7 @@ namespace CapaVista
                     lbTabla.DataSource = objDT;
                     lbTabla.DisplayMember = "TABLE_NAME";
                     lbTabla.ValueMember = "TABLE_NAME";
+                    
                 }
                 else
                 {
@@ -61,10 +61,9 @@ namespace CapaVista
                     }
 
                     MessageBox.Show("La base de datos selecciona no contiene tablas");
+                    
                     lbTabla.Items.Clear();
                 }
-
-
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -327,6 +326,13 @@ namespace CapaVista
             }
             
 
+        }
+
+        private void cboBD_DropDown(object sender, EventArgs e)
+        {
+            cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
+            cboBD.ValueMember = "DATABASE_NAME";
+            cboBD.DisplayMember = "DATABASE_NAME";
         }
     }
 }

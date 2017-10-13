@@ -37,7 +37,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbColumnas = new System.Windows.Forms.ListBox();
             this.gbBD = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.lbTabla = new System.Windows.Forms.ListBox();
             this.cboBD = new MetroFramework.Controls.MetroComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -130,7 +129,6 @@
             // 
             // gbBD
             // 
-            this.gbBD.Controls.Add(this.button5);
             this.gbBD.Controls.Add(this.lbTabla);
             this.gbBD.Font = new System.Drawing.Font("Maiandra GD", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBD.Location = new System.Drawing.Point(6, 19);
@@ -138,20 +136,6 @@
             this.gbBD.Size = new System.Drawing.Size(167, 219);
             this.gbBD.TabIndex = 0;
             this.gbBD.TabStop = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::CapaVista.Properties.Resources.rotate;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(142, 11);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(19, 19);
-            this.button5.TabIndex = 6;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // lbTabla
             // 
@@ -175,6 +159,7 @@
             this.cboBD.Size = new System.Drawing.Size(145, 29);
             this.cboBD.TabIndex = 1;
             this.cboBD.UseSelectable = true;
+            this.cboBD.DropDown += new System.EventHandler(this.cboBD_DropDown);
             // 
             // groupBox2
             // 
@@ -755,6 +740,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button5;
     }
 }
