@@ -50,7 +50,7 @@
             this.tabQuery1 = new System.Windows.Forms.TabControl();
             this.tab5 = new MetroFramework.Controls.MetroTabPage();
             this.btnClose = new System.Windows.Forms.Button();
-            this.Query5 = new System.Windows.Forms.TextBox();
+            this.txtQuery5 = new System.Windows.Forms.TextBox();
             this.tab4 = new MetroFramework.Controls.MetroTabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.txtQuery4 = new System.Windows.Forms.TextBox();
@@ -254,7 +254,7 @@
             // tab5
             // 
             this.tab5.Controls.Add(this.btnClose);
-            this.tab5.Controls.Add(this.Query5);
+            this.tab5.Controls.Add(this.txtQuery5);
             this.tab5.HorizontalScrollbarBarColor = true;
             this.tab5.HorizontalScrollbarHighlightOnWheel = false;
             this.tab5.HorizontalScrollbarSize = 10;
@@ -262,7 +262,7 @@
             this.tab5.Name = "tab5";
             this.tab5.Size = new System.Drawing.Size(671, 357);
             this.tab5.TabIndex = 4;
-            this.tab5.Text = "Query ";
+            this.tab5.Text = "Query 5";
             this.tab5.VerticalScrollbarBarColor = true;
             this.tab5.VerticalScrollbarHighlightOnWheel = false;
             this.tab5.VerticalScrollbarSize = 10;
@@ -277,21 +277,21 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(635, 26);
+            this.btnClose.Location = new System.Drawing.Point(647, 16);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(28, 23);
+            this.btnClose.Size = new System.Drawing.Size(19, 17);
             this.btnClose.TabIndex = 9;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Query5
+            // txtQuery5
             // 
-            this.Query5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.Query5.Location = new System.Drawing.Point(3, 22);
-            this.Query5.Multiline = true;
-            this.Query5.Name = "Query5";
-            this.Query5.Size = new System.Drawing.Size(668, 335);
-            this.Query5.TabIndex = 12;
+            this.txtQuery5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtQuery5.Location = new System.Drawing.Point(1, 11);
+            this.txtQuery5.Multiline = true;
+            this.txtQuery5.Name = "txtQuery5";
+            this.txtQuery5.Size = new System.Drawing.Size(668, 335);
+            this.txtQuery5.TabIndex = 12;
             // 
             // tab4
             // 
@@ -304,7 +304,7 @@
             this.tab4.Name = "tab4";
             this.tab4.Size = new System.Drawing.Size(671, 357);
             this.tab4.TabIndex = 3;
-            this.tab4.Text = "Query ";
+            this.tab4.Text = "Query 4";
             this.tab4.VerticalScrollbarBarColor = true;
             this.tab4.VerticalScrollbarHighlightOnWheel = false;
             this.tab4.VerticalScrollbarSize = 10;
@@ -319,9 +319,9 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(633, 20);
+            this.button1.Location = new System.Drawing.Point(647, 16);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.Size = new System.Drawing.Size(19, 17);
             this.button1.TabIndex = 13;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -346,7 +346,7 @@
             this.tab3.Name = "tab3";
             this.tab3.Size = new System.Drawing.Size(671, 357);
             this.tab3.TabIndex = 2;
-            this.tab3.Text = "Query ";
+            this.tab3.Text = "Query 3";
             this.tab3.VerticalScrollbarBarColor = true;
             this.tab3.VerticalScrollbarHighlightOnWheel = false;
             this.tab3.VerticalScrollbarSize = 10;
@@ -361,9 +361,9 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(633, 21);
+            this.button2.Location = new System.Drawing.Point(647, 16);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 23);
+            this.button2.Size = new System.Drawing.Size(19, 17);
             this.button2.TabIndex = 13;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -388,7 +388,7 @@
             this.tab2.Name = "tab2";
             this.tab2.Size = new System.Drawing.Size(671, 357);
             this.tab2.TabIndex = 1;
-            this.tab2.Text = "Query ";
+            this.tab2.Text = "Query 2";
             this.tab2.VerticalScrollbarBarColor = true;
             this.tab2.VerticalScrollbarHighlightOnWheel = false;
             this.tab2.VerticalScrollbarSize = 10;
@@ -403,9 +403,9 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(633, 22);
+            this.button3.Location = new System.Drawing.Point(647, 16);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 23);
+            this.button3.Size = new System.Drawing.Size(19, 17);
             this.button3.TabIndex = 13;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -413,10 +413,10 @@
             // txtQuery2
             // 
             this.txtQuery2.Font = new System.Drawing.Font("Maiandra GD", 15.75F);
-            this.txtQuery2.Location = new System.Drawing.Point(1, 13);
+            this.txtQuery2.Location = new System.Drawing.Point(1, 11);
             this.txtQuery2.Multiline = true;
             this.txtQuery2.Name = "txtQuery2";
-            this.txtQuery2.Size = new System.Drawing.Size(668, 333);
+            this.txtQuery2.Size = new System.Drawing.Size(668, 335);
             this.txtQuery2.TabIndex = 12;
             // 
             // Tab1
@@ -430,7 +430,7 @@
             this.Tab1.Name = "Tab1";
             this.Tab1.Size = new System.Drawing.Size(671, 357);
             this.Tab1.TabIndex = 0;
-            this.Tab1.Text = "Query ";
+            this.Tab1.Text = "Query 1";
             this.Tab1.VerticalScrollbarBarColor = true;
             this.Tab1.VerticalScrollbarHighlightOnWheel = false;
             this.Tab1.VerticalScrollbarSize = 10;
@@ -445,9 +445,9 @@
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(643, 16);
+            this.button4.Location = new System.Drawing.Point(647, 16);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 19);
+            this.button4.Size = new System.Drawing.Size(19, 17);
             this.button4.TabIndex = 14;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -471,7 +471,7 @@
             this.tabContQuery.Controls.Add(this.tab5);
             this.tabContQuery.Location = new System.Drawing.Point(189, 153);
             this.tabContQuery.Name = "tabContQuery";
-            this.tabContQuery.SelectedIndex = 0;
+            this.tabContQuery.SelectedIndex = 4;
             this.tabContQuery.Size = new System.Drawing.Size(679, 399);
             this.tabContQuery.Style = MetroFramework.MetroColorStyle.Green;
             this.tabContQuery.TabIndex = 11;
@@ -538,25 +538,26 @@
             // sELECTToolStripMenuItem
             // 
             this.sELECTToolStripMenuItem.Name = "sELECTToolStripMenuItem";
-            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sELECTToolStripMenuItem.Text = "SELECT";
+            this.sELECTToolStripMenuItem.Click += new System.EventHandler(this.sELECTToolStripMenuItem_Click);
             // 
             // iNSERTToolStripMenuItem
             // 
             this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
-            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iNSERTToolStripMenuItem.Text = "INSERT";
             // 
             // uPDATEToolStripMenuItem
             // 
             this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
-            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.uPDATEToolStripMenuItem.Text = "UPDATE";
             // 
             // dELETEToolStripMenuItem
             // 
             this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
-            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dELETEToolStripMenuItem.Text = "DELETE";
             // 
             // dLLToolStripMenuItem
@@ -720,7 +721,7 @@
         private System.Windows.Forms.TabControl tabQuery1;
         private MetroFramework.Controls.MetroTabPage tab5;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox Query5;
+        private System.Windows.Forms.TextBox txtQuery5;
         private MetroFramework.Controls.MetroTabPage tab4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtQuery4;

@@ -164,7 +164,7 @@ namespace CapaVista
         private void nuevoQueryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             #region ifTab
-            if (cont < 4)
+            if (cont < 5)
             {
                 if (cont == 0)
                 {
@@ -208,15 +208,26 @@ namespace CapaVista
         private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
-            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
-            if (txtQuery1.Text == "" || txtQuery1.SelectedText == "")
+            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text)); 
+            if (tabContQuery.SelectedTab==Tab1)
             {
-                MessageBox.Show("Debe introducir y seleccionar el texto antes de ejecutar", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-            else if (tabContQuery.SelectedIndex == 0)
-            {
-                //Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
                 dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
             }
         }
 
@@ -301,6 +312,21 @@ namespace CapaVista
             cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
             cboBD.ValueMember = "DATABASE_NAME";
             cboBD.DisplayMember = "DATABASE_NAME";
+        }
+
+        private void sELECTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab==Tab1)
+            {
+                //txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + "\n\r"+ "SELECT";
+                MessageBox.Show("tab 1 abierto");
+            }
+            else
+            {
+                MessageBox.Show("tab 1 cerrado");
+            }
+            
+
         }
     }
 }
