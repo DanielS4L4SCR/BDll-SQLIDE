@@ -97,8 +97,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.gbBD);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(3, 101);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(180, 659);
@@ -163,6 +165,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.lbReloj);
             this.groupBox2.Controls.Add(this.lbSqlManager);
             this.groupBox2.Controls.Add(this.btnActualizar);
@@ -188,7 +191,7 @@
             this.lbSqlManager.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lbSqlManager.Location = new System.Drawing.Point(28, 16);
             this.lbSqlManager.Name = "lbSqlManager";
-            this.lbSqlManager.Size = new System.Drawing.Size(167, 25);
+            this.lbSqlManager.Size = new System.Drawing.Size(179, 25);
             this.lbSqlManager.TabIndex = 4;
             this.lbSqlManager.Text = "SQL MANAGER 2017";
             // 
@@ -523,26 +526,26 @@
             // sELECTToolStripMenuItem
             // 
             this.sELECTToolStripMenuItem.Name = "sELECTToolStripMenuItem";
-            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.sELECTToolStripMenuItem.Text = "SELECT";
             this.sELECTToolStripMenuItem.Click += new System.EventHandler(this.sELECTToolStripMenuItem_Click);
             // 
             // iNSERTToolStripMenuItem
             // 
             this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
-            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.iNSERTToolStripMenuItem.Text = "INSERT";
             // 
             // uPDATEToolStripMenuItem
             // 
             this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
-            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.uPDATEToolStripMenuItem.Text = "UPDATE";
             // 
             // dELETEToolStripMenuItem
             // 
             this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
-            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.dELETEToolStripMenuItem.Text = "DELETE";
             // 
             // dLLToolStripMenuItem
@@ -559,19 +562,19 @@
             // cREATEToolStripMenuItem
             // 
             this.cREATEToolStripMenuItem.Name = "cREATEToolStripMenuItem";
-            this.cREATEToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.cREATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cREATEToolStripMenuItem.Text = "CREATE";
             // 
             // dROPToolStripMenuItem
             // 
             this.dROPToolStripMenuItem.Name = "dROPToolStripMenuItem";
-            this.dROPToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.dROPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dROPToolStripMenuItem.Text = "DROP";
             // 
             // aLTERToolStripMenuItem
             // 
             this.aLTERToolStripMenuItem.Name = "aLTERToolStripMenuItem";
-            this.aLTERToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.aLTERToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aLTERToolStripMenuItem.Text = "ALTER";
             // 
             // dgvInfo
@@ -663,7 +666,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "lbTabñas";
             this.Padding = new System.Windows.Forms.Padding(0, 60, 20, 20);
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.Green;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(154)))), ((int)(((byte)(164)))));
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
