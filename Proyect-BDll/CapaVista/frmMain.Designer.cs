@@ -191,7 +191,7 @@
             this.lbSqlManager.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lbSqlManager.Location = new System.Drawing.Point(28, 16);
             this.lbSqlManager.Name = "lbSqlManager";
-            this.lbSqlManager.Size = new System.Drawing.Size(179, 25);
+            this.lbSqlManager.Size = new System.Drawing.Size(167, 25);
             this.lbSqlManager.TabIndex = 4;
             this.lbSqlManager.Text = "SQL MANAGER 2017";
             // 
@@ -274,7 +274,7 @@
             // 
             // txtQuery5
             // 
-            this.txtQuery5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtQuery5.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery5.Location = new System.Drawing.Point(1, 11);
             this.txtQuery5.Multiline = true;
             this.txtQuery5.Name = "txtQuery5";
@@ -316,7 +316,7 @@
             // 
             // txtQuery4
             // 
-            this.txtQuery4.Font = new System.Drawing.Font("Maiandra GD", 12F);
+            this.txtQuery4.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery4.Location = new System.Drawing.Point(1, 11);
             this.txtQuery4.Multiline = true;
             this.txtQuery4.Name = "txtQuery4";
@@ -358,7 +358,7 @@
             // 
             // txtQuery3
             // 
-            this.txtQuery3.Font = new System.Drawing.Font("Maiandra GD", 12F);
+            this.txtQuery3.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery3.Location = new System.Drawing.Point(1, 11);
             this.txtQuery3.Multiline = true;
             this.txtQuery3.Name = "txtQuery3";
@@ -400,7 +400,7 @@
             // 
             // txtQuery2
             // 
-            this.txtQuery2.Font = new System.Drawing.Font("Maiandra GD", 15.75F);
+            this.txtQuery2.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery2.Location = new System.Drawing.Point(1, 11);
             this.txtQuery2.Multiline = true;
             this.txtQuery2.Name = "txtQuery2";
@@ -442,7 +442,7 @@
             // 
             // txtQuery1
             // 
-            this.txtQuery1.Font = new System.Drawing.Font("Maiandra GD", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuery1.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuery1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtQuery1.Location = new System.Drawing.Point(1, 11);
             this.txtQuery1.Multiline = true;
@@ -562,19 +562,19 @@
             // cREATEToolStripMenuItem
             // 
             this.cREATEToolStripMenuItem.Name = "cREATEToolStripMenuItem";
-            this.cREATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cREATEToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.cREATEToolStripMenuItem.Text = "CREATE";
             // 
             // dROPToolStripMenuItem
             // 
             this.dROPToolStripMenuItem.Name = "dROPToolStripMenuItem";
-            this.dROPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dROPToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.dROPToolStripMenuItem.Text = "DROP";
             // 
             // aLTERToolStripMenuItem
             // 
             this.aLTERToolStripMenuItem.Name = "aLTERToolStripMenuItem";
-            this.aLTERToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aLTERToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.aLTERToolStripMenuItem.Text = "ALTER";
             // 
             // dgvInfo

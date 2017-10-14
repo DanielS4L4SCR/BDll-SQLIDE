@@ -315,17 +315,39 @@ namespace CapaVista
 
         private void sELECTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tabContQuery.SelectedTab==Tab1)
-            {
-                //txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + "\n\r"+ "SELECT";
-                MessageBox.Show("tab 1 abierto");
-            }
-            else
-            {
-                MessageBox.Show("tab 1 cerrado");
-            }
-            
+            int cont = 0;
 
+            
+            if (tabContQuery.SelectedTab==Tab1)
+            {  
+                txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+                 "SELECT " +lbColumnas.Text+  Environment.NewLine +
+                 "FROM " +"[" + lbTabla.Text + "]";
+            }
+            else if(tabContQuery.SelectedTab==tab2)
+            {
+                txtQuery2.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+                 "SELECT " + lbColumnas.Text + Environment.NewLine +
+                 "FROM " + "[" + lbTabla.Text + "]";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+                 "SELECT " + lbColumnas.Text + Environment.NewLine +
+                 "FROM " + "[" + lbTabla.Text + "]";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+                 "SELECT " + lbColumnas.Text + Environment.NewLine +
+                 "FROM " + "[" + lbTabla.Text + "]";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+                 "SELECT " + lbColumnas.Text + Environment.NewLine +
+                 "FROM " + "[" + lbTabla.Text + "]";
+            }
         }
 
         private void cboBD_DropDown(object sender, EventArgs e)
@@ -334,6 +356,8 @@ namespace CapaVista
             cboBD.ValueMember = "DATABASE_NAME";
             cboBD.DisplayMember = "DATABASE_NAME";
         }
+
+        
     }
 }
 
