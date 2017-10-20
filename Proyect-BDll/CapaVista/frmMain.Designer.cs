@@ -189,7 +189,7 @@
             // 
             this.lbSqlManager.AutoSize = true;
             this.lbSqlManager.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lbSqlManager.Location = new System.Drawing.Point(28, 16);
+            this.lbSqlManager.Location = new System.Drawing.Point(23, 16);
             this.lbSqlManager.Name = "lbSqlManager";
             this.lbSqlManager.Size = new System.Drawing.Size(167, 25);
             this.lbSqlManager.TabIndex = 4;
