@@ -313,16 +313,30 @@ namespace CapaVista
             cboBD.DisplayMember = "DATABASE_NAME";
         }
 
+        //string resultado="";
+        //List<string> columnas = new List<string>();
         private void sELECTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int cont = 0;
-
-            
+            //DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+            //columnas = new List<string>();
+            //if (columnas == null || columnas.Count == 1)
+            //{
+            //    MessageBox.Show("debe selecionar las columnas que desea");
+            //}
+            //else
+            //{
+            //    for (int i = 1; i < lbColumnas.Items.Count+1; i++)
+            //    {
+            //         resultado += columnas[i] + ", ";
+            //    }
+               
+            //}
             if (tabContQuery.SelectedTab==Tab1)
-            {  
+            {
                 txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-                 "SELECT " +lbColumnas.Text+  Environment.NewLine +
-                 "FROM " +"[" + lbTabla.Text + "]";
+                 "SELECT " + lbColumnas.Text+ Environment.NewLine +
+                 "FROM " + "[" + lbTabla.Text + "]";
+                //columnas = null;
             }
             else if(tabContQuery.SelectedTab==tab2)
             {
@@ -357,7 +371,245 @@ namespace CapaVista
             cboBD.DisplayMember = "DATABASE_NAME";
         }
 
+        private void iNSERTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
+                 "Values " + Environment.NewLine + "() ";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
+                 "Values " + Environment.NewLine + "() ";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
+                 "Values " + Environment.NewLine + "() ";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
+                 "Values " + Environment.NewLine + "() ";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
+                 "Values " + Environment.NewLine + "() ";
+            }
+        }
         
+
+        private void lbColumnas_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lbColumnas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //columnas.Add(lbColumnas.Text);
+        }
+
+        private void uPDATEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + "(" + lbColumnas.Text + ")" + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + "(" + lbColumnas.Text + ")"+" = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                 "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + "(" + lbColumnas.Text + ")" + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + "(" + lbColumnas.Text + ")" + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + lbColumnas.Text + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+        }
+
+        private void dELETEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+        }
+
+        private void dATABASEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "CREATE DATABASE databasename";            
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "CREATE DATABASE databasename";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "CREATE DATABASE databasename";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "CREATE DATABASE databasename";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "CREATE DATABASE databasename";
+            }
+        }
+
+        private void tABLEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine + 
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+                
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+            }
+        }
+
+        private void dATABASEToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Drop Database " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Drop Database " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Drop Database " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Drop Database " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Drop Database " + cboBD.Text;
+            }
+        }
+
+        private void tABLAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Drop Table " + lbTabla.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Drop Table " + lbTabla.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Drop Table " + lbTabla.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Drop Table " + lbTabla.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Drop Table " + lbTabla.Text;
+            }
+        }
     }
 }
 
