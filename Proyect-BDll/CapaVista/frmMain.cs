@@ -610,6 +610,117 @@ namespace CapaVista
                 txtQuery5.Text = "Drop Table " + lbTabla.Text;
             }
         }
+
+        private void dATABASEToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Modify Name = " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Modify Name = " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Modify Name = " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Modify Name = " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Modify Name = " + cboBD.Text;
+            }
+        }
+
+        private void aDDCOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+        }
+
+        private void dROPECOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+        }
+
+        private void aLTERCOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+        }
     }
 }
 

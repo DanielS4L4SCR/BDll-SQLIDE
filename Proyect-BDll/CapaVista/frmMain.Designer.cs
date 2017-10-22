@@ -538,28 +538,28 @@
             // sELECTToolStripMenuItem
             // 
             this.sELECTToolStripMenuItem.Name = "sELECTToolStripMenuItem";
-            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sELECTToolStripMenuItem.Text = "SELECT";
             this.sELECTToolStripMenuItem.Click += new System.EventHandler(this.sELECTToolStripMenuItem_Click);
             // 
             // iNSERTToolStripMenuItem
             // 
             this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
-            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iNSERTToolStripMenuItem.Text = "INSERT";
             this.iNSERTToolStripMenuItem.Click += new System.EventHandler(this.iNSERTToolStripMenuItem_Click);
             // 
             // uPDATEToolStripMenuItem
             // 
             this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
-            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.uPDATEToolStripMenuItem.Text = "UPDATE";
             this.uPDATEToolStripMenuItem.Click += new System.EventHandler(this.uPDATEToolStripMenuItem_Click);
             // 
             // dELETEToolStripMenuItem
             // 
             this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
-            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dELETEToolStripMenuItem.Text = "DELETE";
             this.dELETEToolStripMenuItem.Click += new System.EventHandler(this.dELETEToolStripMenuItem_Click);
             // 
@@ -586,14 +586,14 @@
             // dATABASEToolStripMenuItem
             // 
             this.dATABASEToolStripMenuItem.Name = "dATABASEToolStripMenuItem";
-            this.dATABASEToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.dATABASEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dATABASEToolStripMenuItem.Text = "DATABASE";
             this.dATABASEToolStripMenuItem.Click += new System.EventHandler(this.dATABASEToolStripMenuItem_Click);
             // 
             // tABLEToolStripMenuItem
             // 
             this.tABLEToolStripMenuItem.Name = "tABLEToolStripMenuItem";
-            this.tABLEToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.tABLEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tABLEToolStripMenuItem.Text = "TABLE";
             this.tABLEToolStripMenuItem.Click += new System.EventHandler(this.tABLEToolStripMenuItem_Click);
             // 
@@ -609,14 +609,14 @@
             // dATABASEToolStripMenuItem1
             // 
             this.dATABASEToolStripMenuItem1.Name = "dATABASEToolStripMenuItem1";
-            this.dATABASEToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
+            this.dATABASEToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.dATABASEToolStripMenuItem1.Text = "DATABASE";
             this.dATABASEToolStripMenuItem1.Click += new System.EventHandler(this.dATABASEToolStripMenuItem1_Click);
             // 
             // tABLAToolStripMenuItem
             // 
             this.tABLAToolStripMenuItem.Name = "tABLAToolStripMenuItem";
-            this.tABLAToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.tABLAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tABLAToolStripMenuItem.Text = "TABLA";
             this.tABLAToolStripMenuItem.Click += new System.EventHandler(this.tABLAToolStripMenuItem_Click);
             // 
@@ -634,6 +634,7 @@
             this.dATABASEToolStripMenuItem2.Name = "dATABASEToolStripMenuItem2";
             this.dATABASEToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.dATABASEToolStripMenuItem2.Text = "DATABASE";
+            this.dATABASEToolStripMenuItem2.Click += new System.EventHandler(this.dATABASEToolStripMenuItem2_Click);
             // 
             // tABLEToolStripMenuItem1
             // 
@@ -651,18 +652,21 @@
             this.aDDCOLUMNToolStripMenuItem.Name = "aDDCOLUMNToolStripMenuItem";
             this.aDDCOLUMNToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.aDDCOLUMNToolStripMenuItem.Text = "ADD COLUMN";
+            this.aDDCOLUMNToolStripMenuItem.Click += new System.EventHandler(this.aDDCOLUMNToolStripMenuItem_Click);
             // 
             // dROPECOLUMNToolStripMenuItem
             // 
             this.dROPECOLUMNToolStripMenuItem.Name = "dROPECOLUMNToolStripMenuItem";
             this.dROPECOLUMNToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.dROPECOLUMNToolStripMenuItem.Text = "DROP COLUMN";
+            this.dROPECOLUMNToolStripMenuItem.Click += new System.EventHandler(this.dROPECOLUMNToolStripMenuItem_Click);
             // 
             // aLTERCOLUMNToolStripMenuItem
             // 
             this.aLTERCOLUMNToolStripMenuItem.Name = "aLTERCOLUMNToolStripMenuItem";
             this.aLTERCOLUMNToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.aLTERCOLUMNToolStripMenuItem.Text = "ALTER COLUMN";
+            this.aLTERCOLUMNToolStripMenuItem.Click += new System.EventHandler(this.aLTERCOLUMNToolStripMenuItem_Click);
             // 
             // mODIFYCOLUMNToolStripMenuItem
             // 
