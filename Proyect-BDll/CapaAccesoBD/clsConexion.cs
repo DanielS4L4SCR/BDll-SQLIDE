@@ -146,12 +146,12 @@ namespace CapaAccesoBD
                 if (abrirConexion())
                 {
                     oSQLDA.Fill(oDT);
-                    MessageBox.Show("Comando ejecutado correctamente","Éxito", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show("Comando ejecutado correctamente", "SQL MANAGER 2017", MessageBoxButtons.OK, MessageBoxIcon.None);
                 }
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("Comando con errores de sintaxis: " + ex.Message,"ERROR",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                MessageBox.Show("Comando con errores: " + ex.Message, "SQL MANAGER 2017", MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
             }
             cerrarConexion();
             return oDT;

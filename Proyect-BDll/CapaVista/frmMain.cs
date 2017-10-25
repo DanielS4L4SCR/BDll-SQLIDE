@@ -98,7 +98,7 @@ namespace CapaVista
         #region Boton Cerrar
         private void button1_Click_1(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -110,7 +110,7 @@ namespace CapaVista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -123,7 +123,7 @@ namespace CapaVista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -135,7 +135,7 @@ namespace CapaVista
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -147,7 +147,7 @@ namespace CapaVista
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "Avertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -200,7 +200,7 @@ namespace CapaVista
             #endregion
             else
             {
-                MessageBox.Show("Máximo de pestañas superado");
+                MessageBox.Show("Máximo de pestañas superado", "SQL MANAGER 2017",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
 
         }
@@ -244,7 +244,7 @@ namespace CapaVista
 
                 if (objDT is null)
                 {
-                    MessageBox.Show("Error al cargar las columnas");
+                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
                     return;
                 }
                 if (lbTabla.Enabled)
@@ -271,7 +271,7 @@ namespace CapaVista
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione una base de datos");
+                    MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Exclamation);
 
                 }
             }
@@ -284,7 +284,7 @@ namespace CapaVista
 
                 if (objDT is null)
                 {
-                    MessageBox.Show("Error al cargar las columnas");
+                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
                     return;
                 }
                 if (lbTabla.Enabled)
@@ -308,7 +308,7 @@ namespace CapaVista
             }
             else
             {
-                MessageBox.Show("Seleccione una base de datos");
+                MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -718,11 +718,6 @@ namespace CapaVista
                 txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
                 "Alter Column column_name datatype;";
             }
-        }
-
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

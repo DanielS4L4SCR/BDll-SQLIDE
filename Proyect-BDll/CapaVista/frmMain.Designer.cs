@@ -758,7 +758,6 @@
             this.lbConsulta.Name = "lbConsulta";
             this.lbConsulta.Size = new System.Drawing.Size(0, 0);
             this.lbConsulta.TabIndex = 17;
-            this.lbConsulta.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // lbTabñas
             // 
