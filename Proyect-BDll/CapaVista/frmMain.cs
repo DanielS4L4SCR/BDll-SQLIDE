@@ -115,6 +115,7 @@ namespace CapaVista
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
                 cont = 0;
+                lbConsulta.Text = "";
             }
             else if (msj == DialogResult.No)
             { }
@@ -206,6 +207,7 @@ namespace CapaVista
 
         private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DateTime tiempo1 = DateTime.Now;
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
             SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text)); 
             if (tabContQuery.SelectedTab==Tab1)
@@ -228,6 +230,10 @@ namespace CapaVista
             {
                 dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
             }
+            DateTime tiempo2 = DateTime.Now;
+            TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
+            lbConsulta.Text = "Tiempo de consulta: " + total.ToString();
+
         }
 
         private void lbTabla_DoubleClick(object sender, EventArgs e)
@@ -315,7 +321,18 @@ namespace CapaVista
 
         //string resultado="";
         //List<string> columnas = new List<string>();
-        private void sELECTToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cboBD_DropDown(object sender, EventArgs e)
+        {
+            cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
+            cboBD.ValueMember = "DATABASE_NAME";
+            cboBD.DisplayMember = "DATABASE_NAME";
+        }
+        private void lbColumnas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //columnas.Add(lbColumnas.Text);
+        }
+
+        private void sELECTToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             //DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
             //columnas = new List<string>();
@@ -329,16 +346,16 @@ namespace CapaVista
             //    {
             //         resultado += columnas[i] + ", ";
             //    }
-               
+
             //}
-            if (tabContQuery.SelectedTab==Tab1)
+            if (tabContQuery.SelectedTab == Tab1)
             {
                 txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-                 "SELECT " + lbColumnas.Text+ Environment.NewLine +
+                 "SELECT " + lbColumnas.Text + Environment.NewLine +
                  "FROM " + "[" + lbTabla.Text + "]";
                 //columnas = null;
             }
-            else if(tabContQuery.SelectedTab==tab2)
+            else if (tabContQuery.SelectedTab == tab2)
             {
                 txtQuery2.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
                  "SELECT " + lbColumnas.Text + Environment.NewLine +
@@ -364,14 +381,7 @@ namespace CapaVista
             }
         }
 
-        private void cboBD_DropDown(object sender, EventArgs e)
-        {
-            cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
-            cboBD.ValueMember = "DATABASE_NAME";
-            cboBD.DisplayMember = "DATABASE_NAME";
-        }
-
-        private void iNSERTToolStripMenuItem_Click(object sender, EventArgs e)
+        private void iNSERTToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -404,19 +414,8 @@ namespace CapaVista
                  "Values " + Environment.NewLine + "() ";
             }
         }
-        
 
-        private void lbColumnas_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void lbColumnas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //columnas.Add(lbColumnas.Text);
-        }
-
-        private void uPDATEToolStripMenuItem_Click(object sender, EventArgs e)
+        private void uPDATEToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -429,7 +428,7 @@ namespace CapaVista
             {
                 txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
                   "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-                  "Set " + "(" + lbColumnas.Text + ")"+" = " + Environment.NewLine +
+                  "Set " + "(" + lbColumnas.Text + ")" + " = " + Environment.NewLine +
                   "Where " + Environment.NewLine;
             }
             else if (tabContQuery.SelectedTab == tab3)
@@ -455,7 +454,7 @@ namespace CapaVista
             }
         }
 
-        private void dELETEToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dELETEToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -489,11 +488,11 @@ namespace CapaVista
             }
         }
 
-        private void dATABASEToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dATABASEToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "CREATE DATABASE databasename";            
+                txtQuery1.Text = "CREATE DATABASE databasename";
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
@@ -513,17 +512,17 @@ namespace CapaVista
             }
         }
 
-        private void tABLEToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tABLEToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
                 txtQuery1.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
                 "column1 datatype," + Environment.NewLine +
                 "column2 datatype," + Environment.NewLine +
-                "column3 datatype" + Environment.NewLine + 
+                "column3 datatype" + Environment.NewLine +
                  "...." + Environment.NewLine +
                 ")" + Environment.NewLine;
-                
+
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
@@ -563,7 +562,7 @@ namespace CapaVista
             }
         }
 
-        private void dATABASEToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void dATABASEToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -587,7 +586,7 @@ namespace CapaVista
             }
         }
 
-        private void tABLAToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tABLEToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -610,8 +609,7 @@ namespace CapaVista
                 txtQuery5.Text = "Drop Table " + lbTabla.Text;
             }
         }
-
-        private void dATABASEToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void dATABASEToolStripMenuItem5_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -635,7 +633,7 @@ namespace CapaVista
             }
         }
 
-        private void aDDCOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aDDCOLUMNToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -664,7 +662,7 @@ namespace CapaVista
             }
         }
 
-        private void dROPECOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dROPCOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -693,7 +691,7 @@ namespace CapaVista
             }
         }
 
-        private void aLTERCOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
+        private void aLTERCOLUMNToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
@@ -720,6 +718,11 @@ namespace CapaVista
                 txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
                 "Alter Column column_name datatype;";
             }
+        }
+
+        private void metroLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

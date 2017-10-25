@@ -67,29 +67,31 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nuevoQueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejecutarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sELECTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iNSERTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uPDATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dELETEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dLLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cREATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dATABASEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tABLEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dROPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dATABASEToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tABLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aLTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dATABASEToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tABLEToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aDDCOLUMNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dROPECOLUMNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aLTERCOLUMNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mODIFYCOLUMNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scriptDatabaseAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sELECTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.iNSERTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.uPDATEToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dELETEToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cREATEToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dATABASEToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tABLEToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dROPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dATABASEToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tABLEToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aLTERToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dATABASEToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tABLEToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDDCOLUMNToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dROPCOLUMNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aLTERCOLUMNToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mODIFYCOLUMNToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvInfo = new MetroFramework.Controls.MetroGrid();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbConsulta = new MetroFramework.Controls.MetroLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbBD.SuspendLayout();
@@ -139,7 +141,6 @@
             this.lbColumnas.Size = new System.Drawing.Size(152, 187);
             this.lbColumnas.TabIndex = 0;
             this.lbColumnas.SelectedIndexChanged += new System.EventHandler(this.lbColumnas_SelectedIndexChanged);
-            this.lbColumnas.SelectedValueChanged += new System.EventHandler(this.lbColumnas_SelectedValueChanged);
             // 
             // gbBD
             // 
@@ -224,7 +225,7 @@
             // lbClock
             // 
             this.lbClock.AutoSize = true;
-            this.lbClock.Location = new System.Drawing.Point(1175, 715);
+            this.lbClock.Location = new System.Drawing.Point(1176, 685);
             this.lbClock.Name = "lbClock";
             this.lbClock.Size = new System.Drawing.Size(75, 19);
             this.lbClock.TabIndex = 6;
@@ -498,8 +499,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoQueryToolStripMenuItem,
             this.ejecutarToolStripMenuItem,
-            this.dMLToolStripMenuItem,
-            this.dLLToolStripMenuItem});
+            this.scriptDatabaseAsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 13);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
@@ -512,7 +512,7 @@
             this.nuevoQueryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.nuevoQueryToolStripMenuItem.Name = "nuevoQueryToolStripMenuItem";
             this.nuevoQueryToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
-            this.nuevoQueryToolStripMenuItem.Text = "Nuevo Query";
+            this.nuevoQueryToolStripMenuItem.Text = "&Nuevo Query";
             this.nuevoQueryToolStripMenuItem.Click += new System.EventHandler(this.nuevoQueryToolStripMenuItem_Click);
             // 
             // ejecutarToolStripMenuItem
@@ -520,159 +520,167 @@
             this.ejecutarToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ejecutarToolStripMenuItem.Name = "ejecutarToolStripMenuItem";
             this.ejecutarToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.ejecutarToolStripMenuItem.Text = "Ejecutar";
+            this.ejecutarToolStripMenuItem.Text = "&Ejecutar";
             this.ejecutarToolStripMenuItem.Click += new System.EventHandler(this.ejecutarToolStripMenuItem_Click);
             // 
-            // dMLToolStripMenuItem
+            // scriptDatabaseAsToolStripMenuItem
             // 
-            this.dMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sELECTToolStripMenuItem,
-            this.iNSERTToolStripMenuItem,
-            this.uPDATEToolStripMenuItem,
-            this.dELETEToolStripMenuItem});
-            this.dMLToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dMLToolStripMenuItem.Name = "dMLToolStripMenuItem";
-            this.dMLToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
-            this.dMLToolStripMenuItem.Text = "DML";
+            this.scriptDatabaseAsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dMLToolStripMenuItem1,
+            this.dDLToolStripMenuItem});
+            this.scriptDatabaseAsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.scriptDatabaseAsToolStripMenuItem.Name = "scriptDatabaseAsToolStripMenuItem";
+            this.scriptDatabaseAsToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
+            this.scriptDatabaseAsToolStripMenuItem.Text = "&Script Database as";
             // 
-            // sELECTToolStripMenuItem
+            // dMLToolStripMenuItem1
             // 
-            this.sELECTToolStripMenuItem.Name = "sELECTToolStripMenuItem";
-            this.sELECTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.sELECTToolStripMenuItem.Text = "SELECT";
-            this.sELECTToolStripMenuItem.Click += new System.EventHandler(this.sELECTToolStripMenuItem_Click);
+            this.dMLToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sELECTToolStripMenuItem1,
+            this.iNSERTToolStripMenuItem1,
+            this.uPDATEToolStripMenuItem1,
+            this.dELETEToolStripMenuItem1});
+            this.dMLToolStripMenuItem1.Name = "dMLToolStripMenuItem1";
+            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.dMLToolStripMenuItem1.Text = "DML";
             // 
-            // iNSERTToolStripMenuItem
+            // sELECTToolStripMenuItem1
             // 
-            this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
-            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.iNSERTToolStripMenuItem.Text = "INSERT";
-            this.iNSERTToolStripMenuItem.Click += new System.EventHandler(this.iNSERTToolStripMenuItem_Click);
+            this.sELECTToolStripMenuItem1.Name = "sELECTToolStripMenuItem1";
+            this.sELECTToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.sELECTToolStripMenuItem1.Text = "SELECT";
+            this.sELECTToolStripMenuItem1.Click += new System.EventHandler(this.sELECTToolStripMenuItem1_Click);
             // 
-            // uPDATEToolStripMenuItem
+            // iNSERTToolStripMenuItem1
             // 
-            this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
-            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.uPDATEToolStripMenuItem.Text = "UPDATE";
-            this.uPDATEToolStripMenuItem.Click += new System.EventHandler(this.uPDATEToolStripMenuItem_Click);
+            this.iNSERTToolStripMenuItem1.Name = "iNSERTToolStripMenuItem1";
+            this.iNSERTToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.iNSERTToolStripMenuItem1.Text = "INSERT";
+            this.iNSERTToolStripMenuItem1.Click += new System.EventHandler(this.iNSERTToolStripMenuItem1_Click);
             // 
-            // dELETEToolStripMenuItem
+            // uPDATEToolStripMenuItem1
             // 
-            this.dELETEToolStripMenuItem.Name = "dELETEToolStripMenuItem";
-            this.dELETEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dELETEToolStripMenuItem.Text = "DELETE";
-            this.dELETEToolStripMenuItem.Click += new System.EventHandler(this.dELETEToolStripMenuItem_Click);
+            this.uPDATEToolStripMenuItem1.Name = "uPDATEToolStripMenuItem1";
+            this.uPDATEToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.uPDATEToolStripMenuItem1.Text = "UPDATE";
+            this.uPDATEToolStripMenuItem1.Click += new System.EventHandler(this.uPDATEToolStripMenuItem1_Click);
             // 
-            // dLLToolStripMenuItem
+            // dELETEToolStripMenuItem1
             // 
-            this.dLLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cREATEToolStripMenuItem,
-            this.dROPToolStripMenuItem,
-            this.aLTERToolStripMenuItem});
-            this.dLLToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dLLToolStripMenuItem.Name = "dLLToolStripMenuItem";
-            this.dLLToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
-            this.dLLToolStripMenuItem.Text = "DDL";
+            this.dELETEToolStripMenuItem1.Name = "dELETEToolStripMenuItem1";
+            this.dELETEToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.dELETEToolStripMenuItem1.Text = "DELETE";
+            this.dELETEToolStripMenuItem1.Click += new System.EventHandler(this.dELETEToolStripMenuItem1_Click);
             // 
-            // cREATEToolStripMenuItem
+            // dDLToolStripMenuItem
             // 
-            this.cREATEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dATABASEToolStripMenuItem,
-            this.tABLEToolStripMenuItem});
-            this.cREATEToolStripMenuItem.Name = "cREATEToolStripMenuItem";
-            this.cREATEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cREATEToolStripMenuItem.Text = "CREATE";
+            this.dDLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cREATEToolStripMenuItem1,
+            this.dROPToolStripMenuItem1,
+            this.aLTERToolStripMenuItem1});
+            this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dDLToolStripMenuItem.Text = "DDL";
             // 
-            // dATABASEToolStripMenuItem
+            // cREATEToolStripMenuItem1
             // 
-            this.dATABASEToolStripMenuItem.Name = "dATABASEToolStripMenuItem";
-            this.dATABASEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dATABASEToolStripMenuItem.Text = "DATABASE";
-            this.dATABASEToolStripMenuItem.Click += new System.EventHandler(this.dATABASEToolStripMenuItem_Click);
+            this.cREATEToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dATABASEToolStripMenuItem3,
+            this.tABLEToolStripMenuItem2});
+            this.cREATEToolStripMenuItem1.Name = "cREATEToolStripMenuItem1";
+            this.cREATEToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
+            this.cREATEToolStripMenuItem1.Text = "CREATE";
             // 
-            // tABLEToolStripMenuItem
+            // dATABASEToolStripMenuItem3
             // 
-            this.tABLEToolStripMenuItem.Name = "tABLEToolStripMenuItem";
-            this.tABLEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tABLEToolStripMenuItem.Text = "TABLE";
-            this.tABLEToolStripMenuItem.Click += new System.EventHandler(this.tABLEToolStripMenuItem_Click);
+            this.dATABASEToolStripMenuItem3.Name = "dATABASEToolStripMenuItem3";
+            this.dATABASEToolStripMenuItem3.Size = new System.Drawing.Size(135, 22);
+            this.dATABASEToolStripMenuItem3.Text = "DATABASE";
+            this.dATABASEToolStripMenuItem3.Click += new System.EventHandler(this.dATABASEToolStripMenuItem3_Click);
             // 
-            // dROPToolStripMenuItem
+            // tABLEToolStripMenuItem2
             // 
-            this.dROPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dATABASEToolStripMenuItem1,
-            this.tABLAToolStripMenuItem});
-            this.dROPToolStripMenuItem.Name = "dROPToolStripMenuItem";
-            this.dROPToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dROPToolStripMenuItem.Text = "DROP";
+            this.tABLEToolStripMenuItem2.Name = "tABLEToolStripMenuItem2";
+            this.tABLEToolStripMenuItem2.Size = new System.Drawing.Size(135, 22);
+            this.tABLEToolStripMenuItem2.Text = "TABLE";
+            this.tABLEToolStripMenuItem2.Click += new System.EventHandler(this.tABLEToolStripMenuItem2_Click);
             // 
-            // dATABASEToolStripMenuItem1
+            // dROPToolStripMenuItem1
             // 
-            this.dATABASEToolStripMenuItem1.Name = "dATABASEToolStripMenuItem1";
-            this.dATABASEToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.dATABASEToolStripMenuItem1.Text = "DATABASE";
-            this.dATABASEToolStripMenuItem1.Click += new System.EventHandler(this.dATABASEToolStripMenuItem1_Click);
+            this.dROPToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dATABASEToolStripMenuItem4,
+            this.tABLEToolStripMenuItem3});
+            this.dROPToolStripMenuItem1.Name = "dROPToolStripMenuItem1";
+            this.dROPToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
+            this.dROPToolStripMenuItem1.Text = "DROP";
             // 
-            // tABLAToolStripMenuItem
+            // dATABASEToolStripMenuItem4
             // 
-            this.tABLAToolStripMenuItem.Name = "tABLAToolStripMenuItem";
-            this.tABLAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tABLAToolStripMenuItem.Text = "TABLA";
-            this.tABLAToolStripMenuItem.Click += new System.EventHandler(this.tABLAToolStripMenuItem_Click);
+            this.dATABASEToolStripMenuItem4.Name = "dATABASEToolStripMenuItem4";
+            this.dATABASEToolStripMenuItem4.Size = new System.Drawing.Size(139, 22);
+            this.dATABASEToolStripMenuItem4.Text = "DATABASE ";
+            this.dATABASEToolStripMenuItem4.Click += new System.EventHandler(this.dATABASEToolStripMenuItem4_Click);
             // 
-            // aLTERToolStripMenuItem
+            // tABLEToolStripMenuItem3
             // 
-            this.aLTERToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dATABASEToolStripMenuItem2,
-            this.tABLEToolStripMenuItem1});
-            this.aLTERToolStripMenuItem.Name = "aLTERToolStripMenuItem";
-            this.aLTERToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aLTERToolStripMenuItem.Text = "ALTER";
+            this.tABLEToolStripMenuItem3.Name = "tABLEToolStripMenuItem3";
+            this.tABLEToolStripMenuItem3.Size = new System.Drawing.Size(139, 22);
+            this.tABLEToolStripMenuItem3.Text = "TABLE";
+            this.tABLEToolStripMenuItem3.Click += new System.EventHandler(this.tABLEToolStripMenuItem3_Click);
             // 
-            // dATABASEToolStripMenuItem2
+            // aLTERToolStripMenuItem1
             // 
-            this.dATABASEToolStripMenuItem2.Name = "dATABASEToolStripMenuItem2";
-            this.dATABASEToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.dATABASEToolStripMenuItem2.Text = "DATABASE";
-            this.dATABASEToolStripMenuItem2.Click += new System.EventHandler(this.dATABASEToolStripMenuItem2_Click);
+            this.aLTERToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dATABASEToolStripMenuItem5,
+            this.tABLEToolStripMenuItem4});
+            this.aLTERToolStripMenuItem1.Name = "aLTERToolStripMenuItem1";
+            this.aLTERToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
+            this.aLTERToolStripMenuItem1.Text = "ALTER";
             // 
-            // tABLEToolStripMenuItem1
+            // dATABASEToolStripMenuItem5
             // 
-            this.tABLEToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aDDCOLUMNToolStripMenuItem,
-            this.dROPECOLUMNToolStripMenuItem,
-            this.aLTERCOLUMNToolStripMenuItem,
-            this.mODIFYCOLUMNToolStripMenuItem});
-            this.tABLEToolStripMenuItem1.Name = "tABLEToolStripMenuItem1";
-            this.tABLEToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.tABLEToolStripMenuItem1.Text = "TABLE";
+            this.dATABASEToolStripMenuItem5.Name = "dATABASEToolStripMenuItem5";
+            this.dATABASEToolStripMenuItem5.Size = new System.Drawing.Size(135, 22);
+            this.dATABASEToolStripMenuItem5.Text = "DATABASE";
+            this.dATABASEToolStripMenuItem5.Click += new System.EventHandler(this.dATABASEToolStripMenuItem5_Click);
             // 
-            // aDDCOLUMNToolStripMenuItem
+            // tABLEToolStripMenuItem4
             // 
-            this.aDDCOLUMNToolStripMenuItem.Name = "aDDCOLUMNToolStripMenuItem";
-            this.aDDCOLUMNToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.aDDCOLUMNToolStripMenuItem.Text = "ADD COLUMN";
-            this.aDDCOLUMNToolStripMenuItem.Click += new System.EventHandler(this.aDDCOLUMNToolStripMenuItem_Click);
+            this.tABLEToolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDDCOLUMNToolStripMenuItem1,
+            this.dROPCOLUMNToolStripMenuItem,
+            this.aLTERCOLUMNToolStripMenuItem1,
+            this.mODIFYCOLUMNToolStripMenuItem1});
+            this.tABLEToolStripMenuItem4.Name = "tABLEToolStripMenuItem4";
+            this.tABLEToolStripMenuItem4.Size = new System.Drawing.Size(135, 22);
+            this.tABLEToolStripMenuItem4.Text = "TABLE";
             // 
-            // dROPECOLUMNToolStripMenuItem
+            // aDDCOLUMNToolStripMenuItem1
             // 
-            this.dROPECOLUMNToolStripMenuItem.Name = "dROPECOLUMNToolStripMenuItem";
-            this.dROPECOLUMNToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.dROPECOLUMNToolStripMenuItem.Text = "DROP COLUMN";
-            this.dROPECOLUMNToolStripMenuItem.Click += new System.EventHandler(this.dROPECOLUMNToolStripMenuItem_Click);
+            this.aDDCOLUMNToolStripMenuItem1.Name = "aDDCOLUMNToolStripMenuItem1";
+            this.aDDCOLUMNToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.aDDCOLUMNToolStripMenuItem1.Text = "ADD COLUMN";
+            this.aDDCOLUMNToolStripMenuItem1.Click += new System.EventHandler(this.aDDCOLUMNToolStripMenuItem1_Click);
             // 
-            // aLTERCOLUMNToolStripMenuItem
+            // dROPCOLUMNToolStripMenuItem
             // 
-            this.aLTERCOLUMNToolStripMenuItem.Name = "aLTERCOLUMNToolStripMenuItem";
-            this.aLTERCOLUMNToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.aLTERCOLUMNToolStripMenuItem.Text = "ALTER COLUMN";
-            this.aLTERCOLUMNToolStripMenuItem.Click += new System.EventHandler(this.aLTERCOLUMNToolStripMenuItem_Click);
+            this.dROPCOLUMNToolStripMenuItem.Name = "dROPCOLUMNToolStripMenuItem";
+            this.dROPCOLUMNToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.dROPCOLUMNToolStripMenuItem.Text = "DROP COLUMN";
+            this.dROPCOLUMNToolStripMenuItem.Click += new System.EventHandler(this.dROPCOLUMNToolStripMenuItem_Click);
             // 
-            // mODIFYCOLUMNToolStripMenuItem
+            // aLTERCOLUMNToolStripMenuItem1
             // 
-            this.mODIFYCOLUMNToolStripMenuItem.Name = "mODIFYCOLUMNToolStripMenuItem";
-            this.mODIFYCOLUMNToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.mODIFYCOLUMNToolStripMenuItem.Text = "MODIFY COLUMN";
+            this.aLTERCOLUMNToolStripMenuItem1.Name = "aLTERCOLUMNToolStripMenuItem1";
+            this.aLTERCOLUMNToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.aLTERCOLUMNToolStripMenuItem1.Text = "ALTER COLUMN";
+            this.aLTERCOLUMNToolStripMenuItem1.Click += new System.EventHandler(this.aLTERCOLUMNToolStripMenuItem1_Click);
+            // 
+            // mODIFYCOLUMNToolStripMenuItem1
+            // 
+            this.mODIFYCOLUMNToolStripMenuItem1.Name = "mODIFYCOLUMNToolStripMenuItem1";
+            this.mODIFYCOLUMNToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.mODIFYCOLUMNToolStripMenuItem1.Text = "MODIFY COLUMN";
             // 
             // dgvInfo
             // 
@@ -743,11 +751,21 @@
             this.panel3.Size = new System.Drawing.Size(196, 4);
             this.panel3.TabIndex = 16;
             // 
+            // lbConsulta
+            // 
+            this.lbConsulta.AutoSize = true;
+            this.lbConsulta.Location = new System.Drawing.Point(981, 715);
+            this.lbConsulta.Name = "lbConsulta";
+            this.lbConsulta.Size = new System.Drawing.Size(0, 0);
+            this.lbConsulta.TabIndex = 17;
+            this.lbConsulta.Click += new System.EventHandler(this.metroLabel1_Click);
+            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 765);
+            this.Controls.Add(this.lbConsulta);
             this.Controls.Add(this.lbClock);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -825,32 +843,34 @@
         private MetroFramework.Controls.MetroLabel lbClock;
         private System.Windows.Forms.GroupBox boxSnippet;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem dMLToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dLLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoQueryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ejecutarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sELECTToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem iNSERTToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem uPDATEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dELETEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cREATEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dROPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aLTERToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox lbColumnas;
         private MetroFramework.Controls.MetroGrid dgvInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ToolStripMenuItem dATABASEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tABLEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dATABASEToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem tABLAToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dATABASEToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem tABLEToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem aDDCOLUMNToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dROPECOLUMNToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aLTERCOLUMNToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mODIFYCOLUMNToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scriptDatabaseAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dMLToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sELECTToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem iNSERTToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem uPDATEToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dELETEToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dDLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cREATEToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dATABASEToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem tABLEToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem dROPToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dATABASEToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem tABLEToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem aLTERToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dATABASEToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem tABLEToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem aDDCOLUMNToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dROPCOLUMNToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aLTERCOLUMNToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mODIFYCOLUMNToolStripMenuItem1;
+        private MetroFramework.Controls.MetroLabel lbConsulta;
     }
 }
