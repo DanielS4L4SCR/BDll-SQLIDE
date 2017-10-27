@@ -51,7 +51,7 @@ namespace CapaVista
                     lbTabla.DataSource = objDT;
                     lbTabla.DisplayMember = "TABLE_NAME";
                     lbTabla.ValueMember = "TABLE_NAME";
-                    
+
                 }
                 else
                 {
@@ -61,11 +61,12 @@ namespace CapaVista
                     }
 
                     MessageBox.Show("La base de datos selecciona no contiene tablas");
-                    
+
                     lbTabla.Items.Clear();
                 }
             }
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbClock.Text = DateTime.Now.ToLongTimeString();
@@ -200,7 +201,7 @@ namespace CapaVista
             #endregion
             else
             {
-                MessageBox.Show("Máximo de pestañas superado", "SQL MANAGER 2017",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("Máximo de pestañas superado", "SQL MANAGER 2017", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
@@ -209,8 +210,8 @@ namespace CapaVista
         {
             DateTime tiempo1 = DateTime.Now;
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
-            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text)); 
-            if (tabContQuery.SelectedTab==Tab1)
+            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
+            if (tabContQuery.SelectedTab == Tab1)
             {
                 dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
             }
@@ -244,7 +245,7 @@ namespace CapaVista
 
                 if (objDT is null)
                 {
-                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     return;
                 }
                 if (lbTabla.Enabled)
@@ -271,11 +272,12 @@ namespace CapaVista
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
 
                 }
             }
         }
+
         private void button5_Click(object sender, EventArgs e)
         {
             if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
@@ -284,7 +286,7 @@ namespace CapaVista
 
                 if (objDT is null)
                 {
-                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     return;
                 }
                 if (lbTabla.Enabled)
@@ -327,14 +329,15 @@ namespace CapaVista
             cboBD.ValueMember = "DATABASE_NAME";
             cboBD.DisplayMember = "DATABASE_NAME";
         }
-        private void lbColumnas_SelectedIndexChanged(object sender, EventArgs e)
+
+        public void lbColumnas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //columnas.Add(lbColumnas.Text);
+
         }
 
         private void sELECTToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+            DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
             //columnas = new List<string>();
             //if (columnas == null || columnas.Count == 1)
             //{
@@ -347,13 +350,24 @@ namespace CapaVista
             //         resultado += columnas[i] + ", ";
             //    }
             //}
+
+
             if (tabContQuery.SelectedTab == Tab1)
             {
+                string text = "";
+               
+                foreach (object item in lbColumnas.Items)
+                {
+                    text += item.ToString()+", " ;
+                }
                 txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-                 "SELECT " + lbColumnas.Text + Environment.NewLine +
-                 "FROM " + "[" + lbTabla.Text + "]";
-                //columnas = null;
+               "SELECT " + text + Environment.NewLine +
+               "FROM " + "[" + lbTabla.Text + "]";
+
+
             }
+            //columnas = null;
+
             else if (tabContQuery.SelectedTab == tab2)
             {
                 txtQuery2.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
@@ -382,6 +396,7 @@ namespace CapaVista
 
         private void iNSERTToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
             if (tabContQuery.SelectedTab == Tab1)
             {
                 txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
@@ -608,6 +623,7 @@ namespace CapaVista
                 txtQuery5.Text = "Drop Table " + lbTabla.Text;
             }
         }
+
         private void dATABASEToolStripMenuItem5_Click(object sender, EventArgs e)
         {
             if (tabContQuery.SelectedTab == Tab1)
@@ -718,6 +734,8 @@ namespace CapaVista
                 "Alter Column column_name datatype;";
             }
         }
+
+
     }
 }
 
