@@ -335,7 +335,6 @@ namespace CapaVista
 
     private void sELECTToolStripMenuItem1_Click(object sender, EventArgs e)
     {
-
         if (tabContQuery.SelectedTab == Tab1)
         {
             string text = " ";
