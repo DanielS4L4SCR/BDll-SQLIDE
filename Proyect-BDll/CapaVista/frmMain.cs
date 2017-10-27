@@ -20,8 +20,6 @@ namespace CapaVista
         int cont = 0;
 
 
-
-
         public lbTabñas(String instanceName, Form login)
         {
             InitializeComponent();
@@ -212,11 +210,6 @@ namespace CapaVista
         //txt1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
         //txt1.SetKeywords(0, "select into from update delete");
 
-
-
-
-    
-
     private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
     {
         DateTime tiempo1 = DateTime.Now;
@@ -346,15 +339,13 @@ namespace CapaVista
         if (tabContQuery.SelectedTab == Tab1)
         {
             string text = " ";
-
+            
             foreach (DataRowView item in lbColumnas.Items)
             {
-
-                DataRow mierda = item.Row;
-                text += mierda[3].ToString() + ", ";
+               DataRow var = item.Row;
+               text += var[3].ToString() + ", ";
             }
-
-
+            
             txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
            "SELECT " + text + Environment.NewLine +
            "FROM " + "[" + lbTabla.Text + "]";
