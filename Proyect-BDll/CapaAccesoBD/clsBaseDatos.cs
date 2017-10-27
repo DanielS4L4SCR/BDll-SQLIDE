@@ -23,5 +23,5 @@ namespace CapaAccesoBD
             objSQL.CommandText = "sp_databases";
             return new clsConexion(instanceName).Select(objSQL);
         }
-          }
+    }
 }

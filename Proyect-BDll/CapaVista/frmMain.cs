@@ -346,7 +346,6 @@ namespace CapaVista
             //    {
             //         resultado += columnas[i] + ", ";
             //    }
-
             //}
             if (tabContQuery.SelectedTab == Tab1)
             {
