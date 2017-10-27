@@ -339,15 +339,17 @@ namespace CapaVista
         if (tabContQuery.SelectedTab == Tab1)
         {
             string text = " ";
-            
+            string result = " ";
             foreach (DataRowView item in lbColumnas.Items)
             {
                DataRow var = item.Row;
                text += var[3].ToString() + ", ";
+               
+               
             }
-            
-            txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-           "SELECT " + text + Environment.NewLine +
+           result = text.TrimEnd(',',' ');
+           txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+           "SELECT " + result + Environment.NewLine +
            "FROM " + "[" + lbTabla.Text + "]";
 
 
