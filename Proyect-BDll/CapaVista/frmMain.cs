@@ -343,41 +343,69 @@ namespace CapaVista
             foreach (DataRowView item in lbColumnas.Items)
             {
                DataRow var = item.Row;
-               text += var[3].ToString() + ", ";
-               
-               
+               text += var[3].ToString() + ", "; 
             }
            result = text.TrimEnd(',',' ');
            txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
            "SELECT " + result + Environment.NewLine +
            "FROM " + "[" + lbTabla.Text + "]";
-
-
         }
         //columnas = null;
 
         else if (tabContQuery.SelectedTab == tab2)
         {
-            txtQuery2.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "SELECT " + lbColumnas.Text + Environment.NewLine +
+                string text = " ";
+                string result = " ";
+                foreach (DataRowView item in lbColumnas.Items)
+                {
+                    DataRow var = item.Row;
+                    text += var[3].ToString() + ", ";
+                }
+                result = text.TrimEnd(',', ' ');
+                txtQuery2.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+             "SELECT " + result + Environment.NewLine +
              "FROM " + "[" + lbTabla.Text + "]";
         }
         else if (tabContQuery.SelectedTab == tab3)
         {
-            txtQuery3.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "SELECT " + lbColumnas.Text + Environment.NewLine +
+                string text = " ";
+                string result = " ";
+                foreach (DataRowView item in lbColumnas.Items)
+                {
+                    DataRow var = item.Row;
+                    text += var[3].ToString() + ", ";
+                }
+                result = text.TrimEnd(',', ' ');
+                txtQuery3.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+             "SELECT " + result + Environment.NewLine +
              "FROM " + "[" + lbTabla.Text + "]";
         }
         else if (tabContQuery.SelectedTab == tab4)
         {
-            txtQuery4.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "SELECT " + lbColumnas.Text + Environment.NewLine +
+                string text = " ";
+                string result = " ";
+                foreach (DataRowView item in lbColumnas.Items)
+                {
+                    DataRow var = item.Row;
+                    text += var[3].ToString() + ", ";
+                }
+                result = text.TrimEnd(',', ' ');
+                txtQuery4.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+             "SELECT " + result + Environment.NewLine +
              "FROM " + "[" + lbTabla.Text + "]";
         }
         else if (tabContQuery.SelectedTab == tab5)
         {
-            txtQuery5.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "SELECT " + lbColumnas.Text + Environment.NewLine +
+                string text = " ";
+                string result = " ";
+                foreach (DataRowView item in lbColumnas.Items)
+                {
+                    DataRow var = item.Row;
+                    text += var[3].ToString() + ", ";
+                }
+                result = text.TrimEnd(',', ' ');
+                txtQuery5.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+             "SELECT " + result + Environment.NewLine +
              "FROM " + "[" + lbTabla.Text + "]";
         }
     }
