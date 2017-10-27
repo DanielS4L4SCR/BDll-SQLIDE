@@ -1,4 +1,6 @@
-﻿namespace CapaVista
+﻿using MetroFramework;
+using ScintillaNET;
+namespace CapaVista
 {
     partial class lbTabñas
     {
@@ -49,19 +51,19 @@
             this.tabQuery1 = new System.Windows.Forms.TabControl();
             this.tab5 = new MetroFramework.Controls.MetroTabPage();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtQuery5 = new System.Windows.Forms.TextBox();
+            this.txtQuery5 = new ScintillaNET.Scintilla();
             this.tab4 = new MetroFramework.Controls.MetroTabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtQuery4 = new System.Windows.Forms.TextBox();
+            this.txtQuery4 = new ScintillaNET.Scintilla();
             this.tab3 = new MetroFramework.Controls.MetroTabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtQuery3 = new System.Windows.Forms.TextBox();
+            this.txtQuery3 = new ScintillaNET.Scintilla();
             this.tab2 = new MetroFramework.Controls.MetroTabPage();
             this.button3 = new System.Windows.Forms.Button();
-            this.txtQuery2 = new System.Windows.Forms.TextBox();
+            this.txtQuery2 = new ScintillaNET.Scintilla();
             this.Tab1 = new MetroFramework.Controls.MetroTabPage();
             this.button4 = new System.Windows.Forms.Button();
-            this.txtQuery1 = new System.Windows.Forms.TextBox();
+            this.txtQuery1 = new ScintillaNET.Scintilla();
             this.tabContQuery = new MetroFramework.Controls.MetroTabControl();
             this.boxSnippet = new System.Windows.Forms.GroupBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -139,7 +141,7 @@
             this.lbColumnas.Name = "lbColumnas";
             this.lbColumnas.Size = new System.Drawing.Size(152, 187);
             this.lbColumnas.TabIndex = 0;
-            this.lbColumnas.SelectedIndexChanged += new System.EventHandler(this.lbColumnas_SelectedIndexChanged);
+          
             // 
             // gbBD
             // 
@@ -288,10 +290,15 @@
             // 
             this.txtQuery5.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery5.Location = new System.Drawing.Point(1, 11);
-            this.txtQuery5.Multiline = true;
             this.txtQuery5.Name = "txtQuery5";
             this.txtQuery5.Size = new System.Drawing.Size(668, 335);
             this.txtQuery5.TabIndex = 12;
+            this.txtQuery5.Margins[0].Width = 20;
+            this.txtQuery5.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
+            this.txtQuery5.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
+            this.txtQuery5.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
+            this.txtQuery5.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
+            this.txtQuery5.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
             // 
             // tab4
             // 
@@ -330,10 +337,15 @@
             // 
             this.txtQuery4.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery4.Location = new System.Drawing.Point(1, 11);
-            this.txtQuery4.Multiline = true;
             this.txtQuery4.Name = "txtQuery4";
             this.txtQuery4.Size = new System.Drawing.Size(668, 335);
             this.txtQuery4.TabIndex = 12;
+            this.txtQuery4.Margins[0].Width = 20;
+            this.txtQuery4.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
+            this.txtQuery4.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
+            this.txtQuery4.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
+            this.txtQuery4.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
+            this.txtQuery4.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
             // 
             // tab3
             // 
@@ -372,10 +384,15 @@
             // 
             this.txtQuery3.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery3.Location = new System.Drawing.Point(1, 11);
-            this.txtQuery3.Multiline = true;
             this.txtQuery3.Name = "txtQuery3";
             this.txtQuery3.Size = new System.Drawing.Size(668, 335);
             this.txtQuery3.TabIndex = 12;
+            this.txtQuery3.Margins[0].Width = 20;
+            this.txtQuery3.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
+            this.txtQuery3.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
+            this.txtQuery3.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
+            this.txtQuery3.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
+            this.txtQuery3.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
             // 
             // tab2
             // 
@@ -414,10 +431,15 @@
             // 
             this.txtQuery2.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery2.Location = new System.Drawing.Point(1, 11);
-            this.txtQuery2.Multiline = true;
             this.txtQuery2.Name = "txtQuery2";
             this.txtQuery2.Size = new System.Drawing.Size(668, 335);
             this.txtQuery2.TabIndex = 12;
+            this.txtQuery2.Margins[0].Width = 20;
+            this.txtQuery2.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
+            this.txtQuery2.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
+            this.txtQuery2.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
+            this.txtQuery2.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
+            this.txtQuery2.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
             // 
             // Tab1
             // 
@@ -457,10 +479,16 @@
             this.txtQuery1.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuery1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtQuery1.Location = new System.Drawing.Point(1, 11);
-            this.txtQuery1.Multiline = true;
             this.txtQuery1.Name = "txtQuery1";
-            this.txtQuery1.Size = new System.Drawing.Size(668, 335);
+            this.txtQuery1.Size = new System.Drawing.Size(668, 343);
             this.txtQuery1.TabIndex = 13;
+            this.txtQuery1.Margins[0].Width = 20;
+            this.txtQuery1.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
+            this.txtQuery1.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
+            this.txtQuery1.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
+            this.txtQuery1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
+            this.txtQuery1.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
+
             // 
             // tabContQuery
             // 
@@ -471,7 +499,7 @@
             this.tabContQuery.Controls.Add(this.tab5);
             this.tabContQuery.Location = new System.Drawing.Point(189, 153);
             this.tabContQuery.Name = "tabContQuery";
-            this.tabContQuery.SelectedIndex = 4;
+            this.tabContQuery.SelectedIndex = 0;
             this.tabContQuery.Size = new System.Drawing.Size(679, 399);
             this.tabContQuery.Style = MetroFramework.MetroColorStyle.Green;
             this.tabContQuery.TabIndex = 11;
@@ -542,34 +570,34 @@
             this.uPDATEToolStripMenuItem1,
             this.dELETEToolStripMenuItem1});
             this.dMLToolStripMenuItem1.Name = "dMLToolStripMenuItem1";
-            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.dMLToolStripMenuItem1.Text = "DML";
             // 
             // sELECTToolStripMenuItem1
             // 
             this.sELECTToolStripMenuItem1.Name = "sELECTToolStripMenuItem1";
-            this.sELECTToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.sELECTToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.sELECTToolStripMenuItem1.Text = "SELECT";
             this.sELECTToolStripMenuItem1.Click += new System.EventHandler(this.sELECTToolStripMenuItem1_Click);
             // 
             // iNSERTToolStripMenuItem1
             // 
             this.iNSERTToolStripMenuItem1.Name = "iNSERTToolStripMenuItem1";
-            this.iNSERTToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.iNSERTToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.iNSERTToolStripMenuItem1.Text = "INSERT";
             this.iNSERTToolStripMenuItem1.Click += new System.EventHandler(this.iNSERTToolStripMenuItem1_Click);
             // 
             // uPDATEToolStripMenuItem1
             // 
             this.uPDATEToolStripMenuItem1.Name = "uPDATEToolStripMenuItem1";
-            this.uPDATEToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.uPDATEToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.uPDATEToolStripMenuItem1.Text = "UPDATE";
             this.uPDATEToolStripMenuItem1.Click += new System.EventHandler(this.uPDATEToolStripMenuItem1_Click);
             // 
             // dELETEToolStripMenuItem1
             // 
             this.dELETEToolStripMenuItem1.Name = "dELETEToolStripMenuItem1";
-            this.dELETEToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.dELETEToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.dELETEToolStripMenuItem1.Text = "DELETE";
             this.dELETEToolStripMenuItem1.Click += new System.EventHandler(this.dELETEToolStripMenuItem1_Click);
             // 
@@ -580,7 +608,7 @@
             this.dROPToolStripMenuItem1,
             this.aLTERToolStripMenuItem1});
             this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
-            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.dDLToolStripMenuItem.Text = "DDL";
             // 
             // cREATEToolStripMenuItem1
@@ -784,15 +812,10 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tab5.ResumeLayout(false);
-            this.tab5.PerformLayout();
             this.tab4.ResumeLayout(false);
-            this.tab4.PerformLayout();
             this.tab3.ResumeLayout(false);
-            this.tab3.PerformLayout();
             this.tab2.ResumeLayout(false);
-            this.tab2.PerformLayout();
             this.Tab1.ResumeLayout(false);
-            this.Tab1.PerformLayout();
             this.tabContQuery.ResumeLayout(false);
             this.boxSnippet.ResumeLayout(false);
             this.boxSnippet.PerformLayout();
@@ -819,19 +842,19 @@
         private System.Windows.Forms.TabControl tabQuery1;
         private MetroFramework.Controls.MetroTabPage tab5;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox txtQuery5;
+        private Scintilla txtQuery5;
         private MetroFramework.Controls.MetroTabPage tab4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtQuery4;
+        private Scintilla txtQuery4;
         private MetroFramework.Controls.MetroTabPage tab3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtQuery3;
+        private Scintilla txtQuery3;
         private MetroFramework.Controls.MetroTabPage tab2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txtQuery2;
+        private Scintilla txtQuery2;
         private MetroFramework.Controls.MetroTabPage Tab1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox txtQuery1;
+        private Scintilla txtQuery1;
         private MetroFramework.Controls.MetroTabControl tabContQuery;
         private MetroFramework.Controls.MetroLabel lbClock;
         private System.Windows.Forms.GroupBox boxSnippet;
@@ -864,5 +887,7 @@
         private System.Windows.Forms.ToolStripMenuItem dROPCOLUMNToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aLTERCOLUMNToolStripMenuItem1;
         private MetroFramework.Controls.MetroLabel lbConsulta;
+
+
     }
 }
