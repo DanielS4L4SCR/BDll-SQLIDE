@@ -19,7 +19,6 @@ namespace CapaVista
         List<TabPage> AllTabPages = new List<TabPage>();
         int cont = 0;
 
-
         public lbTabñas(String instanceName, Form login)
         {
             InitializeComponent();
@@ -202,7 +201,7 @@ namespace CapaVista
                 MessageBox.Show("Máximo de pestañas superado");
             }
         }
-        
+
         //txt1.Dock = DockStyle.Fill;
         //txt1.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
         //txt1.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
@@ -210,548 +209,537 @@ namespace CapaVista
         //txt1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
         //txt1.SetKeywords(0, "select into from update delete");
 
-    private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        DateTime tiempo1 = DateTime.Now;
-        CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
-        SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
-        if (tabContQuery.SelectedTab == Tab1)
+        private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
-        }
-        DateTime tiempo2 = DateTime.Now;
-        TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
-        lbConsulta.Text = "Tiempo de consulta: " + total.ToString();
-
-    }
-
-    private void lbTabla_DoubleClick(object sender, EventArgs e)
-    {
-        if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
-        {
-            DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
-
-            if (objDT is null)
+            DateTime tiempo1 = DateTime.Now;
+            CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
+            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
+            if (tabContQuery.SelectedTab == Tab1)
             {
-                MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                return;
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
             }
-            if (lbTabla.Enabled)
+            else if (tabContQuery.SelectedTab == tab2)
             {
-                if (objDT.Rows.Count > 0)
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
+            }
+            DateTime tiempo2 = DateTime.Now;
+            TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
+            lbConsulta.Text = "Tiempo de consulta: " + total.ToString();
+
+        }
+
+        private void lbTabla_DoubleClick(object sender, EventArgs e)
+        {
+            if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
+            {
+                DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+
+                if (objDT is null)
                 {
-                    lbColumnas.ClearSelected();
-                    lbColumnas.Enabled = true;
-                    lbColumnas.DisplayMember = "COLUMN_NAME";
-                    lbColumnas.ValueMember = "COLUMN_NAME";
-                    lbColumnas.DataSource = objDT;
+                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    return;
+                }
+                if (lbTabla.Enabled)
+                {
+                    if (objDT.Rows.Count > 0)
+                    {
+                        lbColumnas.ClearSelected();
+                        lbColumnas.Enabled = true;
+                        lbColumnas.DisplayMember = "COLUMN_NAME";
+                        lbColumnas.ValueMember = "COLUMN_NAME";
+                        lbColumnas.DataSource = objDT;
 
-                    DataTable Dt = new CapaLogica.clsTablas().Registro(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+                        DataTable Dt = new CapaLogica.clsTablas().Registro(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
 
-                    dgvInfo.DataSource = Dt;
+                        dgvInfo.DataSource = Dt;
 
+                    }
+                    else
+                    {
+                        lbTabla.DataSource = objDT;
+                        lbColumnas.Enabled = false;
+                        lbColumnas.DataSource = null;
+                    }
                 }
                 else
                 {
-                    lbTabla.DataSource = objDT;
-                    lbColumnas.Enabled = false;
-                    lbColumnas.DataSource = null;
+                    MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
+            {
+                DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+
+                if (objDT is null)
+                {
+                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    return;
+                }
+                if (lbTabla.Enabled)
+                {
+                    if (objDT.Rows.Count > 0)
+                    {
+                        lbColumnas.ClearSelected();
+                        lbColumnas.Enabled = true;
+                        lbColumnas.DisplayMember = "COLUMN_NAME";
+                        lbColumnas.ValueMember = "COLUMN_NAME";
+                        lbColumnas.DataSource = objDT;
+                    }
+                    else
+                    {
+                        lbTabla.DataSource = objDT;
+                        lbColumnas.Enabled = false;
+                        lbColumnas.DataSource = null;
+                    }
+
                 }
             }
             else
             {
                 MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
-
             }
         }
-    }
 
-    private void button5_Click(object sender, EventArgs e)
-    {
-        if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
+        private void button5_Click_1(object sender, EventArgs e)
         {
-            DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
-
-            if (objDT is null)
-            {
-                MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                return;
-            }
-            if (lbTabla.Enabled)
-            {
-                if (objDT.Rows.Count > 0)
-                {
-                    lbColumnas.ClearSelected();
-                    lbColumnas.Enabled = true;
-                    lbColumnas.DisplayMember = "COLUMN_NAME";
-                    lbColumnas.ValueMember = "COLUMN_NAME";
-                    lbColumnas.DataSource = objDT;
-                }
-                else
-                {
-                    lbTabla.DataSource = objDT;
-                    lbColumnas.Enabled = false;
-                    lbColumnas.DataSource = null;
-                }
-
-            }
+            cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
+            cboBD.ValueMember = "DATABASE_NAME";
+            cboBD.DisplayMember = "DATABASE_NAME";
         }
-        else
+
+        private void cboBD_DropDown(object sender, EventArgs e)
         {
-            MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+            cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
+            cboBD.ValueMember = "DATABASE_NAME";
+            cboBD.DisplayMember = "DATABASE_NAME";
         }
-    }
 
-    private void button5_Click_1(object sender, EventArgs e)
-    {
-        cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
-        cboBD.ValueMember = "DATABASE_NAME";
-        cboBD.DisplayMember = "DATABASE_NAME";
-    }
-
-    private void cboBD_DropDown(object sender, EventArgs e)
-    {
-        cboBD.DataSource = new CapaLogica.clsBaseDatos().BaseDatos(instanceName);
-        cboBD.ValueMember = "DATABASE_NAME";
-        cboBD.DisplayMember = "DATABASE_NAME";
-    }
-
-
-    private void sELECTToolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
+        private void sELECTToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             string text = " ";
             string result = " ";
+
             foreach (DataRowView item in lbColumnas.Items)
             {
-               DataRow var = item.Row;
-               text += var[3].ToString() + ", "; 
+                DataRow var = item.Row;
+                text += var[3].ToString() + ", ";
             }
-           result = text.TrimEnd(',',' ');
-           txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-           "SELECT " + result + Environment.NewLine +
-           "FROM " + "[" + lbTabla.Text + "]";
-        }
-        //columnas = null;
 
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-                string text = " ";
-                string result = " ";
-                foreach (DataRowView item in lbColumnas.Items)
-                {
-                    DataRow var = item.Row;
-                    text += var[3].ToString() + ", ";
-                }
-                result = text.TrimEnd(',', ' ');
+            result = text.TrimEnd(',', ' ');
+
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
+                "SELECT " + result + Environment.NewLine +
+                "FROM " + "[" + lbTabla.Text + "]";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
                 txtQuery2.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "SELECT " + result + Environment.NewLine +
-             "FROM " + "[" + lbTabla.Text + "]";
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-                string text = " ";
-                string result = " ";
-                foreach (DataRowView item in lbColumnas.Items)
-                {
-                    DataRow var = item.Row;
-                    text += var[3].ToString() + ", ";
-                }
-                result = text.TrimEnd(',', ' ');
+                "SELECT " + result + Environment.NewLine +
+                 "FROM " + "[" + lbTabla.Text + "]";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
                 txtQuery3.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "SELECT " + result + Environment.NewLine +
-             "FROM " + "[" + lbTabla.Text + "]";
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-                string text = " ";
-                string result = " ";
-                foreach (DataRowView item in lbColumnas.Items)
-                {
-                    DataRow var = item.Row;
-                    text += var[3].ToString() + ", ";
-                }
-                result = text.TrimEnd(',', ' ');
+                "SELECT " + result + Environment.NewLine +
+                "FROM " + "[" + lbTabla.Text + "]";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
                 txtQuery4.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "SELECT " + result + Environment.NewLine +
-             "FROM " + "[" + lbTabla.Text + "]";
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-                string text = " ";
-                string result = " ";
-                foreach (DataRowView item in lbColumnas.Items)
-                {
-                    DataRow var = item.Row;
-                    text += var[3].ToString() + ", ";
-                }
-                result = text.TrimEnd(',', ' ');
+                "SELECT " + result + Environment.NewLine +
+                "FROM " + "[" + lbTabla.Text + "]";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
                 txtQuery5.Text = "use" + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "SELECT " + result + Environment.NewLine +
-             "FROM " + "[" + lbTabla.Text + "]";
+                "SELECT " + result + Environment.NewLine +
+                "FROM " + "[" + lbTabla.Text + "]";
+            }
         }
+
+        private void iNSERTToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string text = " ";
+            string result = " ";
+
+            foreach (DataRowView item in lbColumnas.Items)
+            {
+                DataRow var = item.Row;
+                text += var[3].ToString() + ", ";
+            }
+
+            result = text.TrimEnd(',', ' ');
+
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                 "Insert Into [dbo].[" + lbTabla.Text + "] " + "("+ result + ") " + Environment.NewLine +
+                 "Values " + Environment.NewLine + "() ";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result + ") " + Environment.NewLine +
+                "Values " + Environment.NewLine + "() ";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result+ ") " + Environment.NewLine +
+                 "Values " + Environment.NewLine + "() ";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result + ") " + Environment.NewLine +
+                "Values " + Environment.NewLine + "() ";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result+ ") " + Environment.NewLine +
+                "Values " + Environment.NewLine + "() ";
+            }
+        }
+
+        private void uPDATEToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string text = " ";
+            string result = " ";
+
+            foreach (DataRowView item in lbColumnas.Items)
+            {
+                DataRow var = item.Row;
+                text += var[3].ToString() + ", ";
+            }
+
+            result = text.TrimEnd(',', ' ');
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + "(" + result+ ")" + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + "(" +result+ ")" + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                 "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + "(" + result + ")" + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + "(" + result + ")" + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                  "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Set " + result + " = " + Environment.NewLine +
+                  "Where " + Environment.NewLine;
+            }
+        }
+
+        private void dELETEToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
+                   "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
+                  "Where <ingrese condiciones>" + Environment.NewLine;
+            }
+        }
+
+        private void dATABASEToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "CREATE DATABASE databasename";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "CREATE DATABASE databasename";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "CREATE DATABASE databasename";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "CREATE DATABASE databasename";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "CREATE DATABASE databasename";
+            }
+        }
+
+        private void tABLEToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                "column1 datatype," + Environment.NewLine +
+                "column2 datatype," + Environment.NewLine +
+                "column3 datatype" + Environment.NewLine +
+                 "...." + Environment.NewLine +
+                ")" + Environment.NewLine;
+            }
+        }
+
+        private void dATABASEToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Drop Database " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Drop Database " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Drop Database " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Drop Database " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Drop Database " + cboBD.Text;
+            }
+        }
+
+        private void tABLEToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Drop Table " + lbTabla.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Drop Table " + lbTabla.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Drop Table " + lbTabla.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Drop Table " + lbTabla.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Drop Table " + lbTabla.Text;
+            }
+        }
+
+        private void dATABASEToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Modify Name = " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Modify Name = " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Modify Name = " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Modify Name = " + cboBD.Text;
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Modify Name = " + cboBD.Text;
+            }
+        }
+
+        private void aDDCOLUMNToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Add column_name datatype;";
+            }
+        }
+
+        private void dROPCOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Drop Column column_name datatype;";
+            }
+        }
+
+        private void aLTERCOLUMNToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (tabContQuery.SelectedTab == Tab1)
+            {
+                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab2)
+            {
+                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab3)
+            {
+                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab4)
+            {
+                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+            else if (tabContQuery.SelectedTab == tab5)
+            {
+                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
+                "Alter Column column_name datatype;";
+            }
+        }
+
+
     }
-
-    private void iNSERTToolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-              "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
-             "Values " + Environment.NewLine + "() ";
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-              "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
-             "Values " + Environment.NewLine + "() ";
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-              "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
-             "Values " + Environment.NewLine + "() ";
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-              "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
-             "Values " + Environment.NewLine + "() ";
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-              "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + lbColumnas.Text + ") " + Environment.NewLine +
-             "Values " + Environment.NewLine + "() ";
-        }
-    }
-
-    private void uPDATEToolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-               "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Set " + "(" + lbColumnas.Text + ")" + " = " + Environment.NewLine +
-              "Where " + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-              "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Set " + "(" + lbColumnas.Text + ")" + " = " + Environment.NewLine +
-              "Where " + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-             "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Set " + "(" + lbColumnas.Text + ")" + " = " + Environment.NewLine +
-              "Where " + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-              "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Set " + "(" + lbColumnas.Text + ")" + " = " + Environment.NewLine +
-              "Where " + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-              "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Set " + lbColumnas.Text + " = " + Environment.NewLine +
-              "Where " + Environment.NewLine;
-        }
-    }
-
-    private void dELETEToolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-               "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Where <ingrese condiciones>" + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-               "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Where <ingrese condiciones>" + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-               "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Where <ingrese condiciones>" + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-               "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Where <ingrese condiciones>" + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-               "Delete From [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-              "Where <ingrese condiciones>" + Environment.NewLine;
-        }
-    }
-
-    private void dATABASEToolStripMenuItem3_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "CREATE DATABASE databasename";
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "CREATE DATABASE databasename";
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "CREATE DATABASE databasename";
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "CREATE DATABASE databasename";
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "CREATE DATABASE databasename";
-        }
-    }
-
-    private void tABLEToolStripMenuItem2_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
-            "column1 datatype," + Environment.NewLine +
-            "column2 datatype," + Environment.NewLine +
-            "column3 datatype" + Environment.NewLine +
-             "...." + Environment.NewLine +
-            ")" + Environment.NewLine;
-
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
-            "column1 datatype," + Environment.NewLine +
-            "column2 datatype," + Environment.NewLine +
-            "column3 datatype" + Environment.NewLine +
-             "...." + Environment.NewLine +
-            ")" + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
-            "column1 datatype," + Environment.NewLine +
-            "column2 datatype," + Environment.NewLine +
-            "column3 datatype" + Environment.NewLine +
-             "...." + Environment.NewLine +
-            ")" + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
-            "column1 datatype," + Environment.NewLine +
-            "column2 datatype," + Environment.NewLine +
-            "column3 datatype" + Environment.NewLine +
-             "...." + Environment.NewLine +
-            ")" + Environment.NewLine;
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
-            "column1 datatype," + Environment.NewLine +
-            "column2 datatype," + Environment.NewLine +
-            "column3 datatype" + Environment.NewLine +
-             "...." + Environment.NewLine +
-            ")" + Environment.NewLine;
-        }
-    }
-
-    private void dATABASEToolStripMenuItem4_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "Drop Database " + cboBD.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "Drop Database " + cboBD.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "Drop Database " + cboBD.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "Drop Database " + cboBD.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "Drop Database " + cboBD.Text;
-        }
-    }
-
-    private void tABLEToolStripMenuItem3_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "Drop Table " + lbTabla.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "Drop Table " + lbTabla.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "Drop Table " + lbTabla.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "Drop Table " + lbTabla.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "Drop Table " + lbTabla.Text;
-        }
-    }
-
-    private void dATABASEToolStripMenuItem5_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "Modify Name = " + cboBD.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "Modify Name = " + cboBD.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "Modify Name = " + cboBD.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "Modify Name = " + cboBD.Text;
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "Modify Name = " + cboBD.Text;
-        }
-    }
-
-    private void aDDCOLUMNToolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Add column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Add column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Add column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Add column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Add column_name datatype;";
-        }
-    }
-
-    private void dROPCOLUMNToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Drop Column column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Drop Column column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Drop Column column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Drop Column column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Drop Column column_name datatype;";
-        }
-    }
-
-    private void aLTERCOLUMNToolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-        if (tabContQuery.SelectedTab == Tab1)
-        {
-            txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Alter Column column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab2)
-        {
-            txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Alter Column column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab3)
-        {
-            txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Alter Column column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab4)
-        {
-            txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Alter Column column_name datatype;";
-        }
-        else if (tabContQuery.SelectedTab == tab5)
-        {
-            txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-            "Alter Column column_name datatype;";
-        }
-    }
-
-
-}
 }
 
 
