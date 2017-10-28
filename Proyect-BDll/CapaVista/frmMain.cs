@@ -19,6 +19,8 @@ namespace CapaVista
         List<TabPage> AllTabPages = new List<TabPage>();
         int cont = 0;
 
+        
+
         public lbTabñas(String instanceName, Form login)
         {
             InitializeComponent();
@@ -164,34 +166,80 @@ namespace CapaVista
 
         #endregion
 
+       
         private void nuevoQueryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (cont == 0)
             {
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery1.Margins[0].Width = 20;
+                this.txtQuery1.Dock = DockStyle.Fill;
+                this.txtQuery1.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
+                this.txtQuery1.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
+                this.txtQuery1.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
+                this.txtQuery1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
+                this.txtQuery1.SetKeywords(0, @"select into from update delete");
                 ShowTabPage(Tab1);
                 Tab1.Show();
                 cont = cont + 1;
             }
             else if (cont == 1)
             {
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery2.Margins[0].Width = 20;
+                this.txtQuery2.Dock = DockStyle.Fill;
+                this.txtQuery2.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
+                this.txtQuery2.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
+                this.txtQuery2.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
+                this.txtQuery2.Styles[ScintillaNET.Style.Sql.Identifier].ForeColor = Color.Blue;
+                this.txtQuery2.SetKeywords(0, "select into from update delete");
                 ShowTabPage(tab2);
                 tab2.Show();
                 cont = cont + 1;
             }
             else if (cont == 2)
             {
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery3.Margins[0].Width = 20;
+                this.txtQuery3.Dock = DockStyle.Fill;
+                this.txtQuery3.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
+                this.txtQuery3.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
+                this.txtQuery3.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
+                this.txtQuery3.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
+                this.txtQuery3.SetKeywords(0, "select into from update delete");
                 ShowTabPage(tab3);
                 tab3.Show();
                 cont = cont + 1;
             }
             else if (cont == 3)
             {
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery4.Margins[0].Width = 20;
+                this.txtQuery4.Dock = DockStyle.Fill;
+                this.txtQuery4.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
+                this.txtQuery4.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
+                this.txtQuery4.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
+                this.txtQuery4.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
+                this.txtQuery4.SetKeywords(0, "select into from update delete");
                 ShowTabPage(tab4);
                 tab4.Show();
                 cont = cont + 1;
             }
             else if (cont == 4)
             {
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery5.Margins[0].Width = 20;
+                this.txtQuery5.Dock = DockStyle.Fill;
+                this.txtQuery5.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
+                this.txtQuery5.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
+                this.txtQuery5.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
+                this.txtQuery5.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
+                this.txtQuery5.SetKeywords(0, "select into from update delete");
                 ShowTabPage(tab5);
                 tab5.Show();
                 cont = cont + 1;
@@ -201,13 +249,6 @@ namespace CapaVista
                 MessageBox.Show("Máximo de pestañas superado");
             }
         }
-
-        //txt1.Dock = DockStyle.Fill;
-        //txt1.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
-        //txt1.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
-        //txt1.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
-        //txt1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
-        //txt1.SetKeywords(0, "select into from update delete");
 
         private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -738,7 +779,10 @@ namespace CapaVista
             }
         }
 
-
+        private void txtQuery1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
 

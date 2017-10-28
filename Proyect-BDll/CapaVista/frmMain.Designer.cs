@@ -141,7 +141,6 @@ namespace CapaVista
             this.lbColumnas.Name = "lbColumnas";
             this.lbColumnas.Size = new System.Drawing.Size(152, 187);
             this.lbColumnas.TabIndex = 0;
-          
             // 
             // gbBD
             // 
@@ -288,17 +287,12 @@ namespace CapaVista
             // 
             // txtQuery5
             // 
+            this.txtQuery5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery5.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery5.Location = new System.Drawing.Point(1, 11);
             this.txtQuery5.Name = "txtQuery5";
             this.txtQuery5.Size = new System.Drawing.Size(668, 335);
             this.txtQuery5.TabIndex = 12;
-            this.txtQuery5.Margins[0].Width = 20;
-            this.txtQuery5.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
-            this.txtQuery5.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
-            this.txtQuery5.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
-            this.txtQuery5.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
-            this.txtQuery5.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
             // 
             // tab4
             // 
@@ -335,17 +329,12 @@ namespace CapaVista
             // 
             // txtQuery4
             // 
+            this.txtQuery4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery4.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery4.Location = new System.Drawing.Point(1, 11);
             this.txtQuery4.Name = "txtQuery4";
             this.txtQuery4.Size = new System.Drawing.Size(668, 335);
             this.txtQuery4.TabIndex = 12;
-            this.txtQuery4.Margins[0].Width = 20;
-            this.txtQuery4.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
-            this.txtQuery4.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
-            this.txtQuery4.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
-            this.txtQuery4.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
-            this.txtQuery4.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
             // 
             // tab3
             // 
@@ -382,17 +371,12 @@ namespace CapaVista
             // 
             // txtQuery3
             // 
+            this.txtQuery3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery3.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery3.Location = new System.Drawing.Point(1, 11);
             this.txtQuery3.Name = "txtQuery3";
             this.txtQuery3.Size = new System.Drawing.Size(668, 335);
             this.txtQuery3.TabIndex = 12;
-            this.txtQuery3.Margins[0].Width = 20;
-            this.txtQuery3.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
-            this.txtQuery3.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
-            this.txtQuery3.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
-            this.txtQuery3.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
-            this.txtQuery3.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
             // 
             // tab2
             // 
@@ -429,17 +413,12 @@ namespace CapaVista
             // 
             // txtQuery2
             // 
+            this.txtQuery2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery2.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
             this.txtQuery2.Location = new System.Drawing.Point(1, 11);
             this.txtQuery2.Name = "txtQuery2";
             this.txtQuery2.Size = new System.Drawing.Size(668, 335);
             this.txtQuery2.TabIndex = 12;
-            this.txtQuery2.Margins[0].Width = 20;
-            this.txtQuery2.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
-            this.txtQuery2.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
-            this.txtQuery2.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
-            this.txtQuery2.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
-            this.txtQuery2.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
             // 
             // Tab1
             // 
@@ -476,19 +455,14 @@ namespace CapaVista
             // 
             // txtQuery1
             // 
+            this.txtQuery1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery1.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuery1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtQuery1.Location = new System.Drawing.Point(1, 11);
             this.txtQuery1.Name = "txtQuery1";
             this.txtQuery1.Size = new System.Drawing.Size(668, 343);
             this.txtQuery1.TabIndex = 13;
-            this.txtQuery1.Margins[0].Width = 20;
-            this.txtQuery1.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = MetroColors.Green;
-            this.txtQuery1.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = MetroColors.Green;
-            this.txtQuery1.Styles[ScintillaNET.Style.Sql.String].ForeColor = MetroColors.Red;
-            this.txtQuery1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = MetroColors.Blue;
-            this.txtQuery1.SetKeywords(0, "from into select insert create database index and or view set begin end while if declare drop table as char varChar int return alter");
-
+            this.txtQuery1.Click += new System.EventHandler(this.txtQuery1_Click);
             // 
             // tabContQuery
             // 
