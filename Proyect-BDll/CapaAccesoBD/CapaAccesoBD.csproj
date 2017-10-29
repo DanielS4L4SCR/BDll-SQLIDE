@@ -60,6 +60,7 @@
     <Compile Include="clsBaseDatos.cs" />
     <Compile Include="clsColumnas.cs" />
     <Compile Include="clsConexion.cs" />
+    <Compile Include="clsIndices.cs" />
     <Compile Include="clsTabla.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -19,8 +19,6 @@ namespace CapaVista
         List<TabPage> AllTabPages = new List<TabPage>();
         int cont = 0;
 
-        
-
         public lbTabñas(String instanceName, Form login)
         {
             InitializeComponent();
@@ -166,7 +164,7 @@ namespace CapaVista
 
         #endregion
 
-       
+
         private void nuevoQueryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (cont == 0)
@@ -186,8 +184,8 @@ namespace CapaVista
             }
             else if (cont == 1)
             {
-                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
-                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery2.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery2.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery2.Margins[0].Width = 20;
                 this.txtQuery2.Dock = DockStyle.Fill;
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
@@ -201,8 +199,8 @@ namespace CapaVista
             }
             else if (cont == 2)
             {
-                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
-                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery3.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery3.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery3.Margins[0].Width = 20;
                 this.txtQuery3.Dock = DockStyle.Fill;
                 this.txtQuery3.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
@@ -216,8 +214,8 @@ namespace CapaVista
             }
             else if (cont == 3)
             {
-                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
-                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery4.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery4.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery4.Margins[0].Width = 20;
                 this.txtQuery4.Dock = DockStyle.Fill;
                 this.txtQuery4.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
@@ -231,8 +229,8 @@ namespace CapaVista
             }
             else if (cont == 4)
             {
-                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
-                this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
+                this.txtQuery5.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
+                this.txtQuery5.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery5.Margins[0].Width = 20;
                 this.txtQuery5.Dock = DockStyle.Fill;
                 this.txtQuery5.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
@@ -255,29 +253,47 @@ namespace CapaVista
             DateTime tiempo1 = DateTime.Now;
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
             SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
-            if (tabContQuery.SelectedTab == Tab1)
+
+            if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
             {
-                dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+                if (objDT is null)
+                {
+                    MessageBox.Show("No existen indices para esta tabla", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    return;
+                }
+                 if (tabContQuery.SelectedTab == Tab1)
+                {
+                    if (sELECTToolStripMenuItem1.Enabled)
+                    {
+                        dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                    }
+                }
+
+                else if (tabContQuery.SelectedTab == tab2)
+                {
+                    dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                }
+                else if (tabContQuery.SelectedTab == tab3)
+                {
+                    dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+                }
+                else if (tabContQuery.SelectedTab == tab4)
+                {
+                    dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+                }
+                else if (tabContQuery.SelectedTab == tab5)
+                {
+                    dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
+                }
+                DateTime tiempo2 = DateTime.Now;
+                TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
+                lbConsulta.Text = "Tiempo de consulta: " + total.ToString();
             }
-            else if (tabContQuery.SelectedTab == tab2)
+            else
             {
-                dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                MessageBox.Show("No ha seleccionado una base de datos");
             }
-            else if (tabContQuery.SelectedTab == tab3)
-            {
-                dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
-            }
-            else if (tabContQuery.SelectedTab == tab4)
-            {
-                dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
-            }
-            else if (tabContQuery.SelectedTab == tab5)
-            {
-                dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
-            }
-            DateTime tiempo2 = DateTime.Now;
-            TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
-            lbConsulta.Text = "Tiempo de consulta: " + total.ToString();
 
         }
 
@@ -433,7 +449,7 @@ namespace CapaVista
             if (tabContQuery.SelectedTab == Tab1)
             {
                 txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-                 "Insert Into [dbo].[" + lbTabla.Text + "] " + "("+ result + ") " + Environment.NewLine +
+                 "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result + ") " + Environment.NewLine +
                  "Values " + Environment.NewLine + "() ";
             }
             else if (tabContQuery.SelectedTab == tab2)
@@ -445,7 +461,7 @@ namespace CapaVista
             else if (tabContQuery.SelectedTab == tab3)
             {
                 txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-                  "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result+ ") " + Environment.NewLine +
+                  "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result + ") " + Environment.NewLine +
                  "Values " + Environment.NewLine + "() ";
             }
             else if (tabContQuery.SelectedTab == tab4)
@@ -457,7 +473,7 @@ namespace CapaVista
             else if (tabContQuery.SelectedTab == tab5)
             {
                 txtQuery5.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
-                "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result+ ") " + Environment.NewLine +
+                "Insert Into [dbo].[" + lbTabla.Text + "] " + "(" + result + ") " + Environment.NewLine +
                 "Values " + Environment.NewLine + "() ";
             }
         }
@@ -478,14 +494,14 @@ namespace CapaVista
             {
                 txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
                    "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-                  "Set " + "(" + result+ ")" + " = " + Environment.NewLine +
+                  "Set " + "(" + result + ")" + " = " + Environment.NewLine +
                   "Where " + Environment.NewLine;
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
                 txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
                   "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-                  "Set " + "(" +result+ ")" + " = " + Environment.NewLine +
+                  "Set " + "(" + result + ")" + " = " + Environment.NewLine +
                   "Where " + Environment.NewLine;
             }
             else if (tabContQuery.SelectedTab == tab3)
@@ -781,7 +797,7 @@ namespace CapaVista
 
         private void txtQuery1_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

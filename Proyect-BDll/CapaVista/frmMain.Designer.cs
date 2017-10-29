@@ -69,7 +69,7 @@ namespace CapaVista
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nuevoQueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejecutarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scriptDatabaseAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.script = new System.Windows.Forms.ToolStripMenuItem();
             this.dMLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sELECTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.iNSERTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -500,7 +500,7 @@ namespace CapaVista
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoQueryToolStripMenuItem,
             this.ejecutarToolStripMenuItem,
-            this.scriptDatabaseAsToolStripMenuItem});
+            this.script});
             this.menuStrip1.Location = new System.Drawing.Point(0, 13);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
@@ -526,15 +526,15 @@ namespace CapaVista
             this.ejecutarToolStripMenuItem.ToolTipText = "Alt+e";
             this.ejecutarToolStripMenuItem.Click += new System.EventHandler(this.ejecutarToolStripMenuItem_Click);
             // 
-            // scriptDatabaseAsToolStripMenuItem
+            // script
             // 
-            this.scriptDatabaseAsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.script.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dMLToolStripMenuItem1,
             this.dDLToolStripMenuItem});
-            this.scriptDatabaseAsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.scriptDatabaseAsToolStripMenuItem.Name = "scriptDatabaseAsToolStripMenuItem";
-            this.scriptDatabaseAsToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
-            this.scriptDatabaseAsToolStripMenuItem.Text = "&Script Database as";
+            this.script.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.script.Name = "script";
+            this.script.Size = new System.Drawing.Size(129, 24);
+            this.script.Text = "&Script Database as";
             // 
             // dMLToolStripMenuItem1
             // 
@@ -544,7 +544,7 @@ namespace CapaVista
             this.uPDATEToolStripMenuItem1,
             this.dELETEToolStripMenuItem1});
             this.dMLToolStripMenuItem1.Name = "dMLToolStripMenuItem1";
-            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
+            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.dMLToolStripMenuItem1.Text = "DML";
             // 
             // sELECTToolStripMenuItem1
@@ -582,7 +582,7 @@ namespace CapaVista
             this.dROPToolStripMenuItem1,
             this.aLTERToolStripMenuItem1});
             this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
-            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dDLToolStripMenuItem.Text = "DDL";
             // 
             // cREATEToolStripMenuItem1
@@ -841,7 +841,7 @@ namespace CapaVista
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ToolStripMenuItem scriptDatabaseAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem script;
         private System.Windows.Forms.ToolStripMenuItem dMLToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sELECTToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem iNSERTToolStripMenuItem1;
