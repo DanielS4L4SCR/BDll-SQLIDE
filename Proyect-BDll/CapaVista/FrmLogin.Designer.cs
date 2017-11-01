@@ -104,7 +104,7 @@
             // 
             // Load2
             // 
-            this.Load2.BackColor = System.Drawing.Color.White;
+            this.Load2.BackColor = System.Drawing.Color.Black;
             this.Load2.Location = new System.Drawing.Point(-1, 209);
             this.Load2.Name = "Load2";
             this.Load2.Size = new System.Drawing.Size(499, 12);
@@ -113,6 +113,7 @@
             // Load1
             // 
             this.Load1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.Load1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Load1.Location = new System.Drawing.Point(-2, 209);
             this.Load1.Name = "Load1";
             this.Load1.Size = new System.Drawing.Size(18, 12);
