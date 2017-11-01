@@ -254,22 +254,22 @@ namespace CapaVista
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
             SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
 
-            if (cboBD.SelectedItem != null && lbTabla.SelectedValue != null)
+            if (cboBD.SelectedItem != null)
             {
-                DataTable objDT = new CapaLogica.clsColumnas().getColumns(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
-                if (objDT is null)
+                if (tabContQuery.SelectedTab == Tab1)
                 {
-                    MessageBox.Show("No existen indices para esta tabla", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                    return;
-                }
-                 if (tabContQuery.SelectedTab == Tab1)
-                {
-                    if (sELECTToolStripMenuItem1.Enabled)
-                    {
-                        dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
-                    }
-                }
+                    //DataTable objDT = new CapaLogica.clsIndices().RegistroInices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.Text);
+                    //if (objDT == null)
+                    //{
+                        //if (txtQuery1.Text.Contains("Select") || txtQuery1.Text.Contains("select") || txtQuery1.Text.Contains("SELECT"))
+                        //{
+                        //    MessageBox.Show("No existen indices para esta tabla", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
 
+                        //}
+                    //}
+                    //else   
+                        dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                }
                 else if (tabContQuery.SelectedTab == tab2)
                 {
                     dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
@@ -290,12 +290,14 @@ namespace CapaVista
                 TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
                 lbConsulta.Text = "Tiempo de consulta: " + total.ToString();
             }
+
             else
             {
-                MessageBox.Show("No ha seleccionado una base de datos");
+                MessageBox.Show("SQL MANAGMENT 2017","No ha cargado ninguna base de datos",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
             }
 
         }
+
 
         private void lbTabla_DoubleClick(object sender, EventArgs e)
         {
