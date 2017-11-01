@@ -26,6 +26,8 @@ namespace CapaVista
                 {
                     new lbTabñas(cboInstancias.Text.ToString(), this).Show();
                     Instancia = cboInstancias.Text.ToString().Trim();
+                    this.Hide();
+
                 }
                 else
                 {

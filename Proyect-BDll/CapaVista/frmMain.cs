@@ -801,6 +801,11 @@ namespace CapaVista
         {
 
         }
+
+        private void dgvInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

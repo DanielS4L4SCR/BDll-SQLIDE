@@ -14,7 +14,7 @@ namespace CapaLogica
             return new CapaAccesoBD.clsTabla().Registros(strTable, strInstanceName, strDataBase);
         }
 
-
+ 
         public DataTable Tablas(String strInstanceName, String strDatabase = "master")
         {
             DataTable oDT = new CapaAccesoBD.clsTabla().Tablas(strInstanceName, strDatabase);

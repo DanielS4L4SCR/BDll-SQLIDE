@@ -544,7 +544,7 @@ namespace CapaVista
             this.uPDATEToolStripMenuItem1,
             this.dELETEToolStripMenuItem1});
             this.dMLToolStripMenuItem1.Name = "dMLToolStripMenuItem1";
-            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.dMLToolStripMenuItem1.Text = "DML";
             // 
             // sELECTToolStripMenuItem1
@@ -582,7 +582,7 @@ namespace CapaVista
             this.dROPToolStripMenuItem1,
             this.aLTERToolStripMenuItem1});
             this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
-            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.dDLToolStripMenuItem.Text = "DDL";
             // 
             // cREATEToolStripMenuItem1
@@ -722,6 +722,7 @@ namespace CapaVista
             this.dgvInfo.Style = MetroFramework.MetroColorStyle.Green;
             this.dgvInfo.TabIndex = 13;
             this.dgvInfo.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.dgvInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInfo_CellContentClick);
             // 
             // panel1
             // 
