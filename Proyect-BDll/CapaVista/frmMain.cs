@@ -374,16 +374,15 @@ namespace CapaVista
                 {
                     if (objDT.Rows.Count > 0)
                     {
+                        lbColumnas.Text = "Columnas:";
                         lbColumnas.ClearSelected();
                         lbColumnas.Enabled = true;
                         lbColumnas.DisplayMember = "COLUMN_NAME";
                         lbColumnas.ValueMember = "COLUMN_NAME";
                         lbColumnas.DataSource = objDT;
 
-                        DataTable Dt = new CapaLogica.clsTablas().Registro(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
-
-                        dgvInfo.DataSource = Dt;
-
+                        //DataTable Dt = new CapaLogica.clsTablas().Registro(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString());
+                        //dgvInfo.DataSource = Dt;
                     }
                     else
                     {
@@ -395,7 +394,6 @@ namespace CapaVista
                 else
                 {
                     MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
-
                 }
             }
         }
@@ -855,6 +853,11 @@ namespace CapaVista
                 txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
                 "Alter Column column_name datatype;";
             }
+        }
+
+        private void cboBD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
