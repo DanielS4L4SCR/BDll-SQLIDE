@@ -93,6 +93,7 @@ namespace CapaVista
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbConsulta = new MetroFramework.Controls.MetroLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbBD.SuspendLayout();
@@ -106,6 +107,7 @@ namespace CapaVista
             this.boxSnippet.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -754,11 +756,20 @@ namespace CapaVista
             this.lbConsulta.Size = new System.Drawing.Size(0, 0);
             this.lbConsulta.TabIndex = 17;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(943, 395);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 765);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbConsulta);
             this.Controls.Add(this.lbClock);
             this.Controls.Add(this.panel3);
@@ -795,6 +806,7 @@ namespace CapaVista
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -860,7 +872,6 @@ namespace CapaVista
         private System.Windows.Forms.ToolStripMenuItem dROPCOLUMNToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aLTERCOLUMNToolStripMenuItem1;
         private MetroFramework.Controls.MetroLabel lbConsulta;
-
-
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

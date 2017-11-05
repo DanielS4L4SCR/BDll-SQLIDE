@@ -10,9 +10,9 @@ namespace CapaLogica
     public class clsIndices
     {
 
-        public DataTable RegistroInices(String strTable, String strInstanceName, String strDataBase = "master")
+        public bool EsquemaIndices(String strTable, String instanceName, String strDataBase = "master")
         {
-            return new CapaAccesoBD.clsIndices().Indices(strTable, strDataBase);
+            return new CapaAccesoBD.clsIndices().registroIndice(strTable, instanceName, strDataBase).Rows.Count > 0;
         }
 
 

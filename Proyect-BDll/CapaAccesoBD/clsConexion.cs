@@ -81,6 +81,7 @@ namespace CapaAccesoBD
             }
             catch (SqlException e)
             {
+                //throw e;
                 Console.Write(e.Message);
                 return null;
             }

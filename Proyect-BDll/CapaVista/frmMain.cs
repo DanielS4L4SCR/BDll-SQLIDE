@@ -169,15 +169,16 @@ namespace CapaVista
         {
             if (cont == 0)
             {
+                this.txtQuery1.Lexer = Lexer.Sql;
                 this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
                 this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery1.Margins[0].Width = 20;
                 this.txtQuery1.Dock = DockStyle.Fill;
-                this.txtQuery1.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
-                this.txtQuery1.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
+                this.txtQuery1.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.MediumSeaGreen;
+                this.txtQuery1.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.MediumSeaGreen;
                 this.txtQuery1.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
                 this.txtQuery1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
-                this.txtQuery1.SetKeywords(0, @"select into from update delete");
+                this.txtQuery1.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");
                 ShowTabPage(Tab1);
                 Tab1.Show();
                 cont = cont + 1;
@@ -192,7 +193,7 @@ namespace CapaVista
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.Identifier].ForeColor = Color.Blue;
-                this.txtQuery2.SetKeywords(0, "select into from update delete");
+                this.txtQuery2.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");
                 ShowTabPage(tab2);
                 tab2.Show();
                 cont = cont + 1;
@@ -207,7 +208,7 @@ namespace CapaVista
                 this.txtQuery3.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
                 this.txtQuery3.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
                 this.txtQuery3.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
-                this.txtQuery3.SetKeywords(0, "select into from update delete");
+                this.txtQuery3.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");
                 ShowTabPage(tab3);
                 tab3.Show();
                 cont = cont + 1;
@@ -222,7 +223,7 @@ namespace CapaVista
                 this.txtQuery4.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
                 this.txtQuery4.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
                 this.txtQuery4.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
-                this.txtQuery4.SetKeywords(0, "select into from update delete");
+                this.txtQuery4.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");
                 ShowTabPage(tab4);
                 tab4.Show();
                 cont = cont + 1;
@@ -237,7 +238,7 @@ namespace CapaVista
                 this.txtQuery5.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
                 this.txtQuery5.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
                 this.txtQuery5.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
-                this.txtQuery5.SetKeywords(0, "select into from update delete");
+                this.txtQuery5.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");
                 ShowTabPage(tab5);
                 tab5.Show();
                 cont = cont + 1;
@@ -257,17 +258,15 @@ namespace CapaVista
             {
                 if (tabContQuery.SelectedTab == Tab1)
                 {
-                    //DataTable objDT = new CapaLogica.clsIndices().RegistroInices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.Text);
-                    //if (objDT == null)
-                    //{
-                        //if (txtQuery1.Text.Contains("Select") || txtQuery1.Text.Contains("select") || txtQuery1.Text.Contains("SELECT"))
-                        //{
-                        //    MessageBox.Show("No existen indices para esta tabla", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-
-                        //}
-                    //}
-                    //else   
+                    if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString())) 
+                    {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No tiene indices");
+                    }
                 }
                 else if (tabContQuery.SelectedTab == tab2)
                 {
@@ -296,7 +295,6 @@ namespace CapaVista
             }
 
         }
-
 
         private void lbTabla_DoubleClick(object sender, EventArgs e)
         {
