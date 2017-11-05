@@ -59,10 +59,10 @@ namespace CapaVista
                 {
                     if (objDT == null)
                     {
-                        MessageBox.Show("Error");
+                        MetroMessageBox.Show(this,"Error","SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
                     }
 
-                    MessageBox.Show("La base de datos selecciona no contiene tablas");
+                    MetroMessageBox.Show(this,"La base de datos selecciona no contiene tablas","SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
 
                     lbTabla.Items.Clear();
                 }
@@ -113,7 +113,7 @@ namespace CapaVista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MetroMessageBox.Show(this,"¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -126,7 +126,7 @@ namespace CapaVista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MetroMessageBox.Show(this,"¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -138,7 +138,7 @@ namespace CapaVista
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MetroMessageBox.Show(this,"¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -150,7 +150,7 @@ namespace CapaVista
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult msj = MessageBox.Show("¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult msj = MetroMessageBox.Show(this,"¿Seguro de que desea cerrar la pestaña?", "SQL MANAGER 2017", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (msj == DialogResult.Yes)
             {
                 tabContQuery.Controls.Remove(tabContQuery.SelectedTab);
@@ -164,7 +164,6 @@ namespace CapaVista
 
         #endregion
 
-
         private void nuevoQueryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (cont == 0)
@@ -173,26 +172,28 @@ namespace CapaVista
                 this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
                 this.txtQuery1.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery1.Margins[0].Width = 20;
-                this.txtQuery1.Dock = DockStyle.Fill;
+                this.txtQuery1.Dock = DockStyle.None;
                 this.txtQuery1.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.MediumSeaGreen;
                 this.txtQuery1.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.MediumSeaGreen;
                 this.txtQuery1.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
                 this.txtQuery1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
-                this.txtQuery1.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");
+                this.txtQuery1.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");         
                 ShowTabPage(Tab1);
                 Tab1.Show();
                 cont = cont + 1;
             }
             else if (cont == 1)
             {
+                this.txtQuery2.Lexer = Lexer.Sql;
                 this.txtQuery2.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
                 this.txtQuery2.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery2.Margins[0].Width = 20;
-                this.txtQuery2.Dock = DockStyle.Fill;
+                this.txtQuery2.Dock = DockStyle.None;
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
-                this.txtQuery2.Styles[ScintillaNET.Style.Sql.Identifier].ForeColor = Color.Blue;
+                //this.txtQuery2.Styles[ScintillaNET.Style.Sql.Identifier].ForeColor = Color.Blue;
+                this.txtQuery1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
                 this.txtQuery2.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");
                 ShowTabPage(tab2);
                 tab2.Show();
@@ -200,10 +201,11 @@ namespace CapaVista
             }
             else if (cont == 2)
             {
+                this.txtQuery3.Lexer = Lexer.Sql;
                 this.txtQuery3.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
                 this.txtQuery3.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery3.Margins[0].Width = 20;
-                this.txtQuery3.Dock = DockStyle.Fill;
+                this.txtQuery3.Dock = DockStyle.None;
                 this.txtQuery3.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
                 this.txtQuery3.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
                 this.txtQuery3.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
@@ -215,10 +217,11 @@ namespace CapaVista
             }
             else if (cont == 3)
             {
+                this.txtQuery4.Lexer = Lexer.Sql;
                 this.txtQuery4.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
                 this.txtQuery4.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery4.Margins[0].Width = 20;
-                this.txtQuery4.Dock = DockStyle.Fill;
+                this.txtQuery4.Dock = DockStyle.None;
                 this.txtQuery4.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
                 this.txtQuery4.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
                 this.txtQuery4.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
@@ -230,10 +233,11 @@ namespace CapaVista
             }
             else if (cont == 4)
             {
+                this.txtQuery5.Lexer = Lexer.Sql;
                 this.txtQuery5.Styles[ScintillaNET.Style.LineNumber].BackColor = Color.MediumSeaGreen;
                 this.txtQuery5.Styles[ScintillaNET.Style.LineNumber].ForeColor = Color.White;
                 this.txtQuery5.Margins[0].Width = 20;
-                this.txtQuery5.Dock = DockStyle.Fill;
+                this.txtQuery5.Dock = DockStyle.None;
                 this.txtQuery5.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
                 this.txtQuery5.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
                 this.txtQuery5.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
@@ -267,7 +271,11 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No tiene indices");
+                            DialogResult msj = MetroMessageBox.Show(this,"No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + lbTabla.SelectedValue + " No contiene índices."+" Presione " + "'"+ "OK" +"'" + "si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                            if(msj == DialogResult.OK)
+                            {
+                                
+                            }
                         }
                     }
                     else
@@ -285,7 +293,7 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No tiene indices");
+                            MessageBox.Show("No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " +lbTabla.SelectedValue+ " No contiene índices","SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -303,7 +311,7 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No tiene indices");
+                            MessageBox.Show("No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + lbTabla.SelectedValue + " No contiene índices", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -321,7 +329,7 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No tiene indices");
+                            MessageBox.Show("No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + lbTabla.SelectedValue + " No contiene índices", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -339,7 +347,7 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No tiene indices");
+                            MessageBox.Show("No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + lbTabla.SelectedValue + " No contiene índices", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -354,7 +362,7 @@ namespace CapaVista
 
             else
             {
-                MessageBox.Show("SQL MANAGMENT 2017", "No ha cargado ninguna base de datos", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                MetroMessageBox.Show(this, "No ha cargado ninguna base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
 
         }
@@ -367,7 +375,7 @@ namespace CapaVista
 
                 if (objDT is null)
                 {
-                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    MetroMessageBox.Show(this,"Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     return;
                 }
                 if (lbTabla.Enabled)
@@ -393,7 +401,7 @@ namespace CapaVista
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+                    MetroMessageBox.Show(this,"Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -406,7 +414,7 @@ namespace CapaVista
 
                 if (objDT is null)
                 {
-                    MessageBox.Show("Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    MetroMessageBox.Show(this,"Error al cargar las columnas", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     return;
                 }
                 if (lbTabla.Enabled)
@@ -430,7 +438,7 @@ namespace CapaVista
             }
             else
             {
-                MessageBox.Show("Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
+                MetroMessageBox.Show(this,"Seleccione una base de datos", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation);
             }
         }
 

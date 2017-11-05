@@ -225,9 +225,9 @@ namespace CapaVista
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Controls.Add(this.lbReloj);
             this.groupBox2.Controls.Add(this.lbSqlManager);
-            this.groupBox2.Location = new System.Drawing.Point(3, 18);
+            this.groupBox2.Location = new System.Drawing.Point(3, 20);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1185, 97);
+            this.groupBox2.Size = new System.Drawing.Size(1185, 103);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -262,10 +262,10 @@ namespace CapaVista
             this.boxSnippet.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.boxSnippet.Controls.Add(this.menuStrip1);
             this.boxSnippet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.boxSnippet.Location = new System.Drawing.Point(210, -5);
+            this.boxSnippet.Location = new System.Drawing.Point(210, -16);
             this.boxSnippet.Name = "boxSnippet";
             this.boxSnippet.Padding = new System.Windows.Forms.Padding(0);
-            this.boxSnippet.Size = new System.Drawing.Size(969, 41);
+            this.boxSnippet.Size = new System.Drawing.Size(938, 38);
             this.boxSnippet.TabIndex = 12;
             this.boxSnippet.TabStop = false;
             // 
@@ -281,7 +281,7 @@ namespace CapaVista
             this.menuStrip1.Location = new System.Drawing.Point(0, 13);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip1.Size = new System.Drawing.Size(969, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(938, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -368,7 +368,7 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem3,
             this.tABLEToolStripMenuItem2});
             this.cREATEToolStripMenuItem1.Name = "cREATEToolStripMenuItem1";
-            this.cREATEToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.cREATEToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
             this.cREATEToolStripMenuItem1.Text = "CREATE";
             // 
             // dATABASEToolStripMenuItem3
@@ -391,7 +391,7 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem4,
             this.tABLEToolStripMenuItem3});
             this.dROPToolStripMenuItem1.Name = "dROPToolStripMenuItem1";
-            this.dROPToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.dROPToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
             this.dROPToolStripMenuItem1.Text = "DROP";
             // 
             // dATABASEToolStripMenuItem4
@@ -414,13 +414,13 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem5,
             this.tABLEToolStripMenuItem4});
             this.aLTERToolStripMenuItem1.Name = "aLTERToolStripMenuItem1";
-            this.aLTERToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.aLTERToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
             this.aLTERToolStripMenuItem1.Text = "ALTER";
             // 
             // dATABASEToolStripMenuItem5
             // 
             this.dATABASEToolStripMenuItem5.Name = "dATABASEToolStripMenuItem5";
-            this.dATABASEToolStripMenuItem5.Size = new System.Drawing.Size(152, 24);
+            this.dATABASEToolStripMenuItem5.Size = new System.Drawing.Size(142, 24);
             this.dATABASEToolStripMenuItem5.Text = "DATABASE";
             this.dATABASEToolStripMenuItem5.Click += new System.EventHandler(this.dATABASEToolStripMenuItem5_Click);
             // 
@@ -431,7 +431,7 @@ namespace CapaVista
             this.dROPCOLUMNToolStripMenuItem,
             this.aLTERCOLUMNToolStripMenuItem1});
             this.tABLEToolStripMenuItem4.Name = "tABLEToolStripMenuItem4";
-            this.tABLEToolStripMenuItem4.Size = new System.Drawing.Size(152, 24);
+            this.tABLEToolStripMenuItem4.Size = new System.Drawing.Size(142, 24);
             this.tABLEToolStripMenuItem4.Text = "TABLE";
             // 
             // aDDCOLUMNToolStripMenuItem1
@@ -513,7 +513,7 @@ namespace CapaVista
             this.tab5.HorizontalScrollbarSize = 10;
             this.tab5.Location = new System.Drawing.Point(4, 38);
             this.tab5.Name = "tab5";
-            this.tab5.Size = new System.Drawing.Size(975, 362);
+            this.tab5.Size = new System.Drawing.Size(979, 343);
             this.tab5.TabIndex = 4;
             this.tab5.Text = "Query 5";
             this.tab5.VerticalScrollbarBarColor = true;
@@ -541,9 +541,9 @@ namespace CapaVista
             // 
             this.txtQuery5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery5.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
-            this.txtQuery5.Location = new System.Drawing.Point(1, 11);
+            this.txtQuery5.Location = new System.Drawing.Point(1, 1);
             this.txtQuery5.Name = "txtQuery5";
-            this.txtQuery5.Size = new System.Drawing.Size(668, 335);
+            this.txtQuery5.Size = new System.Drawing.Size(949, 343);
             this.txtQuery5.TabIndex = 12;
             // 
             // tab4
@@ -555,7 +555,7 @@ namespace CapaVista
             this.tab4.HorizontalScrollbarSize = 10;
             this.tab4.Location = new System.Drawing.Point(4, 38);
             this.tab4.Name = "tab4";
-            this.tab4.Size = new System.Drawing.Size(975, 362);
+            this.tab4.Size = new System.Drawing.Size(979, 343);
             this.tab4.TabIndex = 3;
             this.tab4.Text = "Query 4";
             this.tab4.VerticalScrollbarBarColor = true;
@@ -566,9 +566,9 @@ namespace CapaVista
             // 
             this.txtQuery4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery4.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
-            this.txtQuery4.Location = new System.Drawing.Point(1, 11);
+            this.txtQuery4.Location = new System.Drawing.Point(1, 1);
             this.txtQuery4.Name = "txtQuery4";
-            this.txtQuery4.Size = new System.Drawing.Size(668, 335);
+            this.txtQuery4.Size = new System.Drawing.Size(949, 343);
             this.txtQuery4.TabIndex = 12;
             // 
             // button1
@@ -597,7 +597,7 @@ namespace CapaVista
             this.tab3.HorizontalScrollbarSize = 10;
             this.tab3.Location = new System.Drawing.Point(4, 38);
             this.tab3.Name = "tab3";
-            this.tab3.Size = new System.Drawing.Size(975, 362);
+            this.tab3.Size = new System.Drawing.Size(979, 343);
             this.tab3.TabIndex = 2;
             this.tab3.Text = "Query 3";
             this.tab3.VerticalScrollbarBarColor = true;
@@ -608,9 +608,9 @@ namespace CapaVista
             // 
             this.txtQuery3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery3.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
-            this.txtQuery3.Location = new System.Drawing.Point(1, 11);
+            this.txtQuery3.Location = new System.Drawing.Point(1, 1);
             this.txtQuery3.Name = "txtQuery3";
-            this.txtQuery3.Size = new System.Drawing.Size(668, 335);
+            this.txtQuery3.Size = new System.Drawing.Size(949, 343);
             this.txtQuery3.TabIndex = 12;
             // 
             // button2
@@ -639,7 +639,7 @@ namespace CapaVista
             this.tab2.HorizontalScrollbarSize = 10;
             this.tab2.Location = new System.Drawing.Point(4, 38);
             this.tab2.Name = "tab2";
-            this.tab2.Size = new System.Drawing.Size(975, 362);
+            this.tab2.Size = new System.Drawing.Size(979, 343);
             this.tab2.TabIndex = 1;
             this.tab2.Text = "Query 2";
             this.tab2.VerticalScrollbarBarColor = true;
@@ -649,11 +649,12 @@ namespace CapaVista
             // txtQuery2
             // 
             this.txtQuery2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtQuery2.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
-            this.txtQuery2.Location = new System.Drawing.Point(0, 26);
+            this.txtQuery2.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuery2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtQuery2.Location = new System.Drawing.Point(1, 1);
             this.txtQuery2.Name = "txtQuery2";
-            this.txtQuery2.Size = new System.Drawing.Size(976, 360);
-            this.txtQuery2.TabIndex = 12;
+            this.txtQuery2.Size = new System.Drawing.Size(949, 343);
+            this.txtQuery2.TabIndex = 14;
             // 
             // button3
             // 
@@ -699,7 +700,7 @@ namespace CapaVista
             this.dgvInfo.EnableHeadersVisualStyles = false;
             this.dgvInfo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvInfo.Location = new System.Drawing.Point(209, 540);
+            this.dgvInfo.Location = new System.Drawing.Point(209, 558);
             this.dgvInfo.Name = "dgvInfo";
             this.dgvInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -726,7 +727,7 @@ namespace CapaVista
             this.Tab1.HorizontalScrollbarSize = 10;
             this.Tab1.Location = new System.Drawing.Point(4, 38);
             this.Tab1.Name = "Tab1";
-            this.Tab1.Size = new System.Drawing.Size(975, 362);
+            this.Tab1.Size = new System.Drawing.Size(979, 343);
             this.Tab1.TabIndex = 0;
             this.Tab1.Text = "Query 1";
             this.Tab1.VerticalScrollbarBarColor = true;
@@ -743,7 +744,7 @@ namespace CapaVista
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(956, 3);
+            this.button4.Location = new System.Drawing.Point(957, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(19, 17);
             this.button4.TabIndex = 14;
@@ -755,9 +756,9 @@ namespace CapaVista
             this.txtQuery1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery1.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuery1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtQuery1.Location = new System.Drawing.Point(1, 11);
+            this.txtQuery1.Location = new System.Drawing.Point(1, 1);
             this.txtQuery1.Name = "txtQuery1";
-            this.txtQuery1.Size = new System.Drawing.Size(935, 343);
+            this.txtQuery1.Size = new System.Drawing.Size(949, 343);
             this.txtQuery1.TabIndex = 13;
             // 
             // tabContQuery
@@ -767,10 +768,10 @@ namespace CapaVista
             this.tabContQuery.Controls.Add(this.tab3);
             this.tabContQuery.Controls.Add(this.tab4);
             this.tabContQuery.Controls.Add(this.tab5);
-            this.tabContQuery.Location = new System.Drawing.Point(205, 121);
+            this.tabContQuery.Location = new System.Drawing.Point(205, 129);
             this.tabContQuery.Name = "tabContQuery";
-            this.tabContQuery.SelectedIndex = 1;
-            this.tabContQuery.Size = new System.Drawing.Size(983, 404);
+            this.tabContQuery.SelectedIndex = 4;
+            this.tabContQuery.Size = new System.Drawing.Size(987, 385);
             this.tabContQuery.Style = MetroFramework.MetroColorStyle.Green;
             this.tabContQuery.TabIndex = 11;
             this.tabContQuery.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -878,7 +879,6 @@ namespace CapaVista
         private Scintilla txtQuery3;
         private MetroFramework.Controls.MetroTabPage tab2;
         private System.Windows.Forms.Button button3;
-        private Scintilla txtQuery2;
         private MetroFramework.Controls.MetroTabPage Tab1;
         private System.Windows.Forms.Button button4;
         private Scintilla txtQuery1;
@@ -919,5 +919,6 @@ namespace CapaVista
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
+        private Scintilla txtQuery2;
     }
 }
