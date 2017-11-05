@@ -258,31 +258,94 @@ namespace CapaVista
             {
                 if (tabContQuery.SelectedTab == Tab1)
                 {
-                    if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString())) 
+                    if (txtQuery1.SelectedText.Contains("Select") || txtQuery1.SelectedText.Contains("SELECT") || txtQuery1.SelectedText.Contains("Select"))
                     {
-                        dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                        if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
+                        {
+                            dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("No tiene indices");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("No tiene indices");
+                        dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab2)
                 {
-                    dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                    if (txtQuery2.SelectedText.Contains("Select") || txtQuery2.SelectedText.Contains("SELECT") || txtQuery2.SelectedText.Contains("Select"))
+                    {
+                        if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
+                        {
+                            dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No tiene indices");
+                        }
+                    }
+                    else
+                    {
+                        dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                    }
                 }
                 else if (tabContQuery.SelectedTab == tab3)
                 {
-                    dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+                    if (txtQuery3.SelectedText.Contains("Select") || txtQuery3.SelectedText.Contains("SELECT") || txtQuery3.SelectedText.Contains("Select"))
+                    {
+                        if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
+                        {
+                            dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No tiene indices");
+                        }
+                    }
+                    else
+                    {
+                        dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+                    }
                 }
                 else if (tabContQuery.SelectedTab == tab4)
                 {
-                    dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+                    if (txtQuery4.SelectedText.Contains("Select") || txtQuery4.SelectedText.Contains("SELECT") || txtQuery4.SelectedText.Contains("Select"))
+                    {
+                        if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
+                        {
+                            dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No tiene indices");
+                        }
+                    }
+                    else
+                    {
+                        dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+                    }
                 }
                 else if (tabContQuery.SelectedTab == tab5)
                 {
-                    dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
+                    if (txtQuery5.SelectedText.Contains("Select") || txtQuery5.SelectedText.Contains("SELECT") || txtQuery5.SelectedText.Contains("Select"))
+                    {
+                        if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
+                        {
+                            dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No tiene indices");
+                        }
+                    }
+                    else
+                    {
+                        dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
+                    }
                 }
                 DateTime tiempo2 = DateTime.Now;
                 TimeSpan total = new TimeSpan(tiempo2.Ticks - tiempo1.Ticks);
@@ -291,7 +354,7 @@ namespace CapaVista
 
             else
             {
-                MessageBox.Show("SQL MANAGMENT 2017","No ha cargado ninguna base de datos",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                MessageBox.Show("SQL MANAGMENT 2017", "No ha cargado ninguna base de datos", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
 
         }
