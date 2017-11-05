@@ -253,7 +253,6 @@ namespace CapaVista
             DateTime tiempo1 = DateTime.Now;
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
             SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
-
             if (cboBD.SelectedItem != null)
             {
                 if (tabContQuery.SelectedTab == Tab1)
@@ -795,16 +794,6 @@ namespace CapaVista
                 txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
                 "Alter Column column_name datatype;";
             }
-        }
-
-        private void txtQuery1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

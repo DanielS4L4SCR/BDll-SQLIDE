@@ -152,6 +152,7 @@ namespace CapaAccesoBD
             catch (System.Exception ex)
             {
                 MessageBox.Show("Comando con errores: " + ex.Message, "SQL MANAGER 2017", MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                
             }
             cerrarConexion();
             return oDT;

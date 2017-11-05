@@ -462,7 +462,6 @@ namespace CapaVista
             this.txtQuery1.Name = "txtQuery1";
             this.txtQuery1.Size = new System.Drawing.Size(668, 343);
             this.txtQuery1.TabIndex = 13;
-            this.txtQuery1.Click += new System.EventHandler(this.txtQuery1_Click);
             // 
             // tabContQuery
             // 
@@ -722,7 +721,6 @@ namespace CapaVista
             this.dgvInfo.Style = MetroFramework.MetroColorStyle.Green;
             this.dgvInfo.TabIndex = 13;
             this.dgvInfo.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.dgvInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInfo_CellContentClick);
             // 
             // panel1
             // 
