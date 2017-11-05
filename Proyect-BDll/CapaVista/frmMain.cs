@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ScintillaNET;
 using MetroFramework;
+
 namespace CapaVista
 {
     public partial class lbTabñas : MetroFramework.Forms.MetroForm
@@ -271,9 +272,12 @@ namespace CapaVista
                         }
                         else
                         {
-                            DialogResult msj = MetroMessageBox.Show(this,"No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + lbTabla.SelectedValue + " No contiene índices."+" Presione " + "'"+ "OK" +"'" + "si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                            DialogResult msj = MetroMessageBox.Show(this,"No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " +"'"+ lbTabla.SelectedValue +"'"+ " No contiene índices."+" Presione " + "'"+ "OK" +"'" + " si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                             if(msj == DialogResult.OK)
                             {
+                                frmIndices indices = new frmIndices();
+                                indices.Show();
+                                txtQuery1.Text = indices.indice;
                                 
                             }
                         }
