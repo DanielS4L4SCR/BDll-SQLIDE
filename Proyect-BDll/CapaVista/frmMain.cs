@@ -290,12 +290,14 @@ namespace CapaVista
                                 {
                                     txtQuery1.Text = "CREATE CLUSTERED INDEX index_name" + Environment.NewLine +
                                                       "ON "+ lbTabla.Text + "" + "("+result1+")";
+                                    //this.WindowState = FormWindowState.Normal;
                                 }
 
                                 if (result.Equals("2"))
                                 {
                                     txtQuery1.Text = "CREATE NONCLUSTERED INDEX index_name" + Environment.NewLine +
                                                       "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                    //this.WindowState = FormWindowState.Normal;
                                 }
                             }
                          

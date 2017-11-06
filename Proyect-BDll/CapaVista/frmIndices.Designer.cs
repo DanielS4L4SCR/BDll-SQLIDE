@@ -60,24 +60,19 @@
             // lblmessage
             // 
             this.lblmessage.AutoSize = true;
-            this.lblmessage.Location = new System.Drawing.Point(41, 43);
+            this.lblmessage.Location = new System.Drawing.Point(41, 50);
             this.lblmessage.Name = "lblmessage";
-            this.lblmessage.Size = new System.Drawing.Size(105, 19);
+            this.lblmessage.Size = new System.Drawing.Size(0, 0);
             this.lblmessage.TabIndex = 2;
-            this.lblmessage.Text = "----------------";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(11, 7);
+            this.lblTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblTitle.Location = new System.Drawing.Point(11, 13);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(105, 19);
+            this.lblTitle.Size = new System.Drawing.Size(0, 0);
             this.lblTitle.TabIndex = 3;
-            this.lblTitle.Text = "----------------";
-            // 
-            // timer1
-            // 
-           
             // 
             // lblTimer
             // 
@@ -100,6 +95,7 @@
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Name = "frmIndices";
+            this.Style = MetroFramework.MetroColorStyle.Green;
             this.Load += new System.EventHandler(this.frmIndices_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
