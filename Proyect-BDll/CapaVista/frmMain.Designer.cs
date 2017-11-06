@@ -321,7 +321,7 @@ namespace CapaVista
             this.uPDATEToolStripMenuItem1,
             this.dELETEToolStripMenuItem1});
             this.dMLToolStripMenuItem1.Name = "dMLToolStripMenuItem1";
-            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(108, 24);
             this.dMLToolStripMenuItem1.Text = "DML";
             // 
             // sELECTToolStripMenuItem1
@@ -359,7 +359,7 @@ namespace CapaVista
             this.dROPToolStripMenuItem1,
             this.aLTERToolStripMenuItem1});
             this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
-            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.dDLToolStripMenuItem.Text = "DDL";
             // 
             // cREATEToolStripMenuItem1

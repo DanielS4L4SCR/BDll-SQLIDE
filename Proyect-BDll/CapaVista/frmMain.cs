@@ -192,9 +192,8 @@ namespace CapaVista
                 this.txtQuery2.Dock = DockStyle.None;
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.Comment].ForeColor = Color.Green;
                 this.txtQuery2.Styles[ScintillaNET.Style.Sql.CommentLine].ForeColor = Color.Green;
-                this.txtQuery2.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;
-                //this.txtQuery2.Styles[ScintillaNET.Style.Sql.Identifier].ForeColor = Color.Blue;
-                this.txtQuery1.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
+                this.txtQuery2.Styles[ScintillaNET.Style.Sql.String].ForeColor = Color.Red;         
+                this.txtQuery2.Styles[ScintillaNET.Style.Sql.Word].ForeColor = Color.Blue;
                 this.txtQuery2.SetKeywords(0, "add alter go as asc authorization backup begin break browse bulk by cascade case check checkpoint close clustered column commit compute constraint containstable continue create current current_date cursor database dbcc deallocate declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor for foreign freetext freetexttable from full function goto grant group having holdlock identity identity_insert identitycol if index insert intersect into key kill lineno load merge national nocheck nonclustered of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select semantickeyphrasetable semanticsimilaritydetailstable semanticsimilaritytable set setuser shutdown statistics table tablesample textsize then to top tran transaction trigger truncate union unique updatetext use user values varying view waitfor when where while with within group writetext all and any between cross exists in inner is join left like not null or outer pivot right some unpivot coalesce collate contains convert current_time current_timestamp current_user nullif session_user system_user try_convert tsequal update");
                 ShowTabPage(tab2);
                 tab2.Show();
@@ -250,7 +249,7 @@ namespace CapaVista
             }
             else
             {
-                MessageBox.Show("Máximo de pestañas superado");
+                MetroMessageBox.Show(this,"Máximo de pestañas superado","SQL MANAGER 2017",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
             }
         }
 
@@ -273,13 +272,33 @@ namespace CapaVista
                         else
                         {
                             DialogResult msj = MetroMessageBox.Show(this,"No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " +"'"+ lbTabla.SelectedValue +"'"+ " No contiene índices."+" Presione " + "'"+ "OK" +"'" + " si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                            if(msj == DialogResult.OK)
-                            {
-                                frmIndices indices = new frmIndices();
-                                indices.Show();
-                                txtQuery1.Text = indices.indice;
-                                
+                           
+                            if (msj == DialogResult.OK)
+                            {   
+                                string result = frmIndices.ShowBox("Seleccione el tipo de indice que desea", "Asistente de creación de índices");
+                                string text1 = " ";
+                                string result1 = " ";
+
+                                foreach (DataRowView item in lbColumnas.Items)
+                                {
+                                    DataRow var = item.Row;
+                                    text1 += var[3].ToString() + ", ";
+                                }
+
+                                result1 = text1.TrimEnd(',', ' ');
+                                if (result.Equals("1"))
+                                {
+                                    txtQuery1.Text = "CREATE CLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON "+ lbTabla.Text + "" + "("+result1+")";
+                                }
+
+                                if (result.Equals("2"))
+                                {
+                                    txtQuery1.Text = "CREATE NONCLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                }
                             }
+                         
                         }
                     }
                     else
@@ -297,7 +316,33 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " +lbTabla.SelectedValue+ " No contiene índices","SQL MANAGER 2017",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                            DialogResult msj = MetroMessageBox.Show(this, "No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + "'" + lbTabla.SelectedValue + "'" + " No contiene índices." + " Presione " + "'" + "OK" + "'" + " si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+
+                            if (msj == DialogResult.OK)
+                            {
+                                string result = frmIndices.ShowBox("Seleccione el tipo de indice que desea", "Asistente de creación de índices");
+                                string text1 = " ";
+                                string result1 = " ";
+
+                                foreach (DataRowView item in lbColumnas.Items)
+                                {
+                                    DataRow var = item.Row;
+                                    text1 += var[3].ToString() + ", ";
+                                }
+
+                                result1 = text1.TrimEnd(',', ' ');
+                                if (result.Equals("1"))
+                                {
+                                    txtQuery2.Text = "CREATE CLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                }
+
+                                if (result.Equals("2"))
+                                {
+                                    txtQuery2.Text = "CREATE NONCLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                }
+                            }
                         }
                     }
                     else
@@ -315,7 +360,33 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + lbTabla.SelectedValue + " No contiene índices", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            DialogResult msj = MetroMessageBox.Show(this, "No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + "'" + lbTabla.SelectedValue + "'" + " No contiene índices." + " Presione " + "'" + "OK" + "'" + " si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+
+                            if (msj == DialogResult.OK)
+                            {
+                                string result = frmIndices.ShowBox("Seleccione el tipo de indice que desea", "Asistente de creación de índices");
+                                string text1 = " ";
+                                string result1 = " ";
+
+                                foreach (DataRowView item in lbColumnas.Items)
+                                {
+                                    DataRow var = item.Row;
+                                    text1 += var[3].ToString() + ", ";
+                                }
+
+                                result1 = text1.TrimEnd(',', ' ');
+                                if (result.Equals("1"))
+                                {
+                                    txtQuery3.Text = "CREATE CLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                }
+
+                                if (result.Equals("2"))
+                                {
+                                    txtQuery3.Text = "CREATE NONCLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                }
+                            }
                         }
                     }
                     else
@@ -333,7 +404,33 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + lbTabla.SelectedValue + " No contiene índices", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            DialogResult msj = MetroMessageBox.Show(this, "No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + "'" + lbTabla.SelectedValue + "'" + " No contiene índices." + " Presione " + "'" + "OK" + "'" + " si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+
+                            if (msj == DialogResult.OK)
+                            {
+                                string result = frmIndices.ShowBox("Seleccione el tipo de indice que desea", "Asistente de creación de índices");
+                                string text1 = " ";
+                                string result1 = " ";
+
+                                foreach (DataRowView item in lbColumnas.Items)
+                                {
+                                    DataRow var = item.Row;
+                                    text1 += var[3].ToString() + ", ";
+                                }
+
+                                result1 = text1.TrimEnd(',', ' ');
+                                if (result.Equals("1"))
+                                {
+                                    txtQuery4.Text = "CREATE CLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                }
+
+                                if (result.Equals("2"))
+                                {
+                                    txtQuery4.Text = "CREATE NONCLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                }
+                            }
                         }
                     }
                     else
@@ -351,7 +448,33 @@ namespace CapaVista
                         }
                         else
                         {
-                            MessageBox.Show("No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + lbTabla.SelectedValue + " No contiene índices", "SQL MANAGER 2017", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            DialogResult msj = MetroMessageBox.Show(this, "No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " + "'" + lbTabla.SelectedValue + "'" + " No contiene índices." + " Presione " + "'" + "OK" + "'" + " si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+
+                            if (msj == DialogResult.OK)
+                            {
+                                string result = frmIndices.ShowBox("Seleccione el tipo de indice que desea", "Asistente de creación de índices");
+                                string text1 = " ";
+                                string result1 = " ";
+
+                                foreach (DataRowView item in lbColumnas.Items)
+                                {
+                                    DataRow var = item.Row;
+                                    text1 += var[3].ToString() + ", ";
+                                }
+
+                                result1 = text1.TrimEnd(',', ' ');
+                                if (result.Equals("1"))
+                                {
+                                    txtQuery5.Text = "CREATE CLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "("+ result1 +")";
+                                }
+
+                                if (result.Equals("2"))
+                                {
+                                    txtQuery5.Text = "CREATE NONCLUSTERED INDEX index_name" + Environment.NewLine +
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                }
+                            }
                         }
                     }
                     else

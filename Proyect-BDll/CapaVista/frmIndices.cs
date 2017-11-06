@@ -12,25 +12,74 @@ namespace CapaVista
 {
     public partial class frmIndices : MetroFramework.Forms.MetroForm
     {
+        static frmIndices newMessageBox;
+        public Timer msgTimer;
+        static string Button_id;
+        int disposeFormTimer;
         public frmIndices()
         {
             InitializeComponent();
         }
 
-        private void frmIndices_Load(object sender, EventArgs e)
+        public static string ShowBox(string txtMessage)
         {
-
-        }
-        public String indice="hola";
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            indice = "cluster";
-            this.Hide();
+            newMessageBox = new frmIndices();
+            newMessageBox.lblmessage.Text = txtMessage;
+            newMessageBox.ShowDialog();
+            return Button_id;
         }
 
-        private void metroButton2_Click(object sender, EventArgs e)
+        public static string ShowBox(string txtMessage, string txtTitle)
         {
-            indice = "no cluster";
+            newMessageBox = new frmIndices();
+            newMessageBox.lblTitle.Text = txtTitle;
+            newMessageBox.lblmessage.Text = txtMessage;
+            newMessageBox.ShowDialog();
+            return Button_id;
         }
+        public void frmIndices_Load(object sender, EventArgs e)
+        {
+            disposeFormTimer = 30;
+            newMessageBox.lblTimer.Text = disposeFormTimer.ToString();
+            msgTimer = new Timer();
+            msgTimer.Interval = 1000;
+            msgTimer.Enabled = true;
+            msgTimer.Start();
+            msgTimer.Tick += new System.EventHandler(this.timer_tick);
+        }
+
+        private void timer_tick(object sender, EventArgs e)
+        {
+            disposeFormTimer--;
+
+            if (disposeFormTimer >= 0)
+            {
+                newMessageBox.lblTimer.Text = disposeFormTimer.ToString();
+            }
+            else
+            {
+                newMessageBox.msgTimer.Stop();
+                newMessageBox.msgTimer.Dispose();
+                newMessageBox.Dispose();
+            }
+        }
+
+        public void metroButton1_Click(object sender, EventArgs e)
+        {
+            newMessageBox.msgTimer.Stop();
+            newMessageBox.msgTimer.Dispose();
+            Button_id = "1";
+            newMessageBox.Dispose();
+        }
+
+        public void metroButton2_Click(object sender, EventArgs e)
+        {
+            newMessageBox.msgTimer.Stop();
+            newMessageBox.msgTimer.Dispose();
+            Button_id = "2";
+            newMessageBox.Dispose();
+        }
+
+       
     }
 }
