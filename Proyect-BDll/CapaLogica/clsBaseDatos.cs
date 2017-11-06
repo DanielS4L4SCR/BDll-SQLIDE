@@ -49,6 +49,8 @@ namespace CapaLogica
         {
             return new CapaAccesoBD.clsConexion(instanceName:instances).ejecutar(consulta, instance);
         }
+
+        
     }
 }
 

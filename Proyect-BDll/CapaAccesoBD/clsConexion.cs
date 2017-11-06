@@ -147,8 +147,9 @@ namespace CapaAccesoBD
             {
                 if (abrirConexion())
                 {
-                    oSQLDA.Fill(oDT);           
-                    MessageBox.Show("Comando ejecutado correctamente: ", "SQL MANAGER 2017", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    oSQLDA.Fill(oDT);
+                    //MessageBox.Show("Comando ejecutado correctamente: ", "SQL MANAGER 2017", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    Console.WriteLine("Comando ejecutado correctamente");
                 }
             }
             catch (System.Exception ex)
