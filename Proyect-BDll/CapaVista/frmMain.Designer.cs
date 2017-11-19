@@ -100,6 +100,9 @@ namespace CapaVista
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbConsulta = new MetroFramework.Controls.MetroLabel();
+            this.indicesGeneradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCerrarGrid = new System.Windows.Forms.Button();
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbBD.SuspendLayout();
@@ -147,6 +150,7 @@ namespace CapaVista
             this.groupBox3.Size = new System.Drawing.Size(184, 318);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Columnas";
             // 
             // panel7
             // 
@@ -377,14 +381,14 @@ namespace CapaVista
             // dATABASEToolStripMenuItem3
             // 
             this.dATABASEToolStripMenuItem3.Name = "dATABASEToolStripMenuItem3";
-            this.dATABASEToolStripMenuItem3.Size = new System.Drawing.Size(142, 24);
+            this.dATABASEToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
             this.dATABASEToolStripMenuItem3.Text = "DATABASE";
             this.dATABASEToolStripMenuItem3.Click += new System.EventHandler(this.dATABASEToolStripMenuItem3_Click);
             // 
             // tABLEToolStripMenuItem2
             // 
             this.tABLEToolStripMenuItem2.Name = "tABLEToolStripMenuItem2";
-            this.tABLEToolStripMenuItem2.Size = new System.Drawing.Size(142, 24);
+            this.tABLEToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
             this.tABLEToolStripMenuItem2.Text = "TABLE";
             this.tABLEToolStripMenuItem2.Click += new System.EventHandler(this.tABLEToolStripMenuItem2_Click);
             // 
@@ -400,14 +404,14 @@ namespace CapaVista
             // dATABASEToolStripMenuItem4
             // 
             this.dATABASEToolStripMenuItem4.Name = "dATABASEToolStripMenuItem4";
-            this.dATABASEToolStripMenuItem4.Size = new System.Drawing.Size(146, 24);
+            this.dATABASEToolStripMenuItem4.Size = new System.Drawing.Size(152, 24);
             this.dATABASEToolStripMenuItem4.Text = "DATABASE ";
             this.dATABASEToolStripMenuItem4.Click += new System.EventHandler(this.dATABASEToolStripMenuItem4_Click);
             // 
             // tABLEToolStripMenuItem3
             // 
             this.tABLEToolStripMenuItem3.Name = "tABLEToolStripMenuItem3";
-            this.tABLEToolStripMenuItem3.Size = new System.Drawing.Size(146, 24);
+            this.tABLEToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
             this.tABLEToolStripMenuItem3.Text = "TABLE";
             this.tABLEToolStripMenuItem3.Click += new System.EventHandler(this.tABLEToolStripMenuItem3_Click);
             // 
@@ -423,7 +427,7 @@ namespace CapaVista
             // dATABASEToolStripMenuItem5
             // 
             this.dATABASEToolStripMenuItem5.Name = "dATABASEToolStripMenuItem5";
-            this.dATABASEToolStripMenuItem5.Size = new System.Drawing.Size(142, 24);
+            this.dATABASEToolStripMenuItem5.Size = new System.Drawing.Size(152, 24);
             this.dATABASEToolStripMenuItem5.Text = "DATABASE";
             this.dATABASEToolStripMenuItem5.Click += new System.EventHandler(this.dATABASEToolStripMenuItem5_Click);
             // 
@@ -434,7 +438,7 @@ namespace CapaVista
             this.dROPCOLUMNToolStripMenuItem,
             this.aLTERCOLUMNToolStripMenuItem1});
             this.tABLEToolStripMenuItem4.Name = "tABLEToolStripMenuItem4";
-            this.tABLEToolStripMenuItem4.Size = new System.Drawing.Size(142, 24);
+            this.tABLEToolStripMenuItem4.Size = new System.Drawing.Size(152, 24);
             this.tABLEToolStripMenuItem4.Text = "TABLE";
             // 
             // aDDCOLUMNToolStripMenuItem1
@@ -461,7 +465,9 @@ namespace CapaVista
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.plantillasUtilizadasToolStripMenuItem});
+            this.plantillasUtilizadasToolStripMenuItem,
+            this.indicesGeneradosToolStripMenuItem,
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem});
             this.reportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
@@ -470,7 +476,7 @@ namespace CapaVista
             // plantillasUtilizadasToolStripMenuItem
             // 
             this.plantillasUtilizadasToolStripMenuItem.Name = "plantillasUtilizadasToolStripMenuItem";
-            this.plantillasUtilizadasToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
+            this.plantillasUtilizadasToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
             this.plantillasUtilizadasToolStripMenuItem.Text = "Plantillas Utilizadas";
             this.plantillasUtilizadasToolStripMenuItem.Click += new System.EventHandler(this.plantillasUtilizadasToolStripMenuItem_Click);
             // 
@@ -560,7 +566,7 @@ namespace CapaVista
             // 
             this.txtQuery5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery5.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
-            this.txtQuery5.Location = new System.Drawing.Point(-9, -61);
+            this.txtQuery5.Location = new System.Drawing.Point(1, 1);
             this.txtQuery5.Name = "txtQuery5";
             this.txtQuery5.Size = new System.Drawing.Size(949, 343);
             this.txtQuery5.TabIndex = 12;
@@ -828,11 +834,43 @@ namespace CapaVista
             this.lbConsulta.Size = new System.Drawing.Size(0, 0);
             this.lbConsulta.TabIndex = 17;
             // 
+            // indicesGeneradosToolStripMenuItem
+            // 
+            this.indicesGeneradosToolStripMenuItem.Name = "indicesGeneradosToolStripMenuItem";
+            this.indicesGeneradosToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
+            this.indicesGeneradosToolStripMenuItem.Text = "Total de Indices Generados";
+            this.indicesGeneradosToolStripMenuItem.Click += new System.EventHandler(this.indicesGeneradosToolStripMenuItem_Click);
+            // 
+            // btnCerrarGrid
+            // 
+            this.btnCerrarGrid.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarGrid.BackgroundImage = global::CapaVista.Properties.Resources.if_cross_308235;
+            this.btnCerrarGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrarGrid.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCerrarGrid.FlatAppearance.BorderSize = 0;
+            this.btnCerrarGrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnCerrarGrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnCerrarGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarGrid.Location = new System.Drawing.Point(957, 535);
+            this.btnCerrarGrid.Name = "btnCerrarGrid";
+            this.btnCerrarGrid.Size = new System.Drawing.Size(19, 17);
+            this.btnCerrarGrid.TabIndex = 18;
+            this.btnCerrarGrid.UseVisualStyleBackColor = false;
+            this.btnCerrarGrid.Visible = false;
+            this.btnCerrarGrid.Click += new System.EventHandler(this.btnCerrarGrid_Click);
+            // 
+            // buscarLosIndicesDeUnaTablaToolStripMenuItem
+            // 
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Name = "buscarLosIndicesDeUnaTablaToolStripMenuItem";
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Text = "Buscar los Indices de una tabla";
+            // 
             // lbTabñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1215, 762);
+            this.Controls.Add(this.btnCerrarGrid);
             this.Controls.Add(this.lbConsulta);
             this.Controls.Add(this.lbClock);
             this.Controls.Add(this.panel3);
@@ -941,5 +979,8 @@ namespace CapaVista
         private Scintilla txtQuery2;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem plantillasUtilizadasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem indicesGeneradosToolStripMenuItem;
+        private System.Windows.Forms.Button btnCerrarGrid;
+        private System.Windows.Forms.ToolStripMenuItem buscarLosIndicesDeUnaTablaToolStripMenuItem;
     }
 }

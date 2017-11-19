@@ -279,6 +279,8 @@ namespace CapaVista
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                             dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                            btnCerrarGrid.Visible = true;
+                            dgvInfo.Visible = true;
                             if (txtQuery1.SelectedText.Contains("Select") || txtQuery1.SelectedText.Contains("SELECT") || txtQuery1.SelectedText.Contains("select") && txtQuery1.SelectedText.Contains("["))
                             {
                                 contSelect += 1;
@@ -334,6 +336,8 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                        btnCerrarGrid.Visible = true;
+                        dgvInfo.Visible = true;
                         if (txtQuery1.SelectedText.Contains("Select") || txtQuery1.SelectedText.Contains("SELECT") || txtQuery1.SelectedText.Contains("select") && txtQuery1.SelectedText.Contains("["))
                         {
                             contSelect += 1;
@@ -359,6 +363,8 @@ namespace CapaVista
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                             dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                            btnCerrarGrid.Visible = true;
+                            dgvInfo.Visible = true;
                             if (txtQuery2.SelectedText.Contains("Select") || txtQuery2.SelectedText.Contains("SELECT") || txtQuery2.SelectedText.Contains("select") && txtQuery2.SelectedText.Contains("["))
                             {
                                 contSelect += 1;
@@ -410,6 +416,8 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                        btnCerrarGrid.Visible = true;
+                        dgvInfo.Visible = true;
                         if (txtQuery2.SelectedText.Contains("Select") || txtQuery2.SelectedText.Contains("SELECT") || txtQuery2.SelectedText.Contains("select") && txtQuery2.SelectedText.Contains("["))
                         {
                             contSelect += 1;
@@ -435,7 +443,8 @@ namespace CapaVista
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                               dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
-
+                              btnCerrarGrid.Visible = true;
+                              dgvInfo.Visible = true;
                             if (txtQuery3.SelectedText.Contains("Select") || txtQuery3.SelectedText.Contains("SELECT") || txtQuery3.SelectedText.Contains("select") && txtQuery3.SelectedText.Contains("["))
                             {
                                 contSelect += 1;
@@ -488,6 +497,8 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+                        btnCerrarGrid.Visible = true;
+                        dgvInfo.Visible = true;
                         if (txtQuery3.SelectedText.Contains("Select") || txtQuery3.SelectedText.Contains("SELECT") || txtQuery3.SelectedText.Contains("select") && txtQuery3.SelectedText.Contains("["))
                         {
                             contSelect += 1;
@@ -513,6 +524,8 @@ namespace CapaVista
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                             dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+                            btnCerrarGrid.Visible = true;
+                            dgvInfo.Visible = true;
 
                             if (txtQuery4.SelectedText.Contains("Select") || txtQuery4.SelectedText.Contains("SELECT") || txtQuery4.SelectedText.Contains("select") && txtQuery4.SelectedText.Contains("["))
                             {
@@ -566,6 +579,8 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+                        btnCerrarGrid.Visible = true;
+                        dgvInfo.Visible = true;
                         if (txtQuery4.SelectedText.Contains("Select") || txtQuery4.SelectedText.Contains("SELECT") || txtQuery4.SelectedText.Contains("select") && txtQuery4.SelectedText.Contains("["))
                         {
                             contSelect += 1;
@@ -591,7 +606,8 @@ namespace CapaVista
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                             dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
-
+                            btnCerrarGrid.Visible = true;
+                            dgvInfo.Visible = true;
                             if (txtQuery5.SelectedText.Contains("Select") || txtQuery5.SelectedText.Contains("SELECT") || txtQuery5.SelectedText.Contains("select") && txtQuery5.SelectedText.Contains("["))
                             {
                                 contSelect += 1;
@@ -644,6 +660,8 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
+                        btnCerrarGrid.Visible = true;
+                        dgvInfo.Visible = true;
                         if (txtQuery5.SelectedText.Contains("Select") || txtQuery5.SelectedText.Contains("SELECT") || txtQuery5.SelectedText.Contains("select") && txtQuery5.SelectedText.Contains("["))
                         {
                             contSelect += 1;
@@ -1015,23 +1033,23 @@ namespace CapaVista
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "Drop Database " + "databasename";
+                txtQuery1.Text = "Drop Database " + "["+"databasename"+"]";
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
-                txtQuery2.Text = "Drop Database " + "databasename";
+                txtQuery2.Text = "Drop Database " + "[" + "databasename" + "]";
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
-                txtQuery3.Text = "Drop Database " + "databasename";
+                txtQuery3.Text = "Drop Database " + "[" + "databasename" + "]";
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
-                txtQuery4.Text = "Drop Database " + "databasename";
+                txtQuery4.Text = "Drop Database " + "[" + "databasename" + "]";
             }
             else if (tabContQuery.SelectedTab == tab5)
             {
-                txtQuery5.Text = "Drop Database " + "databasename";
+                txtQuery5.Text = "Drop Database " + "[" + "databasename" + "]";
             }
         }
 
@@ -1177,7 +1195,31 @@ namespace CapaVista
 
         private void plantillasUtilizadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+
             MetroMessageBox.Show(this,"Plantilla Select: " + contSelect +Environment.NewLine+"Plantilla Insert: "+contInsert + Environment.NewLine + "Plantilla Update: " + contUpdate + Environment.NewLine + "Plantilla Delete: " + contDelete, "SQL MANAGER",MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void indicesGeneradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
+            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
+            dgvInfo.DataSource = Conect.Ejectar(String.Format("SELECT i.name AS Nombre_Índice" + Environment.NewLine +
+                                                ", object_name(i.object_id) As Nombre_Tabla" + Environment.NewLine +
+                                                 " , COL_NAME(ic.object_id, ic.column_id) AS column_name" + Environment.NewLine +
+                                                "FROM sys.indexes AS i" + Environment.NewLine +
+                                                "INNER JOIN sys.index_columns AS ic" + Environment.NewLine +
+                                                 " ON i.object_id = ic.object_id AND i.index_id = ic.index_id"), objConexion, instanceName);
+            MetroMessageBox.Show(this,"El total de indices generados hasta el momento es de: "+ dgvInfo.Rows.Count.ToString(),"SQL MANAGER",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            btnCerrarGrid.Visible = true;
+        }
+
+        private void btnCerrarGrid_Click(object sender, EventArgs e)
+        {
+            if (dgvInfo.Visible == true){
+                dgvInfo.Visible = false;
+                btnCerrarGrid.Visible = false;
+            }
         }
     }
 }
