@@ -25,7 +25,7 @@ namespace CapaVista
         private void timer1_Tick(object sender, EventArgs e)
         {
             rectangleShape2.Width += 5;
-            if (rectangleShape2.Width >= 458)
+            if (rectangleShape2.Width >= 459)
             {
                 timer1.Stop();
                 Login log = new Login();
