@@ -19,6 +19,13 @@ namespace CapaVista
         public Form login { get; set; }
         List<TabPage> AllTabPages = new List<TabPage>();
         int cont = 0;
+        int contSelect = 0;
+        int contInsert = 0;
+        int contUpdate = 0;
+        int contDelete = 0;
+        int contDrop = 0;
+        int contCreate = 0;
+        int contAlter = 0;
 
         public lbTabñas(String instanceName, Form login)
         {
@@ -255,23 +262,44 @@ namespace CapaVista
 
         private void ejecutarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            #region Variables
             DateTime tiempo1 = DateTime.Now;
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
             SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
+            
+          
+            #endregion
+
             if (cboBD.SelectedItem != null)
             {
                 if (tabContQuery.SelectedTab == Tab1)
                 {
-                    if (txtQuery1.SelectedText.Contains("Select") || txtQuery1.SelectedText.Contains("SELECT") || txtQuery1.SelectedText.Contains("Select"))
+                    if (txtQuery1.SelectedText.Contains("Select") || txtQuery1.SelectedText.Contains("SELECT") || txtQuery1.SelectedText.Contains("select"))
                     {
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                             dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                            if (txtQuery1.SelectedText.Contains("Select") || txtQuery1.SelectedText.Contains("SELECT") || txtQuery1.SelectedText.Contains("select") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contSelect += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Insert") || txtQuery1.SelectedText.Contains("INSERT") || txtQuery1.SelectedText.Contains("insert") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contInsert += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Update") || txtQuery1.SelectedText.Contains("UPDATE") || txtQuery1.SelectedText.Contains("update") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contUpdate += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Delete") || txtQuery1.SelectedText.Contains("DELETE") || txtQuery1.SelectedText.Contains("delete") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contDelete += 1;
+                            }
 
                         }
                         else
                         {
-                            DialogResult msj = MetroMessageBox.Show(this,"No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " +"'"+ lbTabla.SelectedValue +"'"+ " No contiene índices."+" Presione " + "'"+ "OK" +"'" + " si desea que el sistema le ayude a crear un nuevo indice", "SQL MANAGER 2017", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                            DialogResult msj = MetroMessageBox.Show(this,"SQL MANAGER 2017","No es posible ejecutar esta sentencia tipo select debido a que la tabla seleccionada: " +"'"+ lbTabla.SelectedValue +"'"+ " No contiene índices."+" Presione " + "'"+ "OK" +"'" + " si desea que el sistema le ayude a crear un nuevo indice", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                            
                             if (msj == DialogResult.OK)
                             {   
@@ -289,14 +317,14 @@ namespace CapaVista
                                 if (result.Equals("1"))
                                 {
                                     txtQuery1.Text = "CREATE CLUSTERED INDEX index_name" + Environment.NewLine +
-                                                      "ON "+ lbTabla.Text + "" + "("+result1+")";
+                                                      "ON "+ lbTabla.Text + "" + "("+result1+")";      
                                     //this.WindowState = FormWindowState.Normal;
                                 }
 
                                 if (result.Equals("2"))
                                 {
                                     txtQuery1.Text = "CREATE NONCLUSTERED INDEX index_name" + Environment.NewLine +
-                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";
+                                                      "ON " + lbTabla.Text + "" + "(" + result1 + ")";                                  
                                     //this.WindowState = FormWindowState.Normal;
                                 }
                             }
@@ -306,15 +334,47 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery1.SelectedText, objConexion, instanceName);
+                        if (txtQuery1.SelectedText.Contains("Select") || txtQuery1.SelectedText.Contains("SELECT") || txtQuery1.SelectedText.Contains("select") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contSelect += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Insert") || txtQuery1.SelectedText.Contains("INSERT") || txtQuery1.SelectedText.Contains("insert") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contInsert += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Update") || txtQuery1.SelectedText.Contains("UPDATE") || txtQuery1.SelectedText.Contains("update") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contUpdate += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Delete") || txtQuery1.SelectedText.Contains("DELETE") || txtQuery1.SelectedText.Contains("delete") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contDelete += 1;
+                        }
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab2)
                 {
-                    if (txtQuery2.SelectedText.Contains("Select") || txtQuery2.SelectedText.Contains("SELECT") || txtQuery2.SelectedText.Contains("Select"))
+                    if (txtQuery2.SelectedText.Contains("Select") || txtQuery2.SelectedText.Contains("SELECT") || txtQuery2.SelectedText.Contains("select"))
                     {
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                             dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                            if (txtQuery2.SelectedText.Contains("Select") || txtQuery2.SelectedText.Contains("SELECT") || txtQuery2.SelectedText.Contains("select") && txtQuery2.SelectedText.Contains("["))
+                            {
+                                contSelect += 1;
+                            }
+                            if (txtQuery2.SelectedText.Contains("Insert") || txtQuery2.SelectedText.Contains("INSERT") || txtQuery2.SelectedText.Contains("insert") && txtQuery2.SelectedText.Contains("["))
+                            {
+                                contInsert += 1;
+                            }
+                            if (txtQuery2.SelectedText.Contains("Update") || txtQuery2.SelectedText.Contains("UPDATE") || txtQuery2.SelectedText.Contains("update") && txtQuery2.SelectedText.Contains("["))
+                            {
+                                contUpdate += 1;
+                            }
+                            if (txtQuery2.SelectedText.Contains("Delete") || txtQuery2.SelectedText.Contains("DELETE") || txtQuery2.SelectedText.Contains("delete") && txtQuery2.SelectedText.Contains("["))
+                            {
+                                contDelete += 1;
+                            }
                         }
                         else
                         {
@@ -350,15 +410,49 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery2.SelectedText, objConexion, instanceName);
+                        if (txtQuery2.SelectedText.Contains("Select") || txtQuery2.SelectedText.Contains("SELECT") || txtQuery2.SelectedText.Contains("select") && txtQuery2.SelectedText.Contains("["))
+                        {
+                            contSelect += 1;
+                        }    
+                        if (txtQuery2.SelectedText.Contains("Insert") || txtQuery2.SelectedText.Contains("INSERT") || txtQuery2.SelectedText.Contains("insert") && txtQuery2.SelectedText.Contains("["))
+                        {
+                            contInsert += 1;
+                        }
+                        if (txtQuery2.SelectedText.Contains("Update") || txtQuery2.SelectedText.Contains("UPDATE") || txtQuery2.SelectedText.Contains("update") && txtQuery2.SelectedText.Contains("["))
+                        {
+                            contUpdate += 1;
+                        }
+                        if (txtQuery2.SelectedText.Contains("Delete") || txtQuery2.SelectedText.Contains("DELETE") || txtQuery2.SelectedText.Contains("delete") && txtQuery2.SelectedText.Contains("["))
+                        {
+                            contDelete += 1;
+                        }
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab3)
                 {
-                    if (txtQuery3.SelectedText.Contains("Select") || txtQuery3.SelectedText.Contains("SELECT") || txtQuery3.SelectedText.Contains("Select"))
+                    if (txtQuery3.SelectedText.Contains("Select") || txtQuery3.SelectedText.Contains("SELECT") || txtQuery3.SelectedText.Contains("select"))
                     {
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
-                            dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+                              dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+
+                            if (txtQuery3.SelectedText.Contains("Select") || txtQuery3.SelectedText.Contains("SELECT") || txtQuery3.SelectedText.Contains("select") && txtQuery3.SelectedText.Contains("["))
+                            {
+                                contSelect += 1;
+                            }
+                            if (txtQuery3.SelectedText.Contains("Insert") || txtQuery3.SelectedText.Contains("INSERT") || txtQuery3.SelectedText.Contains("insert") && txtQuery3.SelectedText.Contains("["))
+                            {
+                                contInsert += 1;
+                            }
+                            if (txtQuery3.SelectedText.Contains("Update") || txtQuery3.SelectedText.Contains("UPDATE") || txtQuery3.SelectedText.Contains("update") && txtQuery3.SelectedText.Contains("["))
+                            {
+                                contUpdate += 1;
+                            }
+                            if (txtQuery3.SelectedText.Contains("Delete") || txtQuery3.SelectedText.Contains("DELETE") || txtQuery3.SelectedText.Contains("delete") && txtQuery3.SelectedText.Contains("["))
+                            {
+                                contDelete += 1;
+                            }
+
                         }
                         else
                         {
@@ -394,15 +488,49 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery3.SelectedText, objConexion, instanceName);
+                        if (txtQuery3.SelectedText.Contains("Select") || txtQuery3.SelectedText.Contains("SELECT") || txtQuery3.SelectedText.Contains("select") && txtQuery3.SelectedText.Contains("["))
+                        {
+                            contSelect += 1;
+                        }
+                        if (txtQuery3.SelectedText.Contains("Insert") || txtQuery3.SelectedText.Contains("INSERT") || txtQuery3.SelectedText.Contains("insert") && txtQuery3.SelectedText.Contains("["))
+                        {
+                            contInsert += 1;
+                        }
+                        if (txtQuery3.SelectedText.Contains("Update") || txtQuery3.SelectedText.Contains("UPDATE") || txtQuery3.SelectedText.Contains("update") && txtQuery3.SelectedText.Contains("["))
+                        {
+                            contUpdate += 1;
+                        }
+                        if (txtQuery3.SelectedText.Contains("Delete") || txtQuery3.SelectedText.Contains("DELETE") || txtQuery3.SelectedText.Contains("delete") && txtQuery3.SelectedText.Contains("["))
+                        {
+                            contDelete += 1;
+                        }
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab4)
                 {
-                    if (txtQuery4.SelectedText.Contains("Select") || txtQuery4.SelectedText.Contains("SELECT") || txtQuery4.SelectedText.Contains("Select"))
+                    if (txtQuery4.SelectedText.Contains("Select") || txtQuery4.SelectedText.Contains("SELECT") || txtQuery4.SelectedText.Contains("select"))
                     {
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                             dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+
+                            if (txtQuery4.SelectedText.Contains("Select") || txtQuery4.SelectedText.Contains("SELECT") || txtQuery4.SelectedText.Contains("select") && txtQuery4.SelectedText.Contains("["))
+                            {
+                                contSelect += 1;
+                            }
+                            if (txtQuery4.SelectedText.Contains("Insert") || txtQuery4.SelectedText.Contains("INSERT") || txtQuery4.SelectedText.Contains("insert") && txtQuery4.SelectedText.Contains("["))
+                            {
+                                contInsert += 1;
+                            }
+                            if (txtQuery4.SelectedText.Contains("Update") || txtQuery4.SelectedText.Contains("UPDATE") || txtQuery4.SelectedText.Contains("update") && txtQuery4.SelectedText.Contains("["))
+                            {
+                                contUpdate += 1;
+                            }
+                            if (txtQuery4.SelectedText.Contains("Delete") || txtQuery4.SelectedText.Contains("DELETE") || txtQuery4.SelectedText.Contains("delete") && txtQuery4.SelectedText.Contains("["))
+                            {
+                                contDelete += 1;
+                            }
+
                         }
                         else
                         {
@@ -438,15 +566,49 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery4.SelectedText, objConexion, instanceName);
+                        if (txtQuery4.SelectedText.Contains("Select") || txtQuery4.SelectedText.Contains("SELECT") || txtQuery4.SelectedText.Contains("select") && txtQuery4.SelectedText.Contains("["))
+                        {
+                            contSelect += 1;
+                        }
+                        if (txtQuery4.SelectedText.Contains("Insert") || txtQuery4.SelectedText.Contains("INSERT") || txtQuery4.SelectedText.Contains("insert") && txtQuery4.SelectedText.Contains("["))
+                        {
+                            contInsert += 1;
+                        }
+                        if (txtQuery4.SelectedText.Contains("Update") || txtQuery4.SelectedText.Contains("UPDATE") || txtQuery4.SelectedText.Contains("update") && txtQuery4.SelectedText.Contains("["))
+                        {
+                            contUpdate += 1;
+                        }
+                        if (txtQuery4.SelectedText.Contains("Delete") || txtQuery4.SelectedText.Contains("DELETE") || txtQuery4.SelectedText.Contains("delete") && txtQuery4.SelectedText.Contains("["))
+                        {
+                            contDelete += 1;
+                        }
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab5)
                 {
-                    if (txtQuery5.SelectedText.Contains("Select") || txtQuery5.SelectedText.Contains("SELECT") || txtQuery5.SelectedText.Contains("Select"))
+                    if (txtQuery5.SelectedText.Contains("Select") || txtQuery5.SelectedText.Contains("SELECT") || txtQuery5.SelectedText.Contains("select"))
                     {
                         if (new CapaLogica.clsIndices().EsquemaIndices(lbTabla.SelectedValue.ToString(), instanceName, cboBD.SelectedValue.ToString()))
                         {
                             dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
+
+                            if (txtQuery5.SelectedText.Contains("Select") || txtQuery5.SelectedText.Contains("SELECT") || txtQuery5.SelectedText.Contains("select") && txtQuery5.SelectedText.Contains("["))
+                            {
+                                contSelect += 1;
+                            }
+                            if (txtQuery5.SelectedText.Contains("Insert") || txtQuery5.SelectedText.Contains("INSERT") || txtQuery5.SelectedText.Contains("insert") && txtQuery5.SelectedText.Contains("["))
+                            {
+                                contInsert += 1;
+                            }
+                            if (txtQuery5.SelectedText.Contains("Update") || txtQuery5.SelectedText.Contains("UPDATE") || txtQuery5.SelectedText.Contains("update") && txtQuery5.SelectedText.Contains("["))
+                            {
+                                contUpdate += 1;
+                            }
+                            if (txtQuery5.SelectedText.Contains("Delete") || txtQuery5.SelectedText.Contains("DELETE") || txtQuery5.SelectedText.Contains("delete") && txtQuery5.SelectedText.Contains("["))
+                            {
+                                contDelete += 1;
+                            }
+
                         }
                         else
                         {
@@ -482,6 +644,22 @@ namespace CapaVista
                     else
                     {
                         dgvInfo.DataSource = Conect.Ejectar(txtQuery5.SelectedText, objConexion, instanceName);
+                        if (txtQuery5.SelectedText.Contains("Select") || txtQuery5.SelectedText.Contains("SELECT") || txtQuery5.SelectedText.Contains("select") && txtQuery5.SelectedText.Contains("["))
+                        {
+                            contSelect += 1;
+                        }
+                        if (txtQuery5.SelectedText.Contains("Insert") || txtQuery5.SelectedText.Contains("INSERT") || txtQuery5.SelectedText.Contains("insert") && txtQuery5.SelectedText.Contains("["))
+                        {
+                            contInsert += 1;
+                        }
+                        if (txtQuery5.SelectedText.Contains("Update") || txtQuery5.SelectedText.Contains("UPDATE") || txtQuery5.SelectedText.Contains("update") && txtQuery5.SelectedText.Contains("["))
+                        {
+                            contUpdate += 1;
+                        }
+                        if (txtQuery5.SelectedText.Contains("Delete") || txtQuery5.SelectedText.Contains("DELETE") || txtQuery5.SelectedText.Contains("delete") && txtQuery5.SelectedText.Contains("["))
+                        {
+                            contDelete += 1;
+                        }
                     }
                 }
                 DateTime tiempo2 = DateTime.Now;
@@ -691,28 +869,28 @@ namespace CapaVista
             {
                 txtQuery1.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
                    "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-                  "Set " + "(" + result + ")" + " = " + Environment.NewLine +
+                  "Set "  + result  + " = " + Environment.NewLine +
                   "Where " + Environment.NewLine;
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
                 txtQuery2.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
                   "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-                  "Set " + "(" + result + ")" + " = " + Environment.NewLine +
+                  "Set "  + result + " = " + Environment.NewLine +
                   "Where " + Environment.NewLine;
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
                 txtQuery3.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
                  "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-                  "Set " + "(" + result + ")" + " = " + Environment.NewLine +
+                  "Set " + result + " = " + Environment.NewLine +
                   "Where " + Environment.NewLine;
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
                 txtQuery4.Text = "use " + "[" + cboBD.Text + "]" + Environment.NewLine +
                   "Update [dbo].[" + lbTabla.Text + "] " + Environment.NewLine +
-                  "Set " + "(" + result + ")" + " = " + Environment.NewLine +
+                  "Set " + result + " = " + Environment.NewLine +
                   "Where " + Environment.NewLine;
             }
             else if (tabContQuery.SelectedTab == tab5)
@@ -837,23 +1015,23 @@ namespace CapaVista
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "Drop Database " + cboBD.Text;
+                txtQuery1.Text = "Drop Database " + "databasename";
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
-                txtQuery2.Text = "Drop Database " + cboBD.Text;
+                txtQuery2.Text = "Drop Database " + "databasename";
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
-                txtQuery3.Text = "Drop Database " + cboBD.Text;
+                txtQuery3.Text = "Drop Database " + "databasename";
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
-                txtQuery4.Text = "Drop Database " + cboBD.Text;
+                txtQuery4.Text = "Drop Database " + "databasename";
             }
             else if (tabContQuery.SelectedTab == tab5)
             {
-                txtQuery5.Text = "Drop Database " + cboBD.Text;
+                txtQuery5.Text = "Drop Database " + "databasename";
             }
         }
 
@@ -995,6 +1173,11 @@ namespace CapaVista
         private void cboBD_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void plantillasUtilizadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MetroMessageBox.Show(this,"Plantilla Select: " + contSelect +Environment.NewLine+"Plantilla Insert: "+contInsert + Environment.NewLine + "Plantilla Update: " + contUpdate + Environment.NewLine + "Plantilla Delete: " + contDelete, "SQL MANAGER",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

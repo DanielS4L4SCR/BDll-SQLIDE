@@ -71,6 +71,8 @@ namespace CapaVista
             this.aDDCOLUMNToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dROPCOLUMNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aLTERCOLUMNToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.plantillasUtilizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbReloj = new MetroFramework.Controls.MetroLabel();
             this.lbSqlManager = new MetroFramework.Controls.MetroLabel();
             this.lbClock = new MetroFramework.Controls.MetroLabel();
@@ -277,7 +279,8 @@ namespace CapaVista
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoQueryToolStripMenuItem,
             this.ejecutarToolStripMenuItem,
-            this.script});
+            this.script,
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 13);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(0);
@@ -321,34 +324,34 @@ namespace CapaVista
             this.uPDATEToolStripMenuItem1,
             this.dELETEToolStripMenuItem1});
             this.dMLToolStripMenuItem1.Name = "dMLToolStripMenuItem1";
-            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(108, 24);
+            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.dMLToolStripMenuItem1.Text = "DML";
             // 
             // sELECTToolStripMenuItem1
             // 
             this.sELECTToolStripMenuItem1.Name = "sELECTToolStripMenuItem1";
-            this.sELECTToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
+            this.sELECTToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.sELECTToolStripMenuItem1.Text = "SELECT";
             this.sELECTToolStripMenuItem1.Click += new System.EventHandler(this.sELECTToolStripMenuItem1_Click);
             // 
             // iNSERTToolStripMenuItem1
             // 
             this.iNSERTToolStripMenuItem1.Name = "iNSERTToolStripMenuItem1";
-            this.iNSERTToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
+            this.iNSERTToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.iNSERTToolStripMenuItem1.Text = "INSERT";
             this.iNSERTToolStripMenuItem1.Click += new System.EventHandler(this.iNSERTToolStripMenuItem1_Click);
             // 
             // uPDATEToolStripMenuItem1
             // 
             this.uPDATEToolStripMenuItem1.Name = "uPDATEToolStripMenuItem1";
-            this.uPDATEToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
+            this.uPDATEToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.uPDATEToolStripMenuItem1.Text = "UPDATE";
             this.uPDATEToolStripMenuItem1.Click += new System.EventHandler(this.uPDATEToolStripMenuItem1_Click);
             // 
             // dELETEToolStripMenuItem1
             // 
             this.dELETEToolStripMenuItem1.Name = "dELETEToolStripMenuItem1";
-            this.dELETEToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
+            this.dELETEToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.dELETEToolStripMenuItem1.Text = "DELETE";
             this.dELETEToolStripMenuItem1.Click += new System.EventHandler(this.dELETEToolStripMenuItem1_Click);
             // 
@@ -359,7 +362,7 @@ namespace CapaVista
             this.dROPToolStripMenuItem1,
             this.aLTERToolStripMenuItem1});
             this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
-            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.dDLToolStripMenuItem.Text = "DDL";
             // 
             // cREATEToolStripMenuItem1
@@ -368,7 +371,7 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem3,
             this.tABLEToolStripMenuItem2});
             this.cREATEToolStripMenuItem1.Name = "cREATEToolStripMenuItem1";
-            this.cREATEToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
+            this.cREATEToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.cREATEToolStripMenuItem1.Text = "CREATE";
             // 
             // dATABASEToolStripMenuItem3
@@ -391,7 +394,7 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem4,
             this.tABLEToolStripMenuItem3});
             this.dROPToolStripMenuItem1.Name = "dROPToolStripMenuItem1";
-            this.dROPToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
+            this.dROPToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.dROPToolStripMenuItem1.Text = "DROP";
             // 
             // dATABASEToolStripMenuItem4
@@ -414,7 +417,7 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem5,
             this.tABLEToolStripMenuItem4});
             this.aLTERToolStripMenuItem1.Name = "aLTERToolStripMenuItem1";
-            this.aLTERToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
+            this.aLTERToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.aLTERToolStripMenuItem1.Text = "ALTER";
             // 
             // dATABASEToolStripMenuItem5
@@ -454,6 +457,22 @@ namespace CapaVista
             this.aLTERCOLUMNToolStripMenuItem1.Size = new System.Drawing.Size(179, 24);
             this.aLTERCOLUMNToolStripMenuItem1.Text = "ALTER COLUMN";
             this.aLTERCOLUMNToolStripMenuItem1.Click += new System.EventHandler(this.aLTERCOLUMNToolStripMenuItem1_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plantillasUtilizadasToolStripMenuItem});
+            this.reportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.reportesToolStripMenuItem.Text = "&Reportes";
+            // 
+            // plantillasUtilizadasToolStripMenuItem
+            // 
+            this.plantillasUtilizadasToolStripMenuItem.Name = "plantillasUtilizadasToolStripMenuItem";
+            this.plantillasUtilizadasToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
+            this.plantillasUtilizadasToolStripMenuItem.Text = "Plantillas Utilizadas";
+            this.plantillasUtilizadasToolStripMenuItem.Click += new System.EventHandler(this.plantillasUtilizadasToolStripMenuItem_Click);
             // 
             // lbReloj
             // 
@@ -541,7 +560,7 @@ namespace CapaVista
             // 
             this.txtQuery5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuery5.Font = new System.Drawing.Font("Maiandra GD", 9.75F);
-            this.txtQuery5.Location = new System.Drawing.Point(1, 1);
+            this.txtQuery5.Location = new System.Drawing.Point(-9, -61);
             this.txtQuery5.Name = "txtQuery5";
             this.txtQuery5.Size = new System.Drawing.Size(949, 343);
             this.txtQuery5.TabIndex = 12;
@@ -920,5 +939,7 @@ namespace CapaVista
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private Scintilla txtQuery2;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem plantillasUtilizadasToolStripMenuItem;
     }
 }
