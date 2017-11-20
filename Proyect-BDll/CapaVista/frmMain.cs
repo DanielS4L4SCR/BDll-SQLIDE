@@ -1200,18 +1200,20 @@ namespace CapaVista
 
             MetroMessageBox.Show(this,"Plantilla Select: " + contSelect +Environment.NewLine+"Plantilla Insert: "+contInsert + Environment.NewLine + "Plantilla Update: " + contUpdate + Environment.NewLine + "Plantilla Delete: " + contDelete, "SQL MANAGER",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
+        
         private void indicesGeneradosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int cantIndix = 0;
             CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
             SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
             dgvInfo.DataSource = Conect.Ejectar(String.Format("SELECT i.name AS Nombre_Índice" + Environment.NewLine +
-                                                ", object_name(i.object_id) As Nombre_Tabla" + Environment.NewLine +
-                                                 " , COL_NAME(ic.object_id, ic.column_id) AS column_name" + Environment.NewLine +
+                                                ",object_name(i.object_id) As Nombre_Tabla" + Environment.NewLine +
+                                                 ",COL_NAME(ic.object_id, ic.column_id) AS Nombre_Columna" + Environment.NewLine +
                                                 "FROM sys.indexes AS i" + Environment.NewLine +
                                                 "INNER JOIN sys.index_columns AS ic" + Environment.NewLine +
-                                                 " ON i.object_id = ic.object_id AND i.index_id = ic.index_id"), objConexion, instanceName);
-            MetroMessageBox.Show(this,"El total de indices generados hasta el momento es de: "+ dgvInfo.Rows.Count.ToString(),"SQL MANAGER",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                                 "ON i.object_id = ic.object_id AND i.index_id = ic.index_id"), objConexion, instanceName);
+            cantIndix = dgvInfo.Rows.Count-1;
+            MetroMessageBox.Show(this,"El total de indices generados hasta el momento es de: "+ cantIndix,"SQL MANAGER",MessageBoxButtons.OK,MessageBoxIcon.Information);
             dgvInfo.Visible = true;
             btnCerrarGrid.Visible = true;
         }
