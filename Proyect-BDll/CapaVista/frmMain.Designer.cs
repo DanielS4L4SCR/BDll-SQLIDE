@@ -73,6 +73,8 @@ namespace CapaVista
             this.aLTERCOLUMNToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plantillasUtilizadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.indicesGeneradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbReloj = new MetroFramework.Controls.MetroLabel();
             this.lbSqlManager = new MetroFramework.Controls.MetroLabel();
             this.lbClock = new MetroFramework.Controls.MetroLabel();
@@ -100,9 +102,7 @@ namespace CapaVista
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbConsulta = new MetroFramework.Controls.MetroLabel();
-            this.indicesGeneradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrarGrid = new System.Windows.Forms.Button();
-            this.buscarLosIndicesDeUnaTablaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbBD.SuspendLayout();
@@ -328,34 +328,34 @@ namespace CapaVista
             this.uPDATEToolStripMenuItem1,
             this.dELETEToolStripMenuItem1});
             this.dMLToolStripMenuItem1.Name = "dMLToolStripMenuItem1";
-            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.dMLToolStripMenuItem1.Size = new System.Drawing.Size(108, 24);
             this.dMLToolStripMenuItem1.Text = "DML";
             // 
             // sELECTToolStripMenuItem1
             // 
             this.sELECTToolStripMenuItem1.Name = "sELECTToolStripMenuItem1";
-            this.sELECTToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.sELECTToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
             this.sELECTToolStripMenuItem1.Text = "SELECT";
             this.sELECTToolStripMenuItem1.Click += new System.EventHandler(this.sELECTToolStripMenuItem1_Click);
             // 
             // iNSERTToolStripMenuItem1
             // 
             this.iNSERTToolStripMenuItem1.Name = "iNSERTToolStripMenuItem1";
-            this.iNSERTToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.iNSERTToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
             this.iNSERTToolStripMenuItem1.Text = "INSERT";
             this.iNSERTToolStripMenuItem1.Click += new System.EventHandler(this.iNSERTToolStripMenuItem1_Click);
             // 
             // uPDATEToolStripMenuItem1
             // 
             this.uPDATEToolStripMenuItem1.Name = "uPDATEToolStripMenuItem1";
-            this.uPDATEToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.uPDATEToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
             this.uPDATEToolStripMenuItem1.Text = "UPDATE";
             this.uPDATEToolStripMenuItem1.Click += new System.EventHandler(this.uPDATEToolStripMenuItem1_Click);
             // 
             // dELETEToolStripMenuItem1
             // 
             this.dELETEToolStripMenuItem1.Name = "dELETEToolStripMenuItem1";
-            this.dELETEToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.dELETEToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
             this.dELETEToolStripMenuItem1.Text = "DELETE";
             this.dELETEToolStripMenuItem1.Click += new System.EventHandler(this.dELETEToolStripMenuItem1_Click);
             // 
@@ -366,7 +366,7 @@ namespace CapaVista
             this.dROPToolStripMenuItem1,
             this.aLTERToolStripMenuItem1});
             this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
-            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.dDLToolStripMenuItem.Text = "DDL";
             // 
             // cREATEToolStripMenuItem1
@@ -375,20 +375,20 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem3,
             this.tABLEToolStripMenuItem2});
             this.cREATEToolStripMenuItem1.Name = "cREATEToolStripMenuItem1";
-            this.cREATEToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.cREATEToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
             this.cREATEToolStripMenuItem1.Text = "CREATE";
             // 
             // dATABASEToolStripMenuItem3
             // 
             this.dATABASEToolStripMenuItem3.Name = "dATABASEToolStripMenuItem3";
-            this.dATABASEToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
+            this.dATABASEToolStripMenuItem3.Size = new System.Drawing.Size(142, 24);
             this.dATABASEToolStripMenuItem3.Text = "DATABASE";
             this.dATABASEToolStripMenuItem3.Click += new System.EventHandler(this.dATABASEToolStripMenuItem3_Click);
             // 
             // tABLEToolStripMenuItem2
             // 
             this.tABLEToolStripMenuItem2.Name = "tABLEToolStripMenuItem2";
-            this.tABLEToolStripMenuItem2.Size = new System.Drawing.Size(152, 24);
+            this.tABLEToolStripMenuItem2.Size = new System.Drawing.Size(142, 24);
             this.tABLEToolStripMenuItem2.Text = "TABLE";
             this.tABLEToolStripMenuItem2.Click += new System.EventHandler(this.tABLEToolStripMenuItem2_Click);
             // 
@@ -398,20 +398,20 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem4,
             this.tABLEToolStripMenuItem3});
             this.dROPToolStripMenuItem1.Name = "dROPToolStripMenuItem1";
-            this.dROPToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.dROPToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
             this.dROPToolStripMenuItem1.Text = "DROP";
             // 
             // dATABASEToolStripMenuItem4
             // 
             this.dATABASEToolStripMenuItem4.Name = "dATABASEToolStripMenuItem4";
-            this.dATABASEToolStripMenuItem4.Size = new System.Drawing.Size(152, 24);
+            this.dATABASEToolStripMenuItem4.Size = new System.Drawing.Size(146, 24);
             this.dATABASEToolStripMenuItem4.Text = "DATABASE ";
             this.dATABASEToolStripMenuItem4.Click += new System.EventHandler(this.dATABASEToolStripMenuItem4_Click);
             // 
             // tABLEToolStripMenuItem3
             // 
             this.tABLEToolStripMenuItem3.Name = "tABLEToolStripMenuItem3";
-            this.tABLEToolStripMenuItem3.Size = new System.Drawing.Size(152, 24);
+            this.tABLEToolStripMenuItem3.Size = new System.Drawing.Size(146, 24);
             this.tABLEToolStripMenuItem3.Text = "TABLE";
             this.tABLEToolStripMenuItem3.Click += new System.EventHandler(this.tABLEToolStripMenuItem3_Click);
             // 
@@ -421,13 +421,13 @@ namespace CapaVista
             this.dATABASEToolStripMenuItem5,
             this.tABLEToolStripMenuItem4});
             this.aLTERToolStripMenuItem1.Name = "aLTERToolStripMenuItem1";
-            this.aLTERToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
+            this.aLTERToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
             this.aLTERToolStripMenuItem1.Text = "ALTER";
             // 
             // dATABASEToolStripMenuItem5
             // 
             this.dATABASEToolStripMenuItem5.Name = "dATABASEToolStripMenuItem5";
-            this.dATABASEToolStripMenuItem5.Size = new System.Drawing.Size(152, 24);
+            this.dATABASEToolStripMenuItem5.Size = new System.Drawing.Size(142, 24);
             this.dATABASEToolStripMenuItem5.Text = "DATABASE";
             this.dATABASEToolStripMenuItem5.Click += new System.EventHandler(this.dATABASEToolStripMenuItem5_Click);
             // 
@@ -438,7 +438,7 @@ namespace CapaVista
             this.dROPCOLUMNToolStripMenuItem,
             this.aLTERCOLUMNToolStripMenuItem1});
             this.tABLEToolStripMenuItem4.Name = "tABLEToolStripMenuItem4";
-            this.tABLEToolStripMenuItem4.Size = new System.Drawing.Size(152, 24);
+            this.tABLEToolStripMenuItem4.Size = new System.Drawing.Size(142, 24);
             this.tABLEToolStripMenuItem4.Text = "TABLE";
             // 
             // aDDCOLUMNToolStripMenuItem1
@@ -476,9 +476,23 @@ namespace CapaVista
             // plantillasUtilizadasToolStripMenuItem
             // 
             this.plantillasUtilizadasToolStripMenuItem.Name = "plantillasUtilizadasToolStripMenuItem";
-            this.plantillasUtilizadasToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
+            this.plantillasUtilizadasToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
             this.plantillasUtilizadasToolStripMenuItem.Text = "Plantillas Utilizadas";
             this.plantillasUtilizadasToolStripMenuItem.Click += new System.EventHandler(this.plantillasUtilizadasToolStripMenuItem_Click);
+            // 
+            // indicesGeneradosToolStripMenuItem
+            // 
+            this.indicesGeneradosToolStripMenuItem.Name = "indicesGeneradosToolStripMenuItem";
+            this.indicesGeneradosToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
+            this.indicesGeneradosToolStripMenuItem.Text = "Total de índices Generados";
+            this.indicesGeneradosToolStripMenuItem.Click += new System.EventHandler(this.indicesGeneradosToolStripMenuItem_Click);
+            // 
+            // buscarLosIndicesDeUnaTablaToolStripMenuItem
+            // 
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Name = "buscarLosIndicesDeUnaTablaToolStripMenuItem";
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Text = "Buscar los índices de una tabla";
+            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Click += new System.EventHandler(this.buscarLosIndicesDeUnaTablaToolStripMenuItem_Click);
             // 
             // lbReloj
             // 
@@ -834,13 +848,6 @@ namespace CapaVista
             this.lbConsulta.Size = new System.Drawing.Size(0, 0);
             this.lbConsulta.TabIndex = 17;
             // 
-            // indicesGeneradosToolStripMenuItem
-            // 
-            this.indicesGeneradosToolStripMenuItem.Name = "indicesGeneradosToolStripMenuItem";
-            this.indicesGeneradosToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
-            this.indicesGeneradosToolStripMenuItem.Text = "Total de Indices Generados";
-            this.indicesGeneradosToolStripMenuItem.Click += new System.EventHandler(this.indicesGeneradosToolStripMenuItem_Click);
-            // 
             // btnCerrarGrid
             // 
             this.btnCerrarGrid.BackColor = System.Drawing.Color.Transparent;
@@ -858,12 +865,6 @@ namespace CapaVista
             this.btnCerrarGrid.UseVisualStyleBackColor = false;
             this.btnCerrarGrid.Visible = false;
             this.btnCerrarGrid.Click += new System.EventHandler(this.btnCerrarGrid_Click);
-            // 
-            // buscarLosIndicesDeUnaTablaToolStripMenuItem
-            // 
-            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Name = "buscarLosIndicesDeUnaTablaToolStripMenuItem";
-            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
-            this.buscarLosIndicesDeUnaTablaToolStripMenuItem.Text = "Buscar los Indices de una tabla";
             // 
             // lbTabñas
             // 

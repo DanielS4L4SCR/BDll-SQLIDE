@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ScintillaNET;
 using MetroFramework;
+using Microsoft.VisualBasic;
 
 namespace CapaVista
 {
@@ -1221,6 +1222,23 @@ namespace CapaVista
                 btnCerrarGrid.Visible = false;
             }
         }
+        string RtablaIndex = "";
+        private void buscarLosIndicesDeUnaTablaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RtablaIndex = Microsoft.VisualBasic.Interaction.InputBox(
+              "Ingrese el nombre de la tabla a la cual desea consultar los índices",
+              "Índices por tabla",
+              "");
+            CapaLogica.clsBaseDatos Conect = new CapaLogica.clsBaseDatos();
+            SqlConnection objConexion = new SqlConnection(String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", instanceName, cboBD.Text));
+            dgvInfo.DataSource = Conect.Ejectar(String.Format("SELECT i.name AS Nombre_Índice" + Environment.NewLine +
+                                                ", object_name(i.object_id) As Nombre_Tabla" + Environment.NewLine +
+                                                 " , COL_NAME(ic.object_id, ic.column_id) AS column_name" + Environment.NewLine +
+                                                "FROM sys.indexes AS i" + Environment.NewLine +
+                                                "INNER JOIN sys.index_columns AS ic" + Environment.NewLine +
+                                                 " ON i.object_id = ic.object_id AND i.index_id = ic.index_id"+Environment.NewLine+
+                                                 "WHERE i.object_id = OBJECT_ID('"+RtablaIndex+"')"), objConexion, instanceName);
+        }  
     }
 }
 
