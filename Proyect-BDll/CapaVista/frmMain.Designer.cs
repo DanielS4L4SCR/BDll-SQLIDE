@@ -150,7 +150,6 @@ namespace CapaVista
             this.groupBox3.Size = new System.Drawing.Size(184, 318);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Columnas";
             // 
             // panel7
             // 

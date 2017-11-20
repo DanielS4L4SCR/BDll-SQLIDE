@@ -1212,6 +1212,7 @@ namespace CapaVista
                                                 "INNER JOIN sys.index_columns AS ic" + Environment.NewLine +
                                                  " ON i.object_id = ic.object_id AND i.index_id = ic.index_id"), objConexion, instanceName);
             MetroMessageBox.Show(this,"El total de indices generados hasta el momento es de: "+ dgvInfo.Rows.Count.ToString(),"SQL MANAGER",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            dgvInfo.Visible = true;
             btnCerrarGrid.Visible = true;
         }
 
@@ -1238,6 +1239,8 @@ namespace CapaVista
                                                 "INNER JOIN sys.index_columns AS ic" + Environment.NewLine +
                                                  " ON i.object_id = ic.object_id AND i.index_id = ic.index_id"+Environment.NewLine+
                                                  "WHERE i.object_id = OBJECT_ID('"+RtablaIndex+"')"), objConexion, instanceName);
+            dgvInfo.Visible = true;
+            btnCerrarGrid.Visible = true;
         }  
     }
 }
