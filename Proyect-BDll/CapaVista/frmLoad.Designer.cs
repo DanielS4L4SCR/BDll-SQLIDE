@@ -65,11 +65,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(78, 69);
+            this.label1.Location = new System.Drawing.Point(27, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 50);
+            this.label1.Size = new System.Drawing.Size(411, 50);
             this.label1.TabIndex = 4;
-            this.label1.Text = "SQL MANAGER";
+            this.label1.Text = "SQL MANAGER 2017";
             // 
             // shapeContainer1
             // 
