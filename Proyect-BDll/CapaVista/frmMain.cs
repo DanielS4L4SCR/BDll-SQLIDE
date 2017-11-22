@@ -19,6 +19,7 @@ namespace CapaVista
         public String instanceName { get; set; }
         public Form login { get; set; }
         List<TabPage> AllTabPages = new List<TabPage>();
+        List<int> plantillas = new List<int>();
         int cont = 0;
         int contSelect = 0;
         int contInsert = 0;
@@ -27,6 +28,7 @@ namespace CapaVista
         int contDrop = 0;
         int contCreate = 0;
         int contAlter = 0;
+        
 
         public lbTabñas(String instanceName, Form login)
         {
@@ -1196,9 +1198,21 @@ namespace CapaVista
 
         private void plantillasUtilizadasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            String result = "";
 
-
-            MetroMessageBox.Show(this,"Plantilla Select: " + contSelect +Environment.NewLine+"Plantilla Insert: "+contInsert + Environment.NewLine + "Plantilla Update: " + contUpdate + Environment.NewLine + "Plantilla Delete: " + contDelete, "SQL MANAGER",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            List<String> oList = new List<string>();
+            oList.Add(contSelect + "--> Plantilla Select");
+            oList.Add(contInsert + "--> Plantilla Insert");
+            oList.Add(contDelete + "--> Plantilla Delete");
+            oList.Add(contUpdate + "--> Plantilla Update");
+            oList.Sort();
+            for (int i = oList.Count - 1; i >= 0; i--)
+            {
+                result += oList[i] + "\n";
+            }
+            
+            //MetroMessageBox.Show(this,"Plantilla Select: " + contSelect +Environment.NewLine+"Plantilla Insert: "+contInsert + Environment.NewLine + "Plantilla Update: " + contUpdate + Environment.NewLine + "Plantilla Delete: " + contDelete, "SQL MANAGER",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MetroMessageBox.Show(this, result, "SQL MANAGER", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         
         private void indicesGeneradosToolStripMenuItem_Click(object sender, EventArgs e)
