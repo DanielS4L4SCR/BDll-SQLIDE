@@ -19,7 +19,6 @@ namespace CapaVista
         public String instanceName { get; set; }
         public Form login { get; set; }
         List<TabPage> AllTabPages = new List<TabPage>();
-        List<int> plantillas = new List<int>();
         int cont = 0;
         int contSelect = 0;
         int contInsert = 0;
