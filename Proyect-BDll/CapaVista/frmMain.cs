@@ -1327,7 +1327,6 @@ namespace CapaVista
             {
                 result += oList[i] + "\n";
             }
-            
             //MetroMessageBox.Show(this,"Plantilla Select: " + contSelect +Environment.NewLine+"Plantilla Insert: "+contInsert + Environment.NewLine + "Plantilla Update: " + contUpdate + Environment.NewLine + "Plantilla Delete: " + contDelete, "SQL MANAGER",MessageBoxButtons.OK, MessageBoxIcon.Information);
             MetroMessageBox.Show(this, result, "SQL MANAGER REPORTES", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
