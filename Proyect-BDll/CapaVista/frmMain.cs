@@ -299,6 +299,18 @@ namespace CapaVista
                             {
                                 contDelete += 1;
                             }
+                            if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contCreate += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contDrop += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contAlter += 1;
+                            }
 
                         }
                         else
@@ -356,6 +368,18 @@ namespace CapaVista
                         {
                             contDelete += 1;
                         }
+                        if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contCreate += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contDrop += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contAlter += 1;
+                        }
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab2)
@@ -382,6 +406,18 @@ namespace CapaVista
                             if (txtQuery2.SelectedText.Contains("Delete") || txtQuery2.SelectedText.Contains("DELETE") || txtQuery2.SelectedText.Contains("delete") && txtQuery2.SelectedText.Contains("["))
                             {
                                 contDelete += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contCreate += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contDrop += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contAlter += 1;
                             }
                         }
                         else
@@ -436,6 +472,18 @@ namespace CapaVista
                         {
                             contDelete += 1;
                         }
+                        if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contCreate += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contDrop += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contAlter += 1;
+                        }
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab3)
@@ -462,6 +510,18 @@ namespace CapaVista
                             if (txtQuery3.SelectedText.Contains("Delete") || txtQuery3.SelectedText.Contains("DELETE") || txtQuery3.SelectedText.Contains("delete") && txtQuery3.SelectedText.Contains("["))
                             {
                                 contDelete += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contCreate += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contDrop += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contAlter += 1;
                             }
 
                         }
@@ -517,6 +577,18 @@ namespace CapaVista
                         {
                             contDelete += 1;
                         }
+                        if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contCreate += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contDrop += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contAlter += 1;
+                        }
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab4)
@@ -544,6 +616,18 @@ namespace CapaVista
                             if (txtQuery4.SelectedText.Contains("Delete") || txtQuery4.SelectedText.Contains("DELETE") || txtQuery4.SelectedText.Contains("delete") && txtQuery4.SelectedText.Contains("["))
                             {
                                 contDelete += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contCreate += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contDrop += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contAlter += 1;
                             }
 
                         }
@@ -599,6 +683,18 @@ namespace CapaVista
                         {
                             contDelete += 1;
                         }
+                        if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contCreate += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contDrop += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contAlter += 1;
+                        }
                     }
                 }
                 else if (tabContQuery.SelectedTab == tab5)
@@ -625,6 +721,18 @@ namespace CapaVista
                             if (txtQuery5.SelectedText.Contains("Delete") || txtQuery5.SelectedText.Contains("DELETE") || txtQuery5.SelectedText.Contains("delete") && txtQuery5.SelectedText.Contains("["))
                             {
                                 contDelete += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contCreate += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contDrop += 1;
+                            }
+                            if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                            {
+                                contAlter += 1;
                             }
 
                         }
@@ -679,6 +787,18 @@ namespace CapaVista
                         if (txtQuery5.SelectedText.Contains("Delete") || txtQuery5.SelectedText.Contains("DELETE") || txtQuery5.SelectedText.Contains("delete") && txtQuery5.SelectedText.Contains("["))
                         {
                             contDelete += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Create") || txtQuery1.SelectedText.Contains("CREATE") || txtQuery1.SelectedText.Contains("create") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contCreate += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Drop") || txtQuery1.SelectedText.Contains("DROP") || txtQuery1.SelectedText.Contains("drop") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contDrop += 1;
+                        }
+                        if (txtQuery1.SelectedText.Contains("Alter") || txtQuery1.SelectedText.Contains("ALTER") || txtQuery1.SelectedText.Contains("alter") && txtQuery1.SelectedText.Contains("["))
+                        {
+                            contAlter += 1;
                         }
                     }
                 }
@@ -961,23 +1081,23 @@ namespace CapaVista
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "CREATE DATABASE databasename";
+                txtQuery1.Text = "CREATE DATABASE [databasename]";
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
-                txtQuery2.Text = "CREATE DATABASE databasename";
+                txtQuery2.Text = "CREATE DATABASE [databasename]";
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
-                txtQuery3.Text = "CREATE DATABASE databasename";
+                txtQuery3.Text = "CREATE DATABASE [databasename]";
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
-                txtQuery4.Text = "CREATE DATABASE databasename";
+                txtQuery4.Text = "CREATE DATABASE [databasename]";
             }
             else if (tabContQuery.SelectedTab == tab5)
             {
-                txtQuery5.Text = "CREATE DATABASE databasename";
+                txtQuery5.Text = "CREATE DATABASE [databasename]";
             }
         }
 
@@ -985,7 +1105,7 @@ namespace CapaVista
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                txtQuery1.Text = "CREATE TABLE [table_name]" + "(" + Environment.NewLine +
                 "column1 datatype," + Environment.NewLine +
                 "column2 datatype," + Environment.NewLine +
                 "column3 datatype" + Environment.NewLine +
@@ -995,7 +1115,7 @@ namespace CapaVista
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
-                txtQuery2.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                txtQuery2.Text = "CREATE TABLE [table_name]" + "(" + Environment.NewLine +
                 "column1 datatype," + Environment.NewLine +
                 "column2 datatype," + Environment.NewLine +
                 "column3 datatype" + Environment.NewLine +
@@ -1004,7 +1124,7 @@ namespace CapaVista
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
-                txtQuery3.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                txtQuery3.Text = "CREATE TABLE [table_name]" + "(" + Environment.NewLine +
                 "column1 datatype," + Environment.NewLine +
                 "column2 datatype," + Environment.NewLine +
                 "column3 datatype" + Environment.NewLine +
@@ -1013,7 +1133,7 @@ namespace CapaVista
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
-                txtQuery4.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                txtQuery4.Text = "CREATE TABLE [table_name]" + "(" + Environment.NewLine +
                 "column1 datatype," + Environment.NewLine +
                 "column2 datatype," + Environment.NewLine +
                 "column3 datatype" + Environment.NewLine +
@@ -1022,7 +1142,7 @@ namespace CapaVista
             }
             else if (tabContQuery.SelectedTab == tab5)
             {
-                txtQuery5.Text = "CREATE TABLE table_name" + "(" + Environment.NewLine +
+                txtQuery5.Text = "CREATE TABLE [table_name]" + "(" + Environment.NewLine +
                 "column1 datatype," + Environment.NewLine +
                 "column2 datatype," + Environment.NewLine +
                 "column3 datatype" + Environment.NewLine +
@@ -1059,23 +1179,23 @@ namespace CapaVista
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "Drop Table " + lbTabla.Text;
+                txtQuery1.Text = "Drop Table " + "[table_name]";
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
-                txtQuery2.Text = "Drop Table " + lbTabla.Text;
+                txtQuery2.Text = "Drop Table " + "[table_name]";
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
-                txtQuery3.Text = "Drop Table " + lbTabla.Text;
+                txtQuery3.Text = "Drop Table " + "[table_name]";
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
-                txtQuery4.Text = "Drop Table " + lbTabla.Text;
+                txtQuery4.Text = "Drop Table " + "[table_name]";
             }
             else if (tabContQuery.SelectedTab == tab5)
             {
-                txtQuery5.Text = "Drop Table " + lbTabla.Text;
+                txtQuery5.Text = "Drop Table " + "[table_name]";
             }
         }
 
@@ -1107,28 +1227,28 @@ namespace CapaVista
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Add column_name datatype;";
+                txtQuery1.Text = "Alter Table " + "["+lbTabla.Text +"]"+ Environment.NewLine +
+                "Add [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
-                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Add column_name datatype;";
+                txtQuery2.Text = "Alter Table " + "["+lbTabla.Text +"]"+ Environment.NewLine +
+                "Add [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
-                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Add column_name datatype;";
+                txtQuery3.Text = "Alter Table " + "["+lbTabla.Text + "]"+Environment.NewLine +
+                "Add [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
-                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Add column_name datatype;";
+                txtQuery4.Text = "Alter Table " + "["+lbTabla.Text +"]"+ Environment.NewLine +
+                "Add [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab5)
             {
-                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Add column_name datatype;";
+                txtQuery5.Text = "Alter Table " + "["+lbTabla.Text +"]" +Environment.NewLine +
+                "Add [column_name] datatype;";
             }
         }
 
@@ -1136,28 +1256,28 @@ namespace CapaVista
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Drop Column column_name datatype;";
+                txtQuery1.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Drop Column [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
-                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Drop Column column_name datatype;";
+                txtQuery2.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Drop Column [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
-                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Drop Column column_name datatype;";
+                txtQuery3.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Drop Column [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
-                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Drop Column column_name datatype;";
+                txtQuery4.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Drop Column [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab5)
             {
-                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Drop Column column_name datatype;";
+                txtQuery5.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Drop Column [column_name] datatype;";
             }
         }
 
@@ -1165,34 +1285,29 @@ namespace CapaVista
         {
             if (tabContQuery.SelectedTab == Tab1)
             {
-                txtQuery1.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Alter Column column_name datatype;";
+                txtQuery1.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Alter Column [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab2)
             {
-                txtQuery2.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Alter Column column_name datatype;";
+                txtQuery2.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Alter Column [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab3)
             {
-                txtQuery3.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Alter Column column_name datatype;";
+                txtQuery3.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Alter Column [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab4)
             {
-                txtQuery4.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Alter Column column_name datatype;";
+                txtQuery4.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Alter Column [column_name] datatype;";
             }
             else if (tabContQuery.SelectedTab == tab5)
             {
-                txtQuery5.Text = "Alter Table " + lbTabla.Text + Environment.NewLine +
-                "Alter Column column_name datatype;";
+                txtQuery5.Text = "Alter Table " + "[" + lbTabla.Text + "]" + Environment.NewLine +
+                "Alter Column [column_name] datatype;";
             }
-        }
-
-        private void cboBD_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void plantillasUtilizadasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1204,6 +1319,9 @@ namespace CapaVista
             oList.Add(contInsert + "--> Plantilla Insert");
             oList.Add(contDelete + "--> Plantilla Delete");
             oList.Add(contUpdate + "--> Plantilla Update");
+            oList.Add(contCreate + "--> Plantilla Create");
+            oList.Add(contDrop + "--> Plantilla Drop");
+            oList.Add(contAlter + "--> Plantilla Alter");
             oList.Sort();
             for (int i = oList.Count - 1; i >= 0; i--)
             {
@@ -1211,7 +1329,7 @@ namespace CapaVista
             }
             
             //MetroMessageBox.Show(this,"Plantilla Select: " + contSelect +Environment.NewLine+"Plantilla Insert: "+contInsert + Environment.NewLine + "Plantilla Update: " + contUpdate + Environment.NewLine + "Plantilla Delete: " + contDelete, "SQL MANAGER",MessageBoxButtons.OK, MessageBoxIcon.Information);
-            MetroMessageBox.Show(this, result, "SQL MANAGER", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MetroMessageBox.Show(this, result, "SQL MANAGER REPORTES", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         
         private void indicesGeneradosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1222,7 +1340,7 @@ namespace CapaVista
             dtIndices = TotalIn.TotalIndices(instanceName, cboBD.Text);
             dgvInfo.DataSource = dtIndices;
             cantIndix = dtIndices.Rows.Count;
-            MetroMessageBox.Show(this,"El total de indices generados hasta el momento es de: "+ cantIndix,"SQL MANAGER",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MetroMessageBox.Show(this,"El total de indices generados hasta el momento es de: "+ cantIndix,"SQL MANAGER REPORTES",MessageBoxButtons.OK,MessageBoxIcon.Information);
             dgvInfo.Visible = true;
             btnCerrarGrid.Visible = true;
         }

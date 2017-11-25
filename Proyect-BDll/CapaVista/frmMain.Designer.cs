@@ -222,7 +222,6 @@ namespace CapaVista
             this.cboBD.TabIndex = 1;
             this.cboBD.UseSelectable = true;
             this.cboBD.DropDown += new System.EventHandler(this.cboBD_DropDown);
-            this.cboBD.SelectedIndexChanged += new System.EventHandler(this.cboBD_SelectedIndexChanged);
             // 
             // groupBox2
             // 
