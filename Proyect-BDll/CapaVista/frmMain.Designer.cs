@@ -98,9 +98,6 @@ namespace CapaVista
             this.button4 = new System.Windows.Forms.Button();
             this.txtQuery1 = new ScintillaNET.Scintilla();
             this.tabContQuery = new MetroFramework.Controls.MetroTabControl();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.lbConsulta = new MetroFramework.Controls.MetroLabel();
             this.btnCerrarGrid = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -514,7 +511,8 @@ namespace CapaVista
             // lbClock
             // 
             this.lbClock.AutoSize = true;
-            this.lbClock.Location = new System.Drawing.Point(1127, 714);
+            this.lbClock.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbClock.Location = new System.Drawing.Point(1120, 60);
             this.lbClock.Name = "lbClock";
             this.lbClock.Size = new System.Drawing.Size(75, 19);
             this.lbClock.TabIndex = 6;
@@ -815,30 +813,6 @@ namespace CapaVista
             this.tabContQuery.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tabContQuery.UseSelectable = true;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel1.Location = new System.Drawing.Point(-16, 759);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1265, 13);
-            this.panel1.TabIndex = 14;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel2.Location = new System.Drawing.Point(828, 749);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(374, 4);
-            this.panel2.TabIndex = 15;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel3.Location = new System.Drawing.Point(1006, 736);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(196, 4);
-            this.panel3.TabIndex = 16;
-            // 
             // lbConsulta
             // 
             this.lbConsulta.AutoSize = true;
@@ -873,10 +847,7 @@ namespace CapaVista
             this.Controls.Add(this.btnCerrarGrid);
             this.Controls.Add(this.lbConsulta);
             this.Controls.Add(this.lbClock);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgvInfo);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabContQuery);
             this.Controls.Add(this.tabQuery1);
             this.Controls.Add(this.groupBox2);
@@ -887,8 +858,10 @@ namespace CapaVista
             this.Name = "lbTabñas";
             this.Padding = new System.Windows.Forms.Padding(0, 60, 20, 20);
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(154)))), ((int)(((byte)(164)))));
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -948,9 +921,6 @@ namespace CapaVista
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox lbColumnas;
         private MetroFramework.Controls.MetroGrid dgvInfo;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStripMenuItem script;
         private System.Windows.Forms.ToolStripMenuItem dMLToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sELECTToolStripMenuItem1;
