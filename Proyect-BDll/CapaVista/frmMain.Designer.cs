@@ -816,7 +816,8 @@ namespace CapaVista
             // lbConsulta
             // 
             this.lbConsulta.AutoSize = true;
-            this.lbConsulta.Location = new System.Drawing.Point(981, 715);
+            this.lbConsulta.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbConsulta.Location = new System.Drawing.Point(1120, 60);
             this.lbConsulta.Name = "lbConsulta";
             this.lbConsulta.Size = new System.Drawing.Size(0, 0);
             this.lbConsulta.TabIndex = 17;
