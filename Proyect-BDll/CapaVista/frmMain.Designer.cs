@@ -711,6 +711,7 @@ namespace CapaVista
             // dgvInfo
             // 
             this.dgvInfo.AllowUserToResizeRows = false;
+            this.dgvInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -749,7 +750,7 @@ namespace CapaVista
             this.dgvInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInfo.Size = new System.Drawing.Size(766, 175);
+            this.dgvInfo.Size = new System.Drawing.Size(950, 200);
             this.dgvInfo.Style = MetroFramework.MetroColorStyle.Green;
             this.dgvInfo.TabIndex = 13;
             this.dgvInfo.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -832,7 +833,7 @@ namespace CapaVista
             this.btnCerrarGrid.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnCerrarGrid.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnCerrarGrid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarGrid.Location = new System.Drawing.Point(957, 535);
+            this.btnCerrarGrid.Location = new System.Drawing.Point(1140, 536);
             this.btnCerrarGrid.Name = "btnCerrarGrid";
             this.btnCerrarGrid.Size = new System.Drawing.Size(19, 17);
             this.btnCerrarGrid.TabIndex = 18;
